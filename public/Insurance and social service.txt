@@ -1,0 +1,56 @@
+Insurance and social service
+private insurance= swakaarya suraksha
+Health insurance card=arogya suraksha cheett
+lost card= nashtappetta cheett
+ambulance cover= rogi gathaagath vaahana pariraksha
+ambulance= jangama chikilsaalayam
+car insurance= car rakshabogam
+identity proof= thirichariyal rekha
+driving licence= adhikaara pooritha vaahana anumathi
+liability= baadyatha
+additional coverage= adhika pariraksha
+policy holder= padathi edutha aal
+damaged part= kedaaya baagam
+installation= pradisthaapanam
+contract= karaar
+amount covered= aake thuka
+comprehensive cover= samagramaaya suraksha
+insured= nashtotharavaaditham cheyyuka
+lease agreement= vaadaka karaar
+medical expenses= chikilsa chilavukal
+accident= apakadam
+incident= sambavam
+misunderstanding= thettidarikkuka
+collision= koottiyidi
+period= kaalagattam
+annual= vaarshikam
+monthly= prathimaasam
+premium term= tavana vyavastha
+couple= dampathikal
+treatment= chikilsa
+observation= nireekshanam
+frequency= aavarthi
+existing policy= nilavilulla nayam
+social service= saamoohika sevanam
+gender= lingbedam
+volunteer= sannadha sevakan
+social workers= saamoohika pravarthakar
+inequality= asamathwam
+physical= shaareerikamaaya
+age pension= vaardakya pension
+useful= upayogapradam
+development= vikasanam
+diability= vaikalyam
+civil right= pouraavakaasam
+caring= karuthalulla
+stay home= veettil thaamasikkuka
+social service= samoohya pravarthanam
+social welfare= saamoohya kshemam
+skills= kazhivukal
+individual= vyakthikatha
+describing= vivarikkunnu
+implemented= nadappilaakki
+assumption= daarana
+
+
+

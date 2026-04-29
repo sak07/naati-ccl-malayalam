@@ -1,0 +1,49 @@
+Health= aarogyam
+Left knee= idathu kaalmutt
+right knee= valathu kaal mutt
+hospital cover= aashupathri chilavukal
+injured= parikketta
+insurance claim= rakshaboga nashtaparihaaram
+prescription= kurippadi
+suggestion= nirdesham
+bones= asthikal
+psychologyst= manasaasthraknjan
+doctor= bishagvaran/ vaidyan
+speech therappist= samasara parisheelakan
+doctor appoinment= vaidyante niyamanam/ vaidyante koodikkazhcha samayam
+private health insurance policy
+= swakaarya aarogya suraksha padhathi
+Many= niravadhi
+basic pack= adisthaana padhathi
+optical service= kaazhcha sambandamaaya sevanangal
+dental service= dantha sevanangal
+allowance= bathha
+feeling well= sukham thonnunnu
+examine= parishodikkuka
+sick note= rogiyude cheett
+pharmacy= vaidya shaala
+immune system= roga prathiroda sheshi
+stroke= aagaatham
+infection= baadhikkuka
+genetic disease= janithaka rogam
+dosage= alav
+diagnosed= roga nirnayam
+part time= baagika samayam
+visitors= sandarshakar
+full time= muzhuvan samayam
+research= gaveshanam
+confirmation= sthireekaranam
+isolation= ottappetta
+organic = jaiva
+life modification= jeevitha parishkaranam
+complication= sankeernnam
+operation= shasthrakriya
+patient transport= rogikalude gathaagatham
+govt sposored= sarkkar prayojakar aaya
+extreme cases= theevramaaya casukal
+support pension= pinthunaa vardakyakaala vethanam
+safety and assurance= surakshayum urappum
+healthy diet= aarogyakaramaaya bakshanam
+
+
+

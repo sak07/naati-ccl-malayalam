@@ -1,0 +1,42 @@
+Immigration and settlement vocabulary
+immigration= kudiyettam
+settlement= othutheerpp/ kanakku theerkkal
+settled= sthirappettu/othutheerppayi/ kanakku theerthu
+migrant= kudiyettakkaaran
+immigrants= kudiyettakkaar
+immigration agent= kudiyetta prathinidhi
+office= kaaryaalayam
+approval= sammatham
+immigration law= kudiyetta niyamam
+community= samooham
+offence= kuttakaram
+customs office= chungam kaaryaalayam
+under the limit= paridhiyil
+high range= uyarnna sreni
+analysis= vishakalanam
+compromise= othu theerpp
+follow the rules= niyamam paalikkuka
+co operative= sahakarikkuka
+take action= nadapadi edukkuka
+trained= parisheelanam labicha
+comulsory= nirbandhitham
+terms and conditions= niyamangalum nibandhanakalum
+privacy= swakaaryatha
+deposit= nikshepam
+procedure= nadapadi kramam
+selection= therenjedukkal
+stress= sammardam
+exchange information= kai maatta vivaram
+oppurtunity= avasaram
+wait= kaathirikkuka
+investigation officer= anweshana udyogasthan
+estimated price= kanakkaakkiya chilav
+accept= sweekarichu
+develope= vikasippikkuka
+joint account= onnichulla account
+actual situation= yathaartha sandarbam
+declaration form= prakyaapana form
+passenger= yaathrakkaran
+declared= prakyaapichu
+
+

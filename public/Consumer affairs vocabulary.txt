@@ -1,0 +1,32 @@
+Consumer affairs vocabulary
+Department= shaakha
+consumer law= upabokthru niyamam
+declaration form= prathinjaa pathram
+government= sarkkaar/ baranakoodam
+legal system= niyama vyavastha
+punishment= shiksha
+penalty= pizha
+charges= aaropanam
+arrest= bandhikkuka
+prohibited= niroodikkuka
+stolen= moshticha
+court= kodathi
+claim= avakasam/ avakaasa vaadam
+Insurance= rakshabogam/ suraksha/nastotharavaaditham
+disputes=tharkkangal
+investment= muthalmudakk/nikshepam
+concern= aashanka/ulkanda
+share holder= ohari udama
+job capacity= thozhil sheshi
+sick note= asukha kuripp
+leave= avadhi/ viduka
+licence= anumathi
+passport= yaathraanuvaadha pathram
+representative= prathinidhi
+Guarentee= urapp
+Annual report= vaarshika vivara kuripp
+commodities= charakkukal/ulppannangal
+online registration= online pathiykkal
+communication= aashaya vinimayam
+fight= poruthuka/ poraduka/ vazhakk
+

@@ -1,0 +1,1806 @@
+[
+  {
+    "id": "education",
+    "domain": "Education",
+    "terms": [
+      {
+        "english": "course",
+        "manglish": "paadyakramam/sreni"
+      },
+      {
+        "english": "post graduate",
+        "manglish": "birudaandara birudam"
+      },
+      {
+        "english": "graduation",
+        "manglish": "birudam"
+      },
+      {
+        "english": "graduate",
+        "manglish": "birudadaari"
+      },
+      {
+        "english": "college",
+        "manglish": "kalaalayam"
+      },
+      {
+        "english": "university",
+        "manglish": "sarvakalaasaala"
+      },
+      {
+        "english": "teacher",
+        "manglish": "adyaapika/adyaapakan"
+      },
+      {
+        "english": "friends",
+        "manglish": "snehithar/ suhruthukkal"
+      },
+      {
+        "english": "eligibility",
+        "manglish": "yogyatha"
+      },
+      {
+        "english": "term",
+        "manglish": "kaalaavadhi"
+      },
+      {
+        "english": "branch",
+        "manglish": "shaakha"
+      },
+      {
+        "english": "mistakes",
+        "manglish": "thettukal"
+      },
+      {
+        "english": "exam",
+        "manglish": "pareeksha"
+      },
+      {
+        "english": "qualification",
+        "manglish": "yogyatha/ arhatha"
+      },
+      {
+        "english": "document transalation",
+        "manglish": "pramaanam vivarthanam cheyyuka"
+      },
+      {
+        "english": "excellent",
+        "manglish": "mikachath"
+      },
+      {
+        "english": "appreciate",
+        "manglish": "abinandikkuka"
+      },
+      {
+        "english": "satisfied",
+        "manglish": "samthripthanakuka"
+      },
+      {
+        "english": "tour",
+        "manglish": "sanchaaram"
+      },
+      {
+        "english": "lake",
+        "manglish": "thadaakam"
+      },
+      {
+        "english": "lessons",
+        "manglish": "paadam"
+      },
+      {
+        "english": "Music classes",
+        "manglish": "sangeetha paadangal"
+      },
+      {
+        "english": "instruments",
+        "manglish": "upakaranangal"
+      },
+      {
+        "english": "swimming classes",
+        "manglish": "neenthal classukal"
+      },
+      {
+        "english": "background",
+        "manglish": "pashchaathalam"
+      },
+      {
+        "english": "positions",
+        "manglish": "sthaanam"
+      },
+      {
+        "english": "memmory",
+        "manglish": "orma"
+      },
+      {
+        "english": "thinking capacity",
+        "manglish": "chinthaa sheshi"
+      },
+      {
+        "english": "request",
+        "manglish": "apeksha/ abyarthana"
+      },
+      {
+        "english": "knowledge",
+        "manglish": "arivu"
+      },
+      {
+        "english": "summary",
+        "manglish": "saaraamsam/ samgraham"
+      },
+      {
+        "english": "scheme",
+        "manglish": "padhathi"
+      },
+      {
+        "english": "scholarship",
+        "manglish": "paandithyathinaayi labikkunna vethanam"
+      },
+      {
+        "english": "profit",
+        "manglish": "laabham"
+      },
+      {
+        "english": "pass",
+        "manglish": "jayikkuka"
+      },
+      {
+        "english": "continue",
+        "manglish": "thudaruka"
+      },
+      {
+        "english": "undergraduate",
+        "manglish": "sarva kalaasaala birudam nediyittillatha vidyaarthi"
+      },
+      {
+        "english": "contribute",
+        "manglish": "sambaavana cheyyuka"
+      }
+    ]
+  },
+  {
+    "id": "housing",
+    "domain": "Housing",
+    "terms": [
+      {
+        "english": "Community cente",
+        "manglish": "saamoohika kendram"
+      },
+      {
+        "english": "Poeple",
+        "manglish": "janangal"
+      },
+      {
+        "english": "Group",
+        "manglish": "samooham"
+      },
+      {
+        "english": "Team",
+        "manglish": "sangam"
+      },
+      {
+        "english": "Family members",
+        "manglish": "kudumbaangangal"
+      },
+      {
+        "english": "Housing",
+        "manglish": "paarppidam"
+      },
+      {
+        "english": "Resident",
+        "manglish": "sthala vaasi"
+      },
+      {
+        "english": "residence",
+        "manglish": "sthiravaasam/griham"
+      },
+      {
+        "english": "rent",
+        "manglish": "vaadaka"
+      },
+      {
+        "english": "tenant",
+        "manglish": "vaadakakkaar"
+      },
+      {
+        "english": "cheque",
+        "manglish": "dhana vinimaya cheett"
+      },
+      {
+        "english": "savings account",
+        "manglish": "sambadya account"
+      },
+      {
+        "english": "bank loan",
+        "manglish": "bank vaayppa"
+      },
+      {
+        "english": "rental agreement",
+        "manglish": "vaadaka karaar"
+      },
+      {
+        "english": "housing department",
+        "manglish": "bhavana vakupp"
+      },
+      {
+        "english": "mortgage",
+        "manglish": "panayappeduthuka"
+      },
+      {
+        "english": "instalment",
+        "manglish": "thavanakal"
+      },
+      {
+        "english": "monthly plan",
+        "manglish": "prathimaasa padhathi"
+      },
+      {
+        "english": "yearly plan",
+        "manglish": "vaarshika padhathi"
+      },
+      {
+        "english": "planning",
+        "manglish": "aasoothranam"
+      },
+      {
+        "english": "policy",
+        "manglish": "nayam"
+      },
+      {
+        "english": "reference number",
+        "manglish": "soochana sankya"
+      },
+      {
+        "english": "house owner",
+        "manglish": "veettudamasthan"
+      },
+      {
+        "english": "landlords",
+        "manglish": "boovudamakal/ janmi"
+      },
+      {
+        "english": "purchase",
+        "manglish": "vaangal"
+      },
+      {
+        "english": "shopping mall",
+        "manglish": "vilpana kendram"
+      },
+      {
+        "english": "train station",
+        "manglish": "theevandi kathirippu kendram"
+      },
+      {
+        "english": "working hours",
+        "manglish": "joli samayam/pravarthana samayam"
+      },
+      {
+        "english": "public transport",
+        "manglish": "pothu gathaagatham"
+      },
+      {
+        "english": "sale deed",
+        "manglish": "vilpana karaar"
+      },
+      {
+        "english": "fence",
+        "manglish": "veli"
+      },
+      {
+        "english": "backyard",
+        "manglish": "pinmuttam"
+      },
+      {
+        "english": "frontyard",
+        "manglish": "munmuttam"
+      },
+      {
+        "english": "balcony",
+        "manglish": "nilamuttam"
+      },
+      {
+        "english": "footpath/road",
+        "manglish": "nadavazhi/ nadappatha"
+      },
+      {
+        "english": "loan",
+        "manglish": "vaayppa"
+      },
+      {
+        "english": "lawn",
+        "manglish": "pulthakidi"
+      },
+      {
+        "english": "grass cutting",
+        "manglish": "pullu vettuka"
+      },
+      {
+        "english": "equal instalment",
+        "manglish": "thulya thavana"
+      },
+      {
+        "english": "payment",
+        "manglish": "panam adaykkal/ kodukkal"
+      },
+      {
+        "english": "gross income",
+        "manglish": "aake varumanam"
+      },
+      {
+        "english": "assets",
+        "manglish": "aasthi"
+      },
+      {
+        "english": "property",
+        "manglish": "swath/vasthu"
+      },
+      {
+        "english": "property tax",
+        "manglish": "vasthu nikuthi"
+      },
+      {
+        "english": "neighbors",
+        "manglish": "ayalvaasikal"
+      },
+      {
+        "english": "neighborhood",
+        "manglish": "ayalpakkam"
+      },
+      {
+        "english": "youngsters",
+        "manglish": "yuvaakkal/ cheruppakkar"
+      },
+      {
+        "english": "seniors",
+        "manglish": "muthirnnavar"
+      },
+      {
+        "english": "parents",
+        "manglish": "maathapithakkal"
+      },
+      {
+        "english": "learning",
+        "manglish": "padanam"
+      },
+      {
+        "english": "apartment",
+        "manglish": "bavanam"
+      },
+      {
+        "english": "expensive",
+        "manglish": "vila koodiyath"
+      },
+      {
+        "english": "cheap",
+        "manglish": "vila kuranjath"
+      },
+      {
+        "english": "collection",
+        "manglish": "shekharam/ samaaharam"
+      },
+      {
+        "english": "earning",
+        "manglish": "sambadyam"
+      },
+      {
+        "english": "qualified",
+        "manglish": "yogyatha ulla"
+      },
+      {
+        "english": "reliable",
+        "manglish": "viswasaneeyamaaya"
+      },
+      {
+        "english": "city",
+        "manglish": "nagaram/pattanam"
+      },
+      {
+        "english": "seller",
+        "manglish": "vilpanakkaran"
+      },
+      {
+        "english": "buyer",
+        "manglish": "vangunnayaal"
+      },
+      {
+        "english": "amenities",
+        "manglish": "soukaryangal"
+      },
+      {
+        "english": "comfortabale",
+        "manglish": "sukhakaramaaya"
+      },
+      {
+        "english": "convenient",
+        "manglish": "soukryapradamaaya"
+      },
+      {
+        "english": "privacy",
+        "manglish": "swakaaryatha"
+      },
+      {
+        "english": "previous",
+        "manglish": "munpathe/ munpulla"
+      },
+      {
+        "english": "house shifting",
+        "manglish": "veed maattam"
+      },
+      {
+        "english": "annual waste",
+        "manglish": "vaarshika maalinyam"
+      },
+      {
+        "english": "original",
+        "manglish": "yathaarthamaaya"
+      },
+      {
+        "english": "packers",
+        "manglish": "pothiyunnavar"
+      },
+      {
+        "english": "expected time",
+        "manglish": "pratheekshicha samayam"
+      },
+      {
+        "english": "weather",
+        "manglish": "kaalavastha"
+      },
+      {
+        "english": "cyclone",
+        "manglish": "kodunkaatt"
+      },
+      {
+        "english": "strong winds",
+        "manglish": "shakthamaaya kaatt"
+      },
+      {
+        "english": "cutting trees",
+        "manglish": "vrikshanagl murikkal"
+      },
+      {
+        "english": "forcast",
+        "manglish": "pravachanam"
+      },
+      {
+        "english": "short notice",
+        "manglish": "hriswa ariyipp"
+      },
+      {
+        "english": "paint buckets",
+        "manglish": "chaaya thottikal"
+      },
+      {
+        "english": "divorce",
+        "manglish": "vivaaha mochanam"
+      },
+      {
+        "english": "Live seperately",
+        "manglish": "vere thaamasikkuka"
+      }
+    ]
+  },
+  {
+    "id": "consumer-affairs",
+    "domain": "Consumer Affairs",
+    "terms": [
+      {
+        "english": "Department",
+        "manglish": "shaakha"
+      },
+      {
+        "english": "consumer law",
+        "manglish": "upabokthru niyamam"
+      },
+      {
+        "english": "declaration form",
+        "manglish": "prathinjaa pathram"
+      },
+      {
+        "english": "government",
+        "manglish": "sarkkaar/ baranakoodam"
+      },
+      {
+        "english": "legal system",
+        "manglish": "niyama vyavastha"
+      },
+      {
+        "english": "punishment",
+        "manglish": "shiksha"
+      },
+      {
+        "english": "penalty",
+        "manglish": "pizha"
+      },
+      {
+        "english": "charges",
+        "manglish": "aaropanam"
+      },
+      {
+        "english": "arrest",
+        "manglish": "bandhikkuka"
+      },
+      {
+        "english": "prohibited",
+        "manglish": "niroodikkuka"
+      },
+      {
+        "english": "stolen",
+        "manglish": "moshticha"
+      },
+      {
+        "english": "court",
+        "manglish": "kodathi"
+      },
+      {
+        "english": "claim",
+        "manglish": "avakasam/ avakaasa vaadam"
+      },
+      {
+        "english": "Insurance",
+        "manglish": "rakshabogam/ suraksha/nastotharavaaditham"
+      },
+      {
+        "english": "disputes",
+        "manglish": "tharkkangal"
+      },
+      {
+        "english": "investment",
+        "manglish": "muthalmudakk/nikshepam"
+      },
+      {
+        "english": "concern",
+        "manglish": "aashanka/ulkanda"
+      },
+      {
+        "english": "share holder",
+        "manglish": "ohari udama"
+      },
+      {
+        "english": "job capacity",
+        "manglish": "thozhil sheshi"
+      },
+      {
+        "english": "sick note",
+        "manglish": "asukha kuripp"
+      },
+      {
+        "english": "leave",
+        "manglish": "avadhi/ viduka"
+      },
+      {
+        "english": "licence",
+        "manglish": "anumathi"
+      },
+      {
+        "english": "passport",
+        "manglish": "yaathraanuvaadha pathram"
+      },
+      {
+        "english": "representative",
+        "manglish": "prathinidhi"
+      },
+      {
+        "english": "Guarentee",
+        "manglish": "urapp"
+      },
+      {
+        "english": "Annual report",
+        "manglish": "vaarshika vivara kuripp"
+      },
+      {
+        "english": "commodities",
+        "manglish": "charakkukal/ulppannangal"
+      },
+      {
+        "english": "online registration",
+        "manglish": "online pathiykkal"
+      },
+      {
+        "english": "communication",
+        "manglish": "aashaya vinimayam"
+      },
+      {
+        "english": "fight",
+        "manglish": "poruthuka/ poraduka/ vazhakk"
+      }
+    ]
+  },
+  {
+    "id": "finance",
+    "domain": "Finance",
+    "terms": [
+      {
+        "english": "financial institution",
+        "manglish": "danakaarya sthapanam"
+      },
+      {
+        "english": "online application form",
+        "manglish": "online apeksha pathram"
+      },
+      {
+        "english": "cash",
+        "manglish": "panam"
+      },
+      {
+        "english": "cost",
+        "manglish": "chilav"
+      },
+      {
+        "english": "advisor",
+        "manglish": "upadeshtaav"
+      },
+      {
+        "english": "review",
+        "manglish": "avalokanam nadathuka"
+      },
+      {
+        "english": "inspection",
+        "manglish": "parishodana"
+      },
+      {
+        "english": "floor",
+        "manglish": "nila/thara"
+      },
+      {
+        "english": "finance department",
+        "manglish": "sambathika vakupp"
+      },
+      {
+        "english": "economics",
+        "manglish": "saambathika saasthram"
+      },
+      {
+        "english": "personal finance",
+        "manglish": "swakaarya danakaaryam"
+      },
+      {
+        "english": "sector",
+        "manglish": "mekhala"
+      },
+      {
+        "english": "structure",
+        "manglish": "gatana"
+      },
+      {
+        "english": "currency",
+        "manglish": "naanayam/ panam"
+      },
+      {
+        "english": "meanwhile",
+        "manglish": "ithinidayil"
+      },
+      {
+        "english": "federal",
+        "manglish": "samyukthamaaya"
+      },
+      {
+        "english": "enterprise",
+        "manglish": "samrambam"
+      },
+      {
+        "english": "bond",
+        "manglish": "kada pathram/ karaar pathram"
+      },
+      {
+        "english": "regulation",
+        "manglish": "niyathranam"
+      },
+      {
+        "english": "intrest rate",
+        "manglish": "palisha nirakk"
+      },
+      {
+        "english": "deposit",
+        "manglish": "nikshepam"
+      }
+    ]
+  },
+  {
+    "id": "insurance",
+    "domain": "Insurance",
+    "terms": [
+      {
+        "english": "private insurance",
+        "manglish": "swakaarya suraksha"
+      },
+      {
+        "english": "Health insurance card",
+        "manglish": "arogya suraksha cheett"
+      },
+      {
+        "english": "lost card",
+        "manglish": "nashtappetta cheett"
+      },
+      {
+        "english": "ambulance cover",
+        "manglish": "rogi gathaagath vaahana pariraksha"
+      },
+      {
+        "english": "ambulance",
+        "manglish": "jangama chikilsaalayam"
+      },
+      {
+        "english": "car insurance",
+        "manglish": "car rakshabogam"
+      },
+      {
+        "english": "identity proof",
+        "manglish": "thirichariyal rekha"
+      },
+      {
+        "english": "driving licence",
+        "manglish": "adhikaara pooritha vaahana anumathi"
+      },
+      {
+        "english": "liability",
+        "manglish": "baadyatha"
+      },
+      {
+        "english": "additional coverage",
+        "manglish": "adhika pariraksha"
+      },
+      {
+        "english": "policy holder",
+        "manglish": "padathi edutha aal"
+      },
+      {
+        "english": "damaged part",
+        "manglish": "kedaaya baagam"
+      },
+      {
+        "english": "installation",
+        "manglish": "pradisthaapanam"
+      },
+      {
+        "english": "contract",
+        "manglish": "karaar"
+      },
+      {
+        "english": "amount covered",
+        "manglish": "aake thuka"
+      },
+      {
+        "english": "comprehensive cover",
+        "manglish": "samagramaaya suraksha"
+      },
+      {
+        "english": "insured",
+        "manglish": "nashtotharavaaditham cheyyuka"
+      },
+      {
+        "english": "lease agreement",
+        "manglish": "vaadaka karaar"
+      },
+      {
+        "english": "medical expenses",
+        "manglish": "chikilsa chilavukal"
+      },
+      {
+        "english": "accident",
+        "manglish": "apakadam"
+      },
+      {
+        "english": "incident",
+        "manglish": "sambavam"
+      },
+      {
+        "english": "misunderstanding",
+        "manglish": "thettidarikkuka"
+      },
+      {
+        "english": "collision",
+        "manglish": "koottiyidi"
+      },
+      {
+        "english": "period",
+        "manglish": "kaalagattam"
+      },
+      {
+        "english": "annual",
+        "manglish": "vaarshikam"
+      },
+      {
+        "english": "monthly",
+        "manglish": "prathimaasam"
+      },
+      {
+        "english": "premium term",
+        "manglish": "tavana vyavastha"
+      },
+      {
+        "english": "couple",
+        "manglish": "dampathikal"
+      },
+      {
+        "english": "treatment",
+        "manglish": "chikilsa"
+      },
+      {
+        "english": "observation",
+        "manglish": "nireekshanam"
+      },
+      {
+        "english": "frequency",
+        "manglish": "aavarthi"
+      },
+      {
+        "english": "existing policy",
+        "manglish": "nilavilulla nayam"
+      },
+      {
+        "english": "social service",
+        "manglish": "saamoohika sevanam"
+      },
+      {
+        "english": "gender",
+        "manglish": "lingbedam"
+      },
+      {
+        "english": "volunteer",
+        "manglish": "sannadha sevakan"
+      },
+      {
+        "english": "social workers",
+        "manglish": "saamoohika pravarthakar"
+      },
+      {
+        "english": "inequality",
+        "manglish": "asamathwam"
+      },
+      {
+        "english": "physical",
+        "manglish": "shaareerikamaaya"
+      },
+      {
+        "english": "age pension",
+        "manglish": "vaardakya pension"
+      },
+      {
+        "english": "useful",
+        "manglish": "upayogapradam"
+      },
+      {
+        "english": "development",
+        "manglish": "vikasanam"
+      },
+      {
+        "english": "diability",
+        "manglish": "vaikalyam"
+      },
+      {
+        "english": "civil right",
+        "manglish": "pouraavakaasam"
+      },
+      {
+        "english": "caring",
+        "manglish": "karuthalulla"
+      },
+      {
+        "english": "stay home",
+        "manglish": "veettil thaamasikkuka"
+      },
+      {
+        "english": "social service",
+        "manglish": "samoohya pravarthanam"
+      },
+      {
+        "english": "social welfare",
+        "manglish": "saamoohya kshemam"
+      },
+      {
+        "english": "skills",
+        "manglish": "kazhivukal"
+      },
+      {
+        "english": "individual",
+        "manglish": "vyakthikatha"
+      },
+      {
+        "english": "describing",
+        "manglish": "vivarikkunnu"
+      },
+      {
+        "english": "implemented",
+        "manglish": "nadappilaakki"
+      },
+      {
+        "english": "assumption",
+        "manglish": "daarana"
+      }
+    ]
+  },
+  {
+    "id": "legal",
+    "domain": "Legal",
+    "terms": [
+      {
+        "english": "Legal aid",
+        "manglish": "niyama sahaayam"
+      },
+      {
+        "english": "legal support",
+        "manglish": "niyaparamaaya pinthuna"
+      },
+      {
+        "english": "Lawyer",
+        "manglish": "abibaashakan"
+      },
+      {
+        "english": "court",
+        "manglish": "kodathi"
+      },
+      {
+        "english": "Home affairs",
+        "manglish": "veettile karyangal/ aabyantharam"
+      },
+      {
+        "english": "secretary",
+        "manglish": "kaarya darshi"
+      },
+      {
+        "english": "Grant",
+        "manglish": "anuvadhikkuka"
+      },
+      {
+        "english": "relevant",
+        "manglish": "prathyakshamaaya"
+      },
+      {
+        "english": "transfer",
+        "manglish": "sthalam maattam"
+      },
+      {
+        "english": "minimum",
+        "manglish": "kuranjath"
+      },
+      {
+        "english": "maximum",
+        "manglish": "paramaavadhi"
+      },
+      {
+        "english": "intreperter",
+        "manglish": "vyaakyaathaav/ rachayithaav"
+      },
+      {
+        "english": "Alternatively",
+        "manglish": "pakaramaayi"
+      },
+      {
+        "english": "certainly",
+        "manglish": "theerchayayum"
+      },
+      {
+        "english": "legal documents",
+        "manglish": "niyamaparamaaya rekhakal"
+      },
+      {
+        "english": "relevant evidence",
+        "manglish": "uchithamaaya thelivukal"
+      },
+      {
+        "english": "worker",
+        "manglish": "thozhilaali"
+      },
+      {
+        "english": "discount",
+        "manglish": "kizhivu"
+      },
+      {
+        "english": "on duty",
+        "manglish": "chumathalayil aan"
+      },
+      {
+        "english": "witness",
+        "manglish": "saakshi"
+      },
+      {
+        "english": "clue",
+        "manglish": "soochana"
+      },
+      {
+        "english": "comprehensive",
+        "manglish": "samagramaaya"
+      },
+      {
+        "english": "reasonable",
+        "manglish": "yukthisahamaaya/nyaayamaaya"
+      },
+      {
+        "english": "identity check",
+        "manglish": "thirichariyal parishodhana"
+      },
+      {
+        "english": "funds",
+        "manglish": "dhanam"
+      },
+      {
+        "english": "factors",
+        "manglish": "gatakangal"
+      },
+      {
+        "english": "proficiency",
+        "manglish": "praaveenyam"
+      },
+      {
+        "english": "mandatory",
+        "manglish": "nirbandhitham"
+      },
+      {
+        "english": "statement",
+        "manglish": "prasthaavana"
+      },
+      {
+        "english": "legal proceedings",
+        "manglish": "niyaparamaaya"
+      },
+      {
+        "english": "over speed",
+        "manglish": "amitha vegam"
+      },
+      {
+        "english": "overseas",
+        "manglish": "videsham"
+      },
+      {
+        "english": "risk",
+        "manglish": "apakada saadyatha"
+      },
+      {
+        "english": "attack",
+        "manglish": "aakramanam"
+      },
+      {
+        "english": "complain",
+        "manglish": "paraathi"
+      },
+      {
+        "english": "Rights",
+        "manglish": "avakaasangal"
+      },
+      {
+        "english": "illegal",
+        "manglish": "niyama virudham"
+      },
+      {
+        "english": "crime",
+        "manglish": "kuttakrithyam"
+      },
+      {
+        "english": "judge",
+        "manglish": "nyaayathipan"
+      },
+      {
+        "english": "testify",
+        "manglish": "saakshikarikkuka"
+      }
+    ]
+  },
+  {
+    "id": "business",
+    "domain": "Business",
+    "terms": [
+      {
+        "english": "Bussiness",
+        "manglish": "vyaaparam"
+      },
+      {
+        "english": "advertisement",
+        "manglish": "parasyam"
+      },
+      {
+        "english": "buy",
+        "manglish": "vaanguka"
+      },
+      {
+        "english": "consumer/ consumer",
+        "manglish": "upabokthaav"
+      },
+      {
+        "english": "price/rate",
+        "manglish": "vila/ nirakk"
+      },
+      {
+        "english": "cost",
+        "manglish": "chilav"
+      },
+      {
+        "english": "afford",
+        "manglish": "thaangaanavunna"
+      },
+      {
+        "english": "consumer law",
+        "manglish": "upabokthru niyamam"
+      },
+      {
+        "english": "refund",
+        "manglish": "thirike kodukkal"
+      },
+      {
+        "english": "replace",
+        "manglish": "maatti nalkuka"
+      },
+      {
+        "english": "repair",
+        "manglish": "nannakkuka"
+      },
+      {
+        "english": "reciept",
+        "manglish": "raseeth"
+      },
+      {
+        "english": "manager",
+        "manglish": "nirvaahakan"
+      },
+      {
+        "english": "bank loan",
+        "manglish": "bank vaayppa"
+      },
+      {
+        "english": "legal system",
+        "manglish": "niyama vyavastha"
+      },
+      {
+        "english": "tax number",
+        "manglish": "nikuthi sankhya"
+      },
+      {
+        "english": "change",
+        "manglish": "maattam"
+      },
+      {
+        "english": "charge",
+        "manglish": "vila"
+      },
+      {
+        "english": "bussiness owners",
+        "manglish": "vyaapara udamakal"
+      },
+      {
+        "english": "place",
+        "manglish": "sthalam/ sthanam"
+      },
+      {
+        "english": "negotiate",
+        "manglish": "charcha nadathuka/koodiyaalochikkuka"
+      },
+      {
+        "english": "price list",
+        "manglish": "vila nirakk/ vilavivarappattika"
+      },
+      {
+        "english": "prospective buyer",
+        "manglish": "baaviyil vaangunnayaal"
+      },
+      {
+        "english": "commission",
+        "manglish": "vyaapara prathifalam"
+      },
+      {
+        "english": "competition",
+        "manglish": "malsaram"
+      },
+      {
+        "english": "schedule",
+        "manglish": "pattika"
+      },
+      {
+        "english": "meeting",
+        "manglish": "yogam/sammelanam"
+      },
+      {
+        "english": "tax office",
+        "manglish": "nikuthi kaaryaalayam"
+      },
+      {
+        "english": "colleague",
+        "manglish": "sahapravarthakar"
+      },
+      {
+        "english": "advisor",
+        "manglish": "upadeshtaav"
+      },
+      {
+        "english": "advise",
+        "manglish": "upadesham"
+      },
+      {
+        "english": "representative",
+        "manglish": "prathinidhi"
+      },
+      {
+        "english": "products",
+        "manglish": "ulpannam"
+      },
+      {
+        "english": "intrested",
+        "manglish": "thaalparyam"
+      },
+      {
+        "english": "import",
+        "manglish": "irakkumathi"
+      },
+      {
+        "english": "damaged goods",
+        "manglish": "kedaaya saadanangal"
+      },
+      {
+        "english": "finished goods",
+        "manglish": "poorthiyaaya vasthukkal"
+      },
+      {
+        "english": "proposal",
+        "manglish": "nirdesham"
+      },
+      {
+        "english": "bussiness plan",
+        "manglish": "vyaapara padhathi"
+      },
+      {
+        "english": "supply",
+        "manglish": "vitharanam"
+      },
+      {
+        "english": "demand",
+        "manglish": "aavasyam"
+      },
+      {
+        "english": "popular",
+        "manglish": "janapriyam"
+      },
+      {
+        "english": "successful",
+        "manglish": "vijayapradam/safalamaaya"
+      },
+      {
+        "english": "news",
+        "manglish": "varthamaana pathram"
+      },
+      {
+        "english": "agreement",
+        "manglish": "karaar/vyavastha"
+      }
+    ]
+  },
+  {
+    "id": "health",
+    "domain": "Health",
+    "terms": [
+      {
+        "english": "Health",
+        "manglish": "aarogyam"
+      },
+      {
+        "english": "Left knee",
+        "manglish": "idathu kaalmutt"
+      },
+      {
+        "english": "right knee",
+        "manglish": "valathu kaal mutt"
+      },
+      {
+        "english": "hospital cover",
+        "manglish": "aashupathri chilavukal"
+      },
+      {
+        "english": "injured",
+        "manglish": "parikketta"
+      },
+      {
+        "english": "insurance claim",
+        "manglish": "rakshaboga nashtaparihaaram"
+      },
+      {
+        "english": "prescription",
+        "manglish": "kurippadi"
+      },
+      {
+        "english": "suggestion",
+        "manglish": "nirdesham"
+      },
+      {
+        "english": "bones",
+        "manglish": "asthikal"
+      },
+      {
+        "english": "psychologyst",
+        "manglish": "manasaasthraknjan"
+      },
+      {
+        "english": "doctor",
+        "manglish": "bishagvaran/ vaidyan"
+      },
+      {
+        "english": "speech therappist",
+        "manglish": "samasara parisheelakan"
+      },
+      {
+        "english": "doctor appoinment",
+        "manglish": "vaidyante niyamanam/ vaidyante koodikkazhcha samayam"
+      },
+      {
+        "english": "Many",
+        "manglish": "niravadhi"
+      },
+      {
+        "english": "basic pack",
+        "manglish": "adisthaana padhathi"
+      },
+      {
+        "english": "optical service",
+        "manglish": "kaazhcha sambandamaaya sevanangal"
+      },
+      {
+        "english": "dental service",
+        "manglish": "dantha sevanangal"
+      },
+      {
+        "english": "allowance",
+        "manglish": "bathha"
+      },
+      {
+        "english": "feeling well",
+        "manglish": "sukham thonnunnu"
+      },
+      {
+        "english": "examine",
+        "manglish": "parishodikkuka"
+      },
+      {
+        "english": "sick note",
+        "manglish": "rogiyude cheett"
+      },
+      {
+        "english": "pharmacy",
+        "manglish": "vaidya shaala"
+      },
+      {
+        "english": "immune system",
+        "manglish": "roga prathiroda sheshi"
+      },
+      {
+        "english": "stroke",
+        "manglish": "aagaatham"
+      },
+      {
+        "english": "infection",
+        "manglish": "baadhikkuka"
+      },
+      {
+        "english": "genetic disease",
+        "manglish": "janithaka rogam"
+      },
+      {
+        "english": "dosage",
+        "manglish": "alav"
+      },
+      {
+        "english": "diagnosed",
+        "manglish": "roga nirnayam"
+      },
+      {
+        "english": "part time",
+        "manglish": "baagika samayam"
+      },
+      {
+        "english": "visitors",
+        "manglish": "sandarshakar"
+      },
+      {
+        "english": "full time",
+        "manglish": "muzhuvan samayam"
+      },
+      {
+        "english": "research",
+        "manglish": "gaveshanam"
+      },
+      {
+        "english": "confirmation",
+        "manglish": "sthireekaranam"
+      },
+      {
+        "english": "isolation",
+        "manglish": "ottappetta"
+      },
+      {
+        "english": "organic",
+        "manglish": "jaiva"
+      },
+      {
+        "english": "life modification",
+        "manglish": "jeevitha parishkaranam"
+      },
+      {
+        "english": "complication",
+        "manglish": "sankeernnam"
+      },
+      {
+        "english": "operation",
+        "manglish": "shasthrakriya"
+      },
+      {
+        "english": "patient transport",
+        "manglish": "rogikalude gathaagatham"
+      },
+      {
+        "english": "govt sposored",
+        "manglish": "sarkkar prayojakar aaya"
+      },
+      {
+        "english": "extreme cases",
+        "manglish": "theevramaaya casukal"
+      },
+      {
+        "english": "support pension",
+        "manglish": "pinthunaa vardakyakaala vethanam"
+      },
+      {
+        "english": "safety and assurance",
+        "manglish": "surakshayum urappum"
+      },
+      {
+        "english": "healthy diet",
+        "manglish": "aarogyakaramaaya bakshanam"
+      }
+    ]
+  },
+  {
+    "id": "office",
+    "domain": "Office",
+    "terms": [
+      {
+        "english": "Import",
+        "manglish": "irakkumathi"
+      },
+      {
+        "english": "export",
+        "manglish": "kayattumathi"
+      },
+      {
+        "english": "tax",
+        "manglish": "nikuthi"
+      },
+      {
+        "english": "sales",
+        "manglish": "vilppana"
+      },
+      {
+        "english": "profit",
+        "manglish": "laabam"
+      },
+      {
+        "english": "loss",
+        "manglish": "nashtam"
+      },
+      {
+        "english": "produce",
+        "manglish": "ulpaadippikkuka"
+      },
+      {
+        "english": "industry",
+        "manglish": "vyavasaayam"
+      },
+      {
+        "english": "conference",
+        "manglish": "sammelanam"
+      },
+      {
+        "english": "meeting",
+        "manglish": "yogam"
+      },
+      {
+        "english": "agenda",
+        "manglish": "vishayavivara pathrika"
+      },
+      {
+        "english": "world wide",
+        "manglish": "lokamembaadum"
+      },
+      {
+        "english": "international market",
+        "manglish": "anthaaraashta vipani"
+      },
+      {
+        "english": "domestic market",
+        "manglish": "aabyanthara  vipani"
+      },
+      {
+        "english": "revenue",
+        "manglish": "varumaanam"
+      },
+      {
+        "english": "leaflet",
+        "manglish": "lakhulekha"
+      },
+      {
+        "english": "innauguration",
+        "manglish": "ulgaadanam"
+      },
+      {
+        "english": "department",
+        "manglish": "vakupp"
+      },
+      {
+        "english": "branch",
+        "manglish": "shaakha"
+      },
+      {
+        "english": "officer",
+        "manglish": "udyogasthan"
+      },
+      {
+        "english": "function",
+        "manglish": "pravarthanam"
+      },
+      {
+        "english": "broker",
+        "manglish": "dallaal"
+      },
+      {
+        "english": "liability",
+        "manglish": "baadyatha"
+      },
+      {
+        "english": "public",
+        "manglish": "pothu"
+      },
+      {
+        "english": "private",
+        "manglish": "swakaarya"
+      },
+      {
+        "english": "review",
+        "manglish": "avalokanam"
+      },
+      {
+        "english": "additional",
+        "manglish": "adhika"
+      },
+      {
+        "english": "request",
+        "manglish": "abyarthana"
+      },
+      {
+        "english": "inflation",
+        "manglish": "vilakkayattam"
+      },
+      {
+        "english": "idea",
+        "manglish": "aashayam"
+      },
+      {
+        "english": "hike",
+        "manglish": "kayattam/vardanav"
+      },
+      {
+        "english": "progress",
+        "manglish": "purogathi"
+      },
+      {
+        "english": "increase",
+        "manglish": "vardikkuka"
+      },
+      {
+        "english": "annual",
+        "manglish": "vaarshikam"
+      },
+      {
+        "english": "building",
+        "manglish": "kettidam"
+      },
+      {
+        "english": "appoinment",
+        "manglish": "niyamanam"
+      },
+      {
+        "english": "resignation",
+        "manglish": "raaji"
+      },
+      {
+        "english": "help",
+        "manglish": "sahaayam"
+      },
+      {
+        "english": "if possible",
+        "manglish": "saadyamenkil"
+      },
+      {
+        "english": "forgive",
+        "manglish": "sahapravarthakan"
+      },
+      {
+        "english": "security purpose",
+        "manglish": "suraksha aavasyangal"
+      },
+      {
+        "english": "quality",
+        "manglish": "gunanilavaaram"
+      },
+      {
+        "english": "service",
+        "manglish": "sevanam"
+      },
+      {
+        "english": "quantity",
+        "manglish": "alav"
+      },
+      {
+        "english": "address",
+        "manglish": "vilaasam"
+      },
+      {
+        "english": "cancel",
+        "manglish": "raddaakkuka"
+      },
+      {
+        "english": "last date",
+        "manglish": "avasana theeyathi"
+      },
+      {
+        "english": "completed",
+        "manglish": "poorthiyaayi"
+      }
+    ]
+  },
+  {
+    "id": "immigration",
+    "domain": "Immigration",
+    "terms": [
+      {
+        "english": "immigration",
+        "manglish": "kudiyettam"
+      },
+      {
+        "english": "settlement",
+        "manglish": "othutheerpp/ kanakku theerkkal"
+      },
+      {
+        "english": "settled",
+        "manglish": "sthirappettu/othutheerppayi/ kanakku theerthu"
+      },
+      {
+        "english": "migrant",
+        "manglish": "kudiyettakkaaran"
+      },
+      {
+        "english": "immigrants",
+        "manglish": "kudiyettakkaar"
+      },
+      {
+        "english": "immigration agent",
+        "manglish": "kudiyetta prathinidhi"
+      },
+      {
+        "english": "office",
+        "manglish": "kaaryaalayam"
+      },
+      {
+        "english": "approval",
+        "manglish": "sammatham"
+      },
+      {
+        "english": "immigration law",
+        "manglish": "kudiyetta niyamam"
+      },
+      {
+        "english": "community",
+        "manglish": "samooham"
+      },
+      {
+        "english": "offence",
+        "manglish": "kuttakaram"
+      },
+      {
+        "english": "customs office",
+        "manglish": "chungam kaaryaalayam"
+      },
+      {
+        "english": "under the limit",
+        "manglish": "paridhiyil"
+      },
+      {
+        "english": "high range",
+        "manglish": "uyarnna sreni"
+      },
+      {
+        "english": "analysis",
+        "manglish": "vishakalanam"
+      },
+      {
+        "english": "compromise",
+        "manglish": "othu theerpp"
+      },
+      {
+        "english": "follow the rules",
+        "manglish": "niyamam paalikkuka"
+      },
+      {
+        "english": "co operative",
+        "manglish": "sahakarikkuka"
+      },
+      {
+        "english": "take action",
+        "manglish": "nadapadi edukkuka"
+      },
+      {
+        "english": "trained",
+        "manglish": "parisheelanam labicha"
+      },
+      {
+        "english": "comulsory",
+        "manglish": "nirbandhitham"
+      },
+      {
+        "english": "terms and conditions",
+        "manglish": "niyamangalum nibandhanakalum"
+      },
+      {
+        "english": "privacy",
+        "manglish": "swakaaryatha"
+      },
+      {
+        "english": "deposit",
+        "manglish": "nikshepam"
+      },
+      {
+        "english": "procedure",
+        "manglish": "nadapadi kramam"
+      },
+      {
+        "english": "selection",
+        "manglish": "therenjedukkal"
+      },
+      {
+        "english": "stress",
+        "manglish": "sammardam"
+      },
+      {
+        "english": "exchange information",
+        "manglish": "kai maatta vivaram"
+      },
+      {
+        "english": "oppurtunity",
+        "manglish": "avasaram"
+      },
+      {
+        "english": "wait",
+        "manglish": "kaathirikkuka"
+      },
+      {
+        "english": "investigation officer",
+        "manglish": "anweshana udyogasthan"
+      },
+      {
+        "english": "estimated price",
+        "manglish": "kanakkaakkiya chilav"
+      },
+      {
+        "english": "accept",
+        "manglish": "sweekarichu"
+      },
+      {
+        "english": "develope",
+        "manglish": "vikasippikkuka"
+      },
+      {
+        "english": "joint account",
+        "manglish": "onnichulla account"
+      },
+      {
+        "english": "actual situation",
+        "manglish": "yathaartha sandarbam"
+      },
+      {
+        "english": "declaration form",
+        "manglish": "prakyaapana form"
+      },
+      {
+        "english": "passenger",
+        "manglish": "yaathrakkaran"
+      },
+      {
+        "english": "declared",
+        "manglish": "prakyaapichu"
+      }
+    ]
+  }
+]

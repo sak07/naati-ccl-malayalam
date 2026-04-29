@@ -1,0 +1,250 @@
+[
+  {
+    "id": "script-music-concert",
+    "title": "Son's Music Concert",
+    "domain": "Education",
+    "exchanges": [
+      {
+        "manglish": "namaskaram , ente per john. njan aan ee vidhyalayathile  kala classukal edukkunnath . njan thangaleyinnu engneyaan sahayikkendath ?",
+        "english": "Hello Mr. John. I am here to know about my son's participation in the concert being held next month."
+      },
+      {
+        "manglish": "theerchayayum. thangalude makan nannayi cheyyunnund . paripady aduthirikkunnathinal njangal eeyide kooduthal parisheelana classukal nadathunnund. valare nalla oru paripady  aayirikkum ann .",
+        "english": "Happy to hear  that . My son is tensed to go on the stage and perform in front of  other people. Singing and dancing stresses him a lot. He is not even eating properly lately."
+      },
+      {
+        "manglish": "enikk manassilavum . kaanikalk  munnil veedhiyil paripady avadhirippikkuka ennath athra eluppamulla kaaryamilla. thaangalude makante class adhyapika ikkaryam ennod paranjirunnu.",
+        "english": "Yes, I understand that this is a great opportunity for him. I really want him to attend the concert because it will be a great experience for him. But all I can say is that he should not be overly concerned about this and that it should not cause any problems to his health."
+      },
+      {
+        "manglish": "thangal ennod ith charcha cheyyan vannathil enikk santhoshamund. avan sangeetha paripaadiyil  pankedukkanamennan  thangal  aagrahikkunnathenn  njan manassilakkunnu. avante abhiprayam enthan? njangalude vidhyarthikale aareyum nirbandhikkan njangal aagrahikkunnilla.",
+        "english": "Yes, he told me he'd love to be a part of all backstage works"
+      },
+      {
+        "manglish": "avanoru anugraheetha kalakaran aan . avan nannayi paadukayum nritham cheyyukayum cheyyunnund . athinal enikk thonnunnath , ithavana, namukkavanod pinnaniyil ninnum paadan aavashyapedam . pineed saavadhanam avante sabhakambam namukk maattiyedukkam .  ithil thangalude abhiprayam enthan?",
+        "english": "I think that's a good idea. I will talk to him about it. I am sure he will be very happy and he will be able to enjoy the program very well . Thank you very much."
+      }
+    ]
+  },
+  {
+    "id": "script-finance-bank",
+    "title": "School Bank Account",
+    "domain": "Finance",
+    "exchanges": [
+      {
+        "manglish": "Njangalude bankilekk swaagatham . ente peru jack. thaankalk oru vyaakyaathavine avasyamund enn formil ninn njan manasilakkunnu.njan ningalkaayi oraale erppadakkiyittund.njan innu ningale engane sahaayikkanam Hi jack , i am new to Australia. I am still learning English. Thank you for arranging the interpreter.I would like to open a school bank accountfor my 9 years old daughter. we didn't have such a  facility back in our country. so, i do not have much idea about this Theerchayaayum school bank accountukal ippol valare janapriyamaan sambaadyathinte pradaanyathe kurich janangale padippikkanulla nalloru vazhiyaanith. thaankalude makal eth vidyaalayathilaan padikkunnath",
+        "english": "She goes to a local private school. i saw a letter in the notice board encouraging parents to open a school account for their children. so, i came here straightaway. could you please help me with this?"
+      },
+      {
+        "manglish": "theerchayaayum ith thra sankeernnamaaya karyamalla.kuttikalil ambaadya heelam prolsaahippikkunnathinaan ee paripadi avatharippichath. ella vidyaalayangalum aazhchayil oru divas am bank dinamaayi  pravarthikkunnund.vidyaarthikalk avar swaroopicha panam avide nikshepikkam .ee accountukalk bankukal oru feesum eedakkunnilla",
+        "english": "This is indeed a great initiative. I want my daughter to learn the importance of savings. few of her school friends have already opened the account."
+      },
+      {
+        "manglish": "Athe ath sheriyaan. thankalude makalude peril thaankalk thane oru account thurakkavunnathaan. ith  online aayo ee form poorippicho cheyyam.ithinaayi thaankal kurach rekhakalum samarppikkendathund",
+        "english": "I am on leave today, so i have the time to open the account now. I have brought my daughter's school id and also my government id. i have also brought my daughter's birth certificate. Are there any other documents that i need to submit? I also have some money to deposit straight away"
+      },
+      {
+        "manglish": "Ath gambeeramaayirikkunnu thaankalude makalude rand photoyum koode njangalk aavasyamund. ath ippolthaankalude pakkal illa enn aanenkil vidyaalayathile adutha bank dinathil bandappetta udyogastharkk ath samarppichal mathiyakum. aadyathe nikshepam thaankalude makal nadathatte ennan njan nirdeshikkuka. appol nadapadi kramangalengane aan ennullath avalk manasilakkamallo. ennirunnalum ath thaankalude theerumanamaan",
+        "english": "Oh yes, that is a great idea. i will tell her once she come back home from school. she will be very excited"
+      },
+      {
+        "manglish": "njan thaankalk ippol oru welcome p[ack nalkaam. athiloru bank pusthakam. nikshepa cheett. koode oru panappettiyum undakum. aa panappettiyil ella divasavum valare cheriya oru thuka ittu vekkan ningal makalod aavasyappeduka, thudarnn aazhchayil orikkalo maasathil orikkalo aa thuka school bank accountilekk nikshepikkavunnathaan",
+        "english": "I am sure she will like the money box. thank you very much for explaining me everything very well."
+      }
+    ]
+  },
+  {
+    "id": "script-constable",
+    "title": "Noisy Neighbour",
+    "domain": "Legal",
+    "exchanges": [
+      {
+        "manglish": "Shubasaayahnam, ith constable Jackson , njan inn ningale engane sahaayikkanam Namaskaaram , ente ayalvaasiyude veetil nadakkunna partye kurich paraathippedaan aan njan vilikkunnath, shabdam valare adhikamaan",
+        "english": "Hello , I am calling to complain about a party going on at my neighbor's house, sound is too much"
+      },
+      {
+        "manglish": "Ente kudumbam athaazham kazhikkan thudangiya samayath aan ith aarambichath, ekadesham 6 mani. appol muthal ith thudarunnu. ippol avide irupatholam perund",
+        "english": "All right, i need some details when did the party starts and how many people are are there in the house now? Sheri, enik kurach vishadaamshangal aavasyamund, eppol aan party thudangiyath , ippol aa veettil ethra peru und"
+      },
+      {
+        "manglish": "Appol party thudangiyitt ekadesham 7 manikkoor aayi, ningal enth kondaan vishamikkunnath enn enik manasilaayi. ee ayalkkaar eppozhum itharam partykal nadathaarundo?",
+        "english": "So party has been going for almost 7 hours. I can see why you are upset. Do these neighbors often hold such parties?"
+      },
+      {
+        "manglish": "Athe und, ellaa vaaranthyangalilum avar itharam partykal nadathaar und,ath kondaan njan ningale vilichath ith vallappozhum mathram ulloovenkilum athra prashnam illa,",
+        "english": "They are breaking residential noise restrictions, by making such loud noise after midnight, if you can hear from inside from your house, i can imagine how loud it is"
+      },
+      {
+        "manglish": "Ardha raathrikk shesham itharathil valiya shabdam undakkunnath vazhi avar paarppida shabda niyanthranangal lamgikkukayaan cheyyunnath, ningalk veedinte ullil ninn thane ithrayum shabdam sravikkan kazhiyunnundenkil athethra maathram uchathilaanenn enik oohikkaan kazhiyum Avare ithellam baadikkunnundenn enik thonnunnilla, njangal avarod samsarikkan sremichuvenilum orathekich maatam onnum undaayilla venalkkaalath janaalakal thurannidumbol aan ettavum budhimutt",
+        "english": "I dont think they are worried about this . we tried to talk to them  about this but no use. it is especially worrying in summer season when we leave our windows open"
+      },
+      {
+        "manglish": "sheri, njan 2 udyogasthare ningalude veettilekk ayakkukayum shabdam kurakkan aavasyapedukayum cheyyaam. avar niyamam langikkukaayan enna munnariyipp nalkukayum cheyyam Njaanaan paraathi nalkiyath enn avar ariyaruth. kazhinja thavana shabdam kurakkan paranjappol avarkk sherikkum deshyam vannirunnu I dont want to know them that i made the complaint. last time i asked them to reduce the noise they got really agitated Don't worry , officers will not mention your name, we will take care of the rest",
+        "english": "Alright, i will send two officers to your neighbors house and ask them to reduce the noise and warn them that they are breaking the rules"
+      },
+      {
+        "manglish": "vishamikkanada udyogasthar ningalude peru parayilla bakki njangal nokkikolaam",
+        "english": "Orupad nanni constable Jackson"
+      },
+      {
+        "manglish": "",
+        "english": "Thanks alot constable jackson"
+      }
+    ]
+  },
+  {
+    "id": "script-drunk-driver",
+    "title": "Drunk Driver",
+    "domain": "Legal",
+    "exchanges": [
+      {
+        "manglish": "ningal vega Paridhi marikadannan vaahanam odikkunnath enn ningalk ariyamo,dayavaayi ningalude aahanam ente idathu vashathekkaayi matti nirthoo",
+        "english": "yes sure, but i was not driving above the speed limit, i am sure that i was driven within the speed limit"
+      },
+      {
+        "manglish": "enik ningalude licence onn kanan kazhiyumo, ningal madyapichittila enn urappu varuthaanayi ee swasana maapiniyilekk onn oothaamo, ningalude rakthathile madyathinte sandratha  anuvadaneeyamaaya paridhikk ukalil anenn kanikkuka anenkilningalk izha athramalla 4 ayogyatha pointukal oodi nashtamakum enn ariyaamo",
+        "english": "Do i need  to breath into the breath analyser i know that we are not allowed to drunk drive in Australia"
+      },
+      {
+        "manglish": "njan samsayichath pole ningalude rakthathile madyathinte sandratha 1.5 aan ath Victoria yil anuvadhaneeyamayathinekkaal 30 madangu kooduthal aan. ningal oru p plate holder aanennan kanikkunnath athin prakaram ningalk vaahanam odikkumbol oru thulli madyam polum kazhikkan anuvaadham illa",
+        "english": "ok, i thought drinking a little alcohol won't make any difference. what can i tell you officer,i am suffering  alot, i think i should just die, i dont want to live anymore"
+      },
+      {
+        "manglish": "Oh appol ningal parayunnath ningal vishamathil aayathinaalaan madyam kazhichath ennano, ennal ningal drive cheyyan paadilla maam, nirbaagya vashaal madyapich vaahanam odichathinu pizha chumathukayaan",
+        "english": "I am out of luck these days , my boy friend of 8 years left me for a permanent resident girl, my friends made me a little to forget my stress. i am not at all intoxicated. i don't know how i got happiness in in this?"
+      },
+      {
+        "manglish": "njan poornamayum manasilakkunnu,ennirunnalum ningalude asradha moolam sambavikkan idayulla naasha nashtangalude alav enkilum ningalk kanakkakkan kazhiyumo,ningal thenkilum apakadathil pettirunnuvenkil ingalude mathramalla mattu chila niraparaadhikalude Jeevan koodi apakadathil ayene",
+        "english": "I am sorry , i apologise for this, can't this be resolved in any other way? can we settle it somehow? i am already going through alot"
+      },
+      {
+        "manglish": "Ippol, oru police udyogasthan kaikooli vaagdaanam cheythathin ningalkethiril pizha chumathum , ningalude pizha kath vazhi labikkum",
+        "english": ""
+      }
+    ]
+  },
+  {
+    "id": "script-housing-6",
+    "title": "Property Inspection",
+    "domain": "Housing",
+    "exchanges": [
+      {
+        "manglish": "Theerchayaayum. Veed kanuvanulla karyangal krameekarikkan njangalk  saadhikkum. Enn pokuvaanaan  thaankalk thaalparyam",
+        "english": "Property inspection Hello, I'm interested in scheduling a property inspection for the house I'm considering renting. Is that possible?"
+      },
+      {
+        "manglish": "Njangalk ucha thirinj 2 manikum 4 manikum njaayarazhcha slotukal labyamaayittund .  Ivayil samayamaan thaankalk  thiranjedukkan thaalparyam",
+        "english": "I would prefer to visit on the weekend. Can we schedule it for Saturday morning? Kshamikkanam sheniyaazhcha ravile saadhikkilla . Njaayarazhcha ucha kazhinj pattumo Sunday afternoon works for me. What time would be convenient?"
+      },
+      {
+        "manglish": "Theerchayayum vasthuvinte melvilaasavum mattu vishadaamshangalum adangunna oru email njan  thankalk ayakkam",
+        "english": "4 PM would be better for me. Could you please provide me with the address of the property?"
+      },
+      {
+        "manglish": "Theerchayayum.  Veed kaanaanayi thankalk thangalude  oru  suhruthineyo kudumbathile oramgatheyo  kond varavunnathaan",
+        "english": "Thank you. I have one more question. During the property inspection, can I bring along a friend to get their opinion as well?"
+      },
+      {
+        "manglish": "Santhosham njaayarazhcha 4 manik veed kanuvaan pokunna samayath namuk veendum  kaanam. Enthenkilum undenkil ennod chodikkan madikkendathilla",
+        "english": "That's great to hear. I appreciate your assistance. I look forward to the property inspection on Sunday at 4 PM."
+      },
+      {
+        "manglish": "",
+        "english": "Thank you once again. I'll be sure to reach out if I have any additional queries before the inspection"
+      }
+    ]
+  },
+  {
+    "id": "script-homework-club",
+    "title": "Homework Club",
+    "domain": "Education",
+    "exchanges": [
+      {
+        "manglish": "Akathekk  varu, irikku. Njan thangale  inn enganeyan  sahayikkendath?",
+        "english": "Thank you for for this meeting David. I have come today to discuss few things about my job"
+      },
+      {
+        "manglish": "Kazhinja moonu masamayi  thaangal njangalodoppam  joli cheyyunnu enn njan  manassilakkunnu . childrensprogram enna padhadhiyude  chumathala thaangalkkanalle? Ellam engne  pokunnu? Ippozhathe joliyil  thangal samthripthanano?",
+        "english": "Absolutely . I am thoroughly enjoying this job.  But some kids are having trouble doing their home work. I have come up with a plan to help them."
+      },
+      {
+        "manglish": "Ithippolpalappozhayi  sambavikkunund. Njngalude shradhayilum  pettittund ee  karym.  Ennal njangalude  jeevanakkar  matt jolikalil  valare thirakkilan. Thaangalkkenthenkilum nirtheshangal  undo?",
+        "english": "I am thinking of after school homework club.  We can also seek help from other  parents and staff members for this"
+      },
+      {
+        "manglish": "Sheri. Ith sangadippikkan thangalude joli samayathil  ninnum  pradhidinam 2 manikoor edutholu . nammude aadhyapadi  enthan  ?",
+        "english": "Ith valare nalla  oru aashayaman . pakshe ee karyam  shariyayi nadathuvanayi  namukk shariyaya aalukaleyum aavashyamund . thaangalk ithil  munparichayam undo Yes, in my previous job I was the home work club leader for 5 years . There is no other job that I have enjoyed so much. We were also able to bring about a positive change among the students. Atheyo.  Eppozhan enikk  aashvasamayath. Nammude vidhyalayathile aadyathe grihapada  samajam thudanguvan  theerthum aaveshathilan . naalazhchakkullil namukkith thudangan  saadhikkum enn  thaangal karuthunnundo  ? Thank you so much for your encouragement  .Of course,  if we can organize a team quickly we can start it in four weeks. I would definitely set aside a part of my working hours for this."
+      },
+      {
+        "manglish": "Gambeeramaayirikkunnu . ith  vijayakaramanenkil , baaviyil  ith vipuleekarikkunnathine kurichulla karyngalum namukkalochikkam",
+        "english": "Firstly, I'll organize a meeting with all the parents and staff and ask for their help. Even if people are reluctant in the beginning, I'm sure we'll get a lot of volunteers once we start the program"
+      },
+      {
+        "manglish": "",
+        "english": "Thank you. I am very eager to start this. I'm sure many kids will find this club helpful"
+      }
+    ]
+  },
+  {
+    "id": "script-computer-course",
+    "title": "Computer Course",
+    "domain": "Education",
+    "exchanges": [
+      {
+        "manglish": "Namaskaaram ente peru sally.  Thaankale inn njan engane aan sahaayikkendath",
+        "english": "Hi Sally ,I came to know from my friend that you offer computer courses here . I am here to know more details about your computer courses."
+      },
+      {
+        "manglish": "Theerchayayum thankale ee karyathil njan sahaayikkam . aadyamaayi thaankal enth aavasyathinaan computer classil cheran aagarahikkunnath enn parayamo. Ningal nedan aagrahikkunna kazhivukale adisthaanathil  namukkivide palatharathilulla coursukal labyamaayittund",
+        "english": "The other day my son asked me to help him with his business. I have been assigned to look at the revenue and expenditure figures of the business. So I want to learn how to use a spreadsheet"
+      },
+      {
+        "manglish": "Angane yaanenkil  njangalude  adisthaana course aayirikkum  thaankalkk  ettavum anuyojyam  aayittullath.  Oru coursil thanne thaankalkk  avasyamaaya  elllatharam kazhivukalum padikkan  saadikkunnathaan",
+        "english": "Awesome. I need a class suitable for beginners. I've used computers only to send emails to my grand children"
+      },
+      {
+        "manglish": "Ath  prashnamalla  njangalude ella coursukal yaathoru mun parichayavum illatha ethorolalkkum anuyojyamaayava thanneyaan. Thaankal orikkalum mattullavarude  pirakil  aavilla enn njan urapp tharunnu",
+        "english": "I feel relieved now. Last time I had joined a computer course. Not only was it very expensive but the teacher was very impatient. If we had known everything in the first place we would not have gone to study there, right?"
+      },
+      {
+        "manglish": "Ath kettathil njan  khedikkunnu. Ivide njangalude adyaapakar valare kshamayullavaraan, thaankalk thaankalude swantham vegathayil  padikkam Glad to hear that. Can I join the next available slot? Because I want to start classes as soon as possible Theerchayaayun  Dhaaralam slotukal labyamaayittund . thaankal  krithya samayathaan vannirikkunnath . njangal praveshana nadapadikal aarambichatheyulloo . puthiya adyayanam  3 aazhchakullil thudangum.  Aazhchayil randu classukal aan njangal nadathunnath . onn budhanaazhchayum , mattonn sheniyaazhchayum",
+        "english": "I want to join Saturday classes. Because my son and daughter - in - law go to work on Wednesdays, So I need to be home to look after my grandchildren"
+      },
+      {
+        "manglish": "Angane aanenkil  njan  thaankale sheniyaazhcha  ravile 10 maniyude classil cherkkam  . thaankal varumbol oru penayum kurachu  kadalaasukalum kondu varunnuvenn  urappu varuthuka. classile notukal  kurichedukkan aavasyam varum",
+        "english": "Of course I will bring them . Or I may forget what the teacher is teaching me when I get home. Thanks a lot .I'm looking forward to starting classes"
+      }
+    ]
+  },
+  {
+    "id": "script-library",
+    "title": "Enquiry at Library",
+    "domain": "Education",
+    "exchanges": [
+      {
+        "manglish": "theerchayayum sahaayikkan enik santhoshameyulloo njan thankale enganeyaan sahaayikkendath ? I have been looking for an encyclopaedia on world history for a while now. But I am not getting a good one.",
+        "english": "Good morning! I'm looking for assistance at the library."
+      },
+      {
+        "manglish": "athoru prashnameyalla. ningalk anuyojyamaayath njangal naamaavali parishodikkatte. \"insights in to world history\" enna vikjaana kosham ithaa. ningal anweshikkunna vivarangal ithil undaayirikkanam. Thank you. While I'm here, could you tell me how books are arranged on the shelves? theerchayaayum. njangalude pusthakangal avayude thalakkettukale adisthaanamakki aksharamaala kramathil krameekarichirikkunnu.",
+        "english": "I see. Can you show me where I can find a language dictionary?"
+      },
+      {
+        "manglish": "theerchayayum. ente koode varoo , baashaa nigandukalulla  vibaagathilekk njan ningale kond pokum . ithoru prashastha prasaadhakante english-malayalam  baashaa nigandu aan, ithonnu nokku",
+        "english": "I'm planning to go to my home country next month. Incase if I fail to return book on time, what would happen?"
+      },
+      {
+        "manglish": "nischitha theeyathikk  munp thane pusthakam thirichelpikkunnathaan uchitham. vaikiyaal pizhayundakum , maathramalla  rand maasam kazhinjittum krithyamaaya ariyipponnum labichillenkil amgathwam vare radhaakapettekkam",
+        "english": "I will definitely keep that in mind. I saw a workshop pamphlet with everyone here. Where can I get it from?"
+      },
+      {
+        "manglish": "lakhu lekhakalum  ariyippukalum  saadaranayaayi  praveshana kavaadathinaduthaar  undaavaar . ath njan ningalk kaanichu tharaam",
+        "english": "Thank you. Lastly, can you tell me about a nearby book stall where I can buy a novel?"
+      },
+      {
+        "manglish": "theerchayum . ivied ninn  oru  block akale , 123 main streetil   \"readers heaven\" enna  peril oru book stall und .avide  ella pusthakangalum vilakkizhivil labikkum",
+        "english": "I really do appreciate your assistance.See you again"
+      }
+    ]
+  }
+]

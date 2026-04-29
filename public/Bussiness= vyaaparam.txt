@@ -1,0 +1,53 @@
+Bussiness= vyaaparam
+advertisement= parasyam
+buy= vaanguka
+consumer/ consumer= upabokthaav
+price/rate= vila/ nirakk
+cost= chilav
+afford= thaangaanavunna
+consumer law= upabokthru niyamam
+refund= thirike kodukkal
+replace= maatti nalkuka
+repair= nannakkuka
+reciept= raseeth
+manager= nirvaahakan
+bank loan= bank vaayppa
+legal system= niyama vyavastha
+tax number= nikuthi sankhya
+change= maattam
+charge=vila
+bussiness owners= vyaapara udamakal
+place= sthalam/ sthanam
+negotiate= charcha nadathuka/koodiyaalochikkuka
+price list= vila nirakk/ vilavivarappattika
+prospective buyer= baaviyil vaangunnayaal
+commission= vyaapara prathifalam
+competition= malsaram
+schedule= pattika
+meeting= yogam/sammelanam
+tax office= nikuthi kaaryaalayam
+colleague=sahapravarthakar
+advisor=upadeshtaav
+advise= upadesham
+representative= prathinidhi
+products= ulpannam
+intrested= thaalparyam
+import= irakkumathi
+damaged goods= kedaaya saadanangal
+finished goods= poorthiyaaya vasthukkal
+proposal= nirdesham
+bussiness plan= vyaapara padhathi
+supply= vitharanam
+demand= aavasyam
+popular= janapriyam
+successful= vijayapradam/safalamaaya
+news= varthamaana pathram
+agreement= karaar/vyavastha
+
+
+
+
+
+
+
+
