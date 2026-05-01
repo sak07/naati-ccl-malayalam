@@ -6,6 +6,7 @@ import type { Dialogue } from '@/lib/types';
 import type { VocabList } from '@/lib/vocab-data';
 import type { Script } from '@/lib/script-data';
 import { LEVEL_COLORS } from '@/lib/types';
+import { useCustomVocab } from '@/lib/useCustomVocab';
 
 type Tab = 'practice' | 'vocab' | 'scripts';
 
@@ -43,6 +44,8 @@ const LEVEL_DOT: Record<string, string> = {
 
 export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabularies, scripts }: Props) {
   const [tab, setTab] = useState<Tab>('practice');
+  const { customVocabs } = useCustomVocab();
+  const allVocabs = [...vocabularies, ...customVocabs];
 
   return (
     <main className="max-w-2xl mx-auto px-4 pb-16">
@@ -56,7 +59,7 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
       <div className="grid grid-cols-3 gap-2 mb-8 animate-fadeUp delay-100">
         {([
           { key: 'practice', icon: '💬', label: 'Dialogues',  sub: `${dialogues.length} topics` },
-          { key: 'vocab',    icon: '📖', label: 'Vocabulary', sub: `${vocabularies.length} lists` },
+          { key: 'vocab',    icon: '📖', label: 'Vocabulary', sub: `${allVocabs.length} lists` },
           { key: 'scripts',  icon: '📄', label: 'Scripts',    sub: `${scripts.length} scripts` },
         ] as { key: Tab; icon: string; label: string; sub: string }[]).map(({ key, icon, label, sub }) => (
           <button
@@ -117,17 +120,26 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
       {/* ── VOCABULARY ────────────────────────────────────────── */}
       {tab === 'vocab' && (
         <div className="space-y-2 animate-fadeUp">
-          {vocabularies.map((v) => {
+          {allVocabs.map((v) => {
+            const isCustom = v.id.startsWith('custom-');
             const icon = VOCAB_ICONS[v.domain] ?? '📚';
+            const href = isCustom
+              ? `/vocab/custom/${encodeURIComponent(v.id)}`
+              : `/vocab/${encodeURIComponent(v.id)}`;
             return (
               <Link
                 key={v.id}
-                href={`/vocab/${encodeURIComponent(v.id)}`}
+                href={href}
                 className="flex items-center gap-3 bg-white rounded-xl px-4 py-4 border border-slate-100 hover:border-indigo-300 hover:shadow-sm transition-all group"
               >
                 <span className="text-2xl shrink-0">{icon}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700">{v.domain}</p>
+                  <p className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 flex items-center gap-2">
+                    {v.domain}
+                    {isCustom && (
+                      <span className="text-xs font-medium text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded-md">Custom</span>
+                    )}
+                  </p>
                   <p className="text-xs text-slate-400 mt-0.5">{v.terms.length} words</p>
                 </div>
                 <svg className="w-4 h-4 text-slate-300 group-hover:text-indigo-400 shrink-0 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,6 +148,15 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
               </Link>
             );
           })}
+          <Link
+            href="/vocab/new"
+            className="flex items-center justify-center gap-2 bg-white rounded-xl px-4 py-4 border-2 border-dashed border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all text-slate-400 hover:text-indigo-600"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+            <span className="text-sm font-medium">Add vocabulary list</span>
+          </Link>
         </div>
       )}
 

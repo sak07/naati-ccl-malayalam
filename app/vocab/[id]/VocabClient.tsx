@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useCallback, useEffect, useMemo } from 'react';
-import type { VocabList } from '@/lib/vocab-data';
+import { useState, useCallback, useEffect } from 'react';
+import type { VocabList, VocabTerm } from '@/lib/vocab-data';
 import { useProgress } from '@/lib/useProgress';
+import { useVocabAdditions } from '@/lib/useVocabAdditions';
 
 interface Props { vocab: VocabList; }
 
@@ -21,19 +22,28 @@ export default function VocabClient({ vocab }: Props) {
   const [revealed, setRevealed] = useState(false);
   const [known, setKnown] = useState<Set<number>>(new Set());
   const [done, setDone] = useState(false);
-  const [isShuffled] = useState(true);
   const [search, setSearch] = useState('');
 
-  // Settings
   const [showSettings, setShowSettings] = useState(false);
   const [direction, setDirection] = useState<'en-to-ml' | 'ml-to-en'>('en-to-ml');
 
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [newEnglish, setNewEnglish] = useState('');
+  const [newManglish, setNewManglish] = useState('');
+  const [addError, setAddError] = useState('');
+  const [saving, setSaving] = useState(false);
+
   const { recordVocabKnown } = useProgress();
-  const ordered = useMemo(() => shuffle(vocab.terms), [vocab.terms]);
+  const { additions, addTerm, deleteTerm } = useVocabAdditions(vocab.id);
+
+  const allTerms: VocabTerm[] = [...vocab.terms, ...additions];
+
+  const [ordered, setOrdered] = useState<VocabTerm[]>(vocab.terms);
+  useEffect(() => { setOrdered(shuffle(allTerms)); }, [vocab.terms, additions]);
 
   const term = ordered[current];
-  const front = direction === 'en-to-ml' ? term.english : term.manglish;
-  const back  = direction === 'en-to-ml' ? term.manglish : term.english;
+  const front = direction === 'en-to-ml' ? term?.english : term?.manglish;
+  const back  = direction === 'en-to-ml' ? term?.manglish : term?.english;
 
   const reveal = useCallback(() => setRevealed(true), []);
 
@@ -68,10 +78,28 @@ export default function VocabClient({ vocab }: Props) {
     return () => window.removeEventListener('keydown', onKey);
   }, [mode, revealed, done, reveal, handleKnow]);
 
-  const filteredList = vocab.terms.filter(t =>
+  const filteredList = allTerms.filter(t =>
     t.english.toLowerCase().includes(search.toLowerCase()) ||
     t.manglish.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleAddTerm = useCallback(async () => {
+    if (!newEnglish.trim() || !newManglish.trim()) { setAddError('Both fields required.'); return; }
+    const duplicate = allTerms.some(t => t.english.toLowerCase() === newEnglish.trim().toLowerCase());
+    if (duplicate) { setAddError('This English word already exists in the list.'); return; }
+    setSaving(true);
+    setAddError('');
+    try {
+      await addTerm(newEnglish.trim(), newManglish.trim());
+      setNewEnglish('');
+      setNewManglish('');
+      setShowAddForm(false);
+    } catch {
+      setAddError('Failed to save. Try again.');
+    } finally {
+      setSaving(false);
+    }
+  }, [newEnglish, newManglish, addTerm]);
 
   // ── Completion ────────────────────────────────────────────────
   if (done && mode === 'flashcard') {
@@ -143,7 +171,6 @@ export default function VocabClient({ vocab }: Props) {
       {/* ── FLASHCARD ────────────────────────────────────────── */}
       {mode === 'flashcard' && (
         <div className="space-y-4">
-          {/* Counter + progress */}
           <div className="flex items-center gap-3">
             <span className="text-sm text-slate-500">
               <span className="font-bold text-slate-800">{current + 1}</span> of {ordered.length}
@@ -157,7 +184,6 @@ export default function VocabClient({ vocab }: Props) {
             <span className="text-xs text-emerald-600 font-medium">{known.size} known</span>
           </div>
 
-          {/* Front card */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center animate-popIn">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
               {direction === 'en-to-ml' ? 'English' : 'Manglish'}
@@ -165,7 +191,6 @@ export default function VocabClient({ vocab }: Props) {
             <p className="text-2xl font-bold text-slate-800">{front}</p>
           </div>
 
-          {/* Reveal / answer */}
           {!revealed ? (
             <button
               onClick={reveal}
@@ -215,20 +240,83 @@ export default function VocabClient({ vocab }: Props) {
               className="w-full pl-9 pr-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
             />
           </div>
+
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden divide-y divide-slate-50">
             {filteredList.length === 0 && (
               <p className="text-slate-400 text-sm text-center py-8">No results</p>
             )}
-            {filteredList.map((t, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors">
-                <span className="text-sm font-medium text-slate-800 flex-1">{t.english}</span>
-                <svg className="w-3 h-3 text-slate-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                <span className="text-sm text-indigo-600 font-medium flex-1 text-right">{t.manglish}</span>
-              </div>
-            ))}
+            {filteredList.map((t, i) => {
+              const isAddition = 'id' in t;
+              return (
+                <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
+                  <span className="text-sm font-medium text-slate-800 flex-1">{t.english}</span>
+                  <svg className="w-3 h-3 text-slate-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span className="text-sm text-indigo-600 font-medium flex-1 text-right">{t.manglish}</span>
+                  {isAddition && (
+                    <button
+                      onClick={() => deleteTerm((t as VocabTerm & { id: string }).id)}
+                      className="ml-2 w-5 h-5 flex items-center justify-center text-slate-200 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 shrink-0"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              );
+            })}
           </div>
+
+          {/* Add term form */}
+          {showAddForm ? (
+            <div className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">New word</p>
+              <div className="flex gap-2">
+                <input
+                  value={newEnglish}
+                  onChange={e => setNewEnglish(e.target.value)}
+                  placeholder="English"
+                  className="flex-1 px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                />
+                <input
+                  value={newManglish}
+                  onChange={e => setNewManglish(e.target.value)}
+                  placeholder="Manglish"
+                  onKeyDown={e => { if (e.key === 'Enter') handleAddTerm(); }}
+                  className="flex-1 px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                />
+              </div>
+              {addError && <p className="text-xs text-red-500">{addError}</p>}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => { setShowAddForm(false); setNewEnglish(''); setNewManglish(''); setAddError(''); }}
+                  className="flex-1 py-2 rounded-xl border border-slate-200 text-slate-500 text-sm font-medium hover:bg-slate-50 transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleAddTerm}
+                  disabled={saving}
+                  className="flex-1 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-all disabled:opacity-60"
+                >
+                  {saving ? 'Saving…' : 'Add'}
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowAddForm(true)}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-dashed border-slate-200 text-slate-400 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-all text-sm font-medium"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Add word
+            </button>
+          )}
+
           <p className="text-xs text-slate-400 text-right">{filteredList.length} words</p>
         </div>
       )}
