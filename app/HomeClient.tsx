@@ -149,6 +149,19 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
             );
           })}
           <Link
+            href="/vocab/quiz"
+            className="flex items-center gap-3 bg-indigo-600 rounded-xl px-4 py-4 border border-indigo-600 hover:bg-indigo-700 transition-all group"
+          >
+            <span className="text-2xl shrink-0">🎯</span>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-white">Quiz — all vocabulary</p>
+              <p className="text-xs text-indigo-200 mt-0.5">Random words from every list</p>
+            </div>
+            <svg className="w-4 h-4 text-indigo-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+          <Link
             href="/vocab/new"
             className="flex items-center justify-center gap-2 bg-white rounded-xl px-4 py-4 border-2 border-dashed border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all text-slate-400 hover:text-indigo-600"
           >
