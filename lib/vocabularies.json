@@ -3,1804 +3,764 @@
     "id": "education",
     "domain": "Education",
     "terms": [
-      {
-        "english": "course",
-        "manglish": "paadyakramam/sreni"
-      },
-      {
-        "english": "post graduate",
-        "manglish": "birudaandara birudam"
-      },
-      {
-        "english": "graduation",
-        "manglish": "birudam"
-      },
-      {
-        "english": "graduate",
-        "manglish": "birudadaari"
-      },
-      {
-        "english": "college",
-        "manglish": "kalaalayam"
-      },
-      {
-        "english": "university",
-        "manglish": "sarvakalaasaala"
-      },
-      {
-        "english": "teacher",
-        "manglish": "adyaapika/adyaapakan"
-      },
-      {
-        "english": "friends",
-        "manglish": "snehithar/ suhruthukkal"
-      },
-      {
-        "english": "eligibility",
-        "manglish": "yogyatha"
-      },
-      {
-        "english": "term",
-        "manglish": "kaalaavadhi"
-      },
-      {
-        "english": "branch",
-        "manglish": "shaakha"
-      },
-      {
-        "english": "mistakes",
-        "manglish": "thettukal"
-      },
-      {
-        "english": "exam",
-        "manglish": "pareeksha"
-      },
-      {
-        "english": "qualification",
-        "manglish": "yogyatha/ arhatha"
-      },
-      {
-        "english": "document transalation",
-        "manglish": "pramaanam vivarthanam cheyyuka"
-      },
-      {
-        "english": "excellent",
-        "manglish": "mikachath"
-      },
-      {
-        "english": "appreciate",
-        "manglish": "abinandikkuka"
-      },
-      {
-        "english": "satisfied",
-        "manglish": "samthripthanakuka"
-      },
-      {
-        "english": "tour",
-        "manglish": "sanchaaram"
-      },
-      {
-        "english": "lake",
-        "manglish": "thadaakam"
-      },
-      {
-        "english": "lessons",
-        "manglish": "paadam"
-      },
-      {
-        "english": "Music classes",
-        "manglish": "sangeetha paadangal"
-      },
-      {
-        "english": "instruments",
-        "manglish": "upakaranangal"
-      },
-      {
-        "english": "swimming classes",
-        "manglish": "neenthal classukal"
-      },
-      {
-        "english": "background",
-        "manglish": "pashchaathalam"
-      },
-      {
-        "english": "positions",
-        "manglish": "sthaanam"
-      },
-      {
-        "english": "memmory",
-        "manglish": "orma"
-      },
-      {
-        "english": "thinking capacity",
-        "manglish": "chinthaa sheshi"
-      },
-      {
-        "english": "request",
-        "manglish": "apeksha/ abyarthana"
-      },
-      {
-        "english": "knowledge",
-        "manglish": "arivu"
-      },
-      {
-        "english": "summary",
-        "manglish": "saaraamsam/ samgraham"
-      },
-      {
-        "english": "scheme",
-        "manglish": "padhathi"
-      },
-      {
-        "english": "scholarship",
-        "manglish": "paandithyathinaayi labikkunna vethanam"
-      },
-      {
-        "english": "profit",
-        "manglish": "laabham"
-      },
-      {
-        "english": "pass",
-        "manglish": "jayikkuka"
-      },
-      {
-        "english": "continue",
-        "manglish": "thudaruka"
-      },
-      {
-        "english": "undergraduate",
-        "manglish": "sarva kalaasaala birudam nediyittillatha vidyaarthi"
-      },
-      {
-        "english": "contribute",
-        "manglish": "sambaavana cheyyuka"
-      }
+      { "english": "course", "hindi": "पाठ्यक्रम (paathyakram)" },
+      { "english": "post graduate", "hindi": "स्नातकोत्तर (snaatakotar)" },
+      { "english": "graduation", "hindi": "स्नातक उपाधि (snaatak upaadhi)" },
+      { "english": "graduate", "hindi": "स्नातक (snaatak)" },
+      { "english": "college", "hindi": "महाविद्यालय (mahavidyaalay)" },
+      { "english": "university", "hindi": "विश्वविद्यालय (vishvavidyaalay)" },
+      { "english": "teacher", "hindi": "शिक्षक (shikshak)" },
+      { "english": "friends", "hindi": "मित्र (mitra)" },
+      { "english": "eligibility", "hindi": "पात्रता (paatrata)" },
+      { "english": "term", "hindi": "सत्र (satra)" },
+      { "english": "branch", "hindi": "शाखा (shaakha)" },
+      { "english": "mistakes", "hindi": "गलतियाँ (galatiyan)" },
+      { "english": "exam", "hindi": "परीक्षा (pareeksha)" },
+      { "english": "qualification", "hindi": "योग्यता (yogyata)" },
+      { "english": "document translation", "hindi": "दस्तावेज़ अनुवाद (dastaavez anuvaad)" },
+      { "english": "excellent", "hindi": "उत्कृष्ट (utkrisht)" },
+      { "english": "appreciate", "hindi": "सराहना करना (sarahna karna)" },
+      { "english": "satisfied", "hindi": "संतुष्ट (santusht)" },
+      { "english": "tour", "hindi": "भ्रमण (bhraman)" },
+      { "english": "lake", "hindi": "झील (jheel)" },
+      { "english": "lessons", "hindi": "पाठ (paath)" },
+      { "english": "Music classes", "hindi": "संगीत कक्षाएँ (sangeet kakshaayein)" },
+      { "english": "instruments", "hindi": "वाद्य यंत्र (vaady yantra)" },
+      { "english": "swimming classes", "hindi": "तैराकी कक्षाएँ (tairaaki kakshaayein)" },
+      { "english": "background", "hindi": "पृष्ठभूमि (prishthbhoomi)" },
+      { "english": "positions", "hindi": "पद (pad)" },
+      { "english": "memory", "hindi": "स्मृति (smriti)" },
+      { "english": "thinking capacity", "hindi": "सोचने की क्षमता (sochne ki kshamata)" },
+      { "english": "request", "hindi": "अनुरोध (anurodh)" },
+      { "english": "knowledge", "hindi": "ज्ञान (gyaan)" },
+      { "english": "summary", "hindi": "सारांश (saaraansh)" },
+      { "english": "scheme", "hindi": "योजना (yojnaa)" },
+      { "english": "scholarship", "hindi": "छात्रवृत्ति (chhaatravrity)" },
+      { "english": "profit", "hindi": "लाभ (laabh)" },
+      { "english": "pass", "hindi": "उत्तीर्ण होना (uttirn hona)" },
+      { "english": "continue", "hindi": "जारी रखना (jaari rakhna)" },
+      { "english": "undergraduate", "hindi": "स्नातक पूर्व छात्र (snaatak poorv chhatra)" },
+      { "english": "contribute", "hindi": "योगदान करना (yogdaan karna)" },
+      { "english": "attendance", "hindi": "उपस्थिति (upasthiti)" },
+      { "english": "certificate", "hindi": "प्रमाण पत्र (pramaan patra)" },
+      { "english": "enrolment", "hindi": "नामांकन (naamankaan)" },
+      { "english": "assignment", "hindi": "कार्यभार (kaaryabhaar)" },
+      { "english": "tuition fee", "hindi": "शिक्षण शुल्क (shikshan shulk)" },
+      { "english": "campus", "hindi": "परिसर (parisar)" },
+      { "english": "semester", "hindi": "सत्र / छमाही (satra)" },
+      { "english": "principal", "hindi": "प्रधानाचार्य (pradhanaachaarya)" },
+      { "english": "lecture", "hindi": "व्याख्यान (vyaakhyaan)" },
+      { "english": "library", "hindi": "पुस्तकालय (pustakaalay)" },
+      { "english": "thesis", "hindi": "शोध प्रबंध (shodh prabandh)" },
+      { "english": "internship", "hindi": "इंटर्नशिप (internship)" },
+      { "english": "curriculum", "hindi": "पाठ्यचर्या (paathyacharyaa)" },
+      { "english": "fees", "hindi": "शुल्क (shulk)" },
+      { "english": "deadline", "hindi": "अंतिम तिथि (antim tithi)" },
+      { "english": "research paper", "hindi": "शोध पत्र (shodh patra)" },
+      { "english": "student loan", "hindi": "छात्र ऋण (chhatra rin)" },
+      { "english": "results", "hindi": "परिणाम (parinaam)" },
+      { "english": "subject", "hindi": "विषय (vishay)" },
+      { "english": "grade", "hindi": "श्रेणी (shreni)" }
     ]
   },
   {
     "id": "housing",
     "domain": "Housing",
     "terms": [
-      {
-        "english": "Community cente",
-        "manglish": "saamoohika kendram"
-      },
-      {
-        "english": "Poeple",
-        "manglish": "janangal"
-      },
-      {
-        "english": "Group",
-        "manglish": "samooham"
-      },
-      {
-        "english": "Team",
-        "manglish": "sangam"
-      },
-      {
-        "english": "Family members",
-        "manglish": "kudumbaangangal"
-      },
-      {
-        "english": "Housing",
-        "manglish": "paarppidam"
-      },
-      {
-        "english": "Resident",
-        "manglish": "sthala vaasi"
-      },
-      {
-        "english": "residence",
-        "manglish": "sthiravaasam/griham"
-      },
-      {
-        "english": "rent",
-        "manglish": "vaadaka"
-      },
-      {
-        "english": "tenant",
-        "manglish": "vaadakakkaar"
-      },
-      {
-        "english": "cheque",
-        "manglish": "dhana vinimaya cheett"
-      },
-      {
-        "english": "savings account",
-        "manglish": "sambadya account"
-      },
-      {
-        "english": "bank loan",
-        "manglish": "bank vaayppa"
-      },
-      {
-        "english": "rental agreement",
-        "manglish": "vaadaka karaar"
-      },
-      {
-        "english": "housing department",
-        "manglish": "bhavana vakupp"
-      },
-      {
-        "english": "mortgage",
-        "manglish": "panayappeduthuka"
-      },
-      {
-        "english": "instalment",
-        "manglish": "thavanakal"
-      },
-      {
-        "english": "monthly plan",
-        "manglish": "prathimaasa padhathi"
-      },
-      {
-        "english": "yearly plan",
-        "manglish": "vaarshika padhathi"
-      },
-      {
-        "english": "planning",
-        "manglish": "aasoothranam"
-      },
-      {
-        "english": "policy",
-        "manglish": "nayam"
-      },
-      {
-        "english": "reference number",
-        "manglish": "soochana sankya"
-      },
-      {
-        "english": "house owner",
-        "manglish": "veettudamasthan"
-      },
-      {
-        "english": "landlords",
-        "manglish": "boovudamakal/ janmi"
-      },
-      {
-        "english": "purchase",
-        "manglish": "vaangal"
-      },
-      {
-        "english": "shopping mall",
-        "manglish": "vilpana kendram"
-      },
-      {
-        "english": "train station",
-        "manglish": "theevandi kathirippu kendram"
-      },
-      {
-        "english": "working hours",
-        "manglish": "joli samayam/pravarthana samayam"
-      },
-      {
-        "english": "public transport",
-        "manglish": "pothu gathaagatham"
-      },
-      {
-        "english": "sale deed",
-        "manglish": "vilpana karaar"
-      },
-      {
-        "english": "fence",
-        "manglish": "veli"
-      },
-      {
-        "english": "backyard",
-        "manglish": "pinmuttam"
-      },
-      {
-        "english": "frontyard",
-        "manglish": "munmuttam"
-      },
-      {
-        "english": "balcony",
-        "manglish": "nilamuttam"
-      },
-      {
-        "english": "footpath/road",
-        "manglish": "nadavazhi/ nadappatha"
-      },
-      {
-        "english": "loan",
-        "manglish": "vaayppa"
-      },
-      {
-        "english": "lawn",
-        "manglish": "pulthakidi"
-      },
-      {
-        "english": "grass cutting",
-        "manglish": "pullu vettuka"
-      },
-      {
-        "english": "equal instalment",
-        "manglish": "thulya thavana"
-      },
-      {
-        "english": "payment",
-        "manglish": "panam adaykkal/ kodukkal"
-      },
-      {
-        "english": "gross income",
-        "manglish": "aake varumanam"
-      },
-      {
-        "english": "assets",
-        "manglish": "aasthi"
-      },
-      {
-        "english": "property",
-        "manglish": "swath/vasthu"
-      },
-      {
-        "english": "property tax",
-        "manglish": "vasthu nikuthi"
-      },
-      {
-        "english": "neighbors",
-        "manglish": "ayalvaasikal"
-      },
-      {
-        "english": "neighborhood",
-        "manglish": "ayalpakkam"
-      },
-      {
-        "english": "youngsters",
-        "manglish": "yuvaakkal/ cheruppakkar"
-      },
-      {
-        "english": "seniors",
-        "manglish": "muthirnnavar"
-      },
-      {
-        "english": "parents",
-        "manglish": "maathapithakkal"
-      },
-      {
-        "english": "learning",
-        "manglish": "padanam"
-      },
-      {
-        "english": "apartment",
-        "manglish": "bavanam"
-      },
-      {
-        "english": "expensive",
-        "manglish": "vila koodiyath"
-      },
-      {
-        "english": "cheap",
-        "manglish": "vila kuranjath"
-      },
-      {
-        "english": "collection",
-        "manglish": "shekharam/ samaaharam"
-      },
-      {
-        "english": "earning",
-        "manglish": "sambadyam"
-      },
-      {
-        "english": "qualified",
-        "manglish": "yogyatha ulla"
-      },
-      {
-        "english": "reliable",
-        "manglish": "viswasaneeyamaaya"
-      },
-      {
-        "english": "city",
-        "manglish": "nagaram/pattanam"
-      },
-      {
-        "english": "seller",
-        "manglish": "vilpanakkaran"
-      },
-      {
-        "english": "buyer",
-        "manglish": "vangunnayaal"
-      },
-      {
-        "english": "amenities",
-        "manglish": "soukaryangal"
-      },
-      {
-        "english": "comfortabale",
-        "manglish": "sukhakaramaaya"
-      },
-      {
-        "english": "convenient",
-        "manglish": "soukryapradamaaya"
-      },
-      {
-        "english": "privacy",
-        "manglish": "swakaaryatha"
-      },
-      {
-        "english": "previous",
-        "manglish": "munpathe/ munpulla"
-      },
-      {
-        "english": "house shifting",
-        "manglish": "veed maattam"
-      },
-      {
-        "english": "annual waste",
-        "manglish": "vaarshika maalinyam"
-      },
-      {
-        "english": "original",
-        "manglish": "yathaarthamaaya"
-      },
-      {
-        "english": "packers",
-        "manglish": "pothiyunnavar"
-      },
-      {
-        "english": "expected time",
-        "manglish": "pratheekshicha samayam"
-      },
-      {
-        "english": "weather",
-        "manglish": "kaalavastha"
-      },
-      {
-        "english": "cyclone",
-        "manglish": "kodunkaatt"
-      },
-      {
-        "english": "strong winds",
-        "manglish": "shakthamaaya kaatt"
-      },
-      {
-        "english": "cutting trees",
-        "manglish": "vrikshanagl murikkal"
-      },
-      {
-        "english": "forcast",
-        "manglish": "pravachanam"
-      },
-      {
-        "english": "short notice",
-        "manglish": "hriswa ariyipp"
-      },
-      {
-        "english": "paint buckets",
-        "manglish": "chaaya thottikal"
-      },
-      {
-        "english": "divorce",
-        "manglish": "vivaaha mochanam"
-      },
-      {
-        "english": "Live seperately",
-        "manglish": "vere thaamasikkuka"
-      }
+      { "english": "Community centre", "hindi": "सामुदायिक केंद्र (saamaadaayik kendra)" },
+      { "english": "People", "hindi": "लोग (log)" },
+      { "english": "Group", "hindi": "समूह (samooh)" },
+      { "english": "Team", "hindi": "दल (dal)" },
+      { "english": "Family members", "hindi": "परिवार के सदस्य (parivaar ke sadasya)" },
+      { "english": "Housing", "hindi": "आवास (aavaas)" },
+      { "english": "Resident", "hindi": "निवासी (nivaasi)" },
+      { "english": "residence", "hindi": "निवास (nivaas)" },
+      { "english": "rent", "hindi": "किराया (kiraaya)" },
+      { "english": "tenant", "hindi": "किरायेदार (kiraayedaar)" },
+      { "english": "cheque", "hindi": "चेक (cheque)" },
+      { "english": "savings account", "hindi": "बचत खाता (bachat khaata)" },
+      { "english": "bank loan", "hindi": "बैंक ऋण (bank rin)" },
+      { "english": "rental agreement", "hindi": "किराया समझौता (kiraaya samjhauta)" },
+      { "english": "housing department", "hindi": "आवास विभाग (aavaas vibhaag)" },
+      { "english": "mortgage", "hindi": "बंधक (bandhak)" },
+      { "english": "instalment", "hindi": "किस्त (kist)" },
+      { "english": "monthly plan", "hindi": "मासिक योजना (maasik yojnaa)" },
+      { "english": "yearly plan", "hindi": "वार्षिक योजना (vaarshik yojnaa)" },
+      { "english": "planning", "hindi": "योजना बनाना (yojnaa banaana)" },
+      { "english": "policy", "hindi": "नीति (neeti)" },
+      { "english": "reference number", "hindi": "संदर्भ संख्या (sandarbh sankhya)" },
+      { "english": "house owner", "hindi": "मकान मालिक (makaan maalik)" },
+      { "english": "landlord", "hindi": "ज़मींदार / मकान मालिक (zamindaar)" },
+      { "english": "purchase", "hindi": "खरीद (khareed)" },
+      { "english": "shopping mall", "hindi": "शॉपिंग मॉल (shopping mall)" },
+      { "english": "train station", "hindi": "रेलवे स्टेशन (railway station)" },
+      { "english": "working hours", "hindi": "काम के घंटे (kaam ke ghante)" },
+      { "english": "public transport", "hindi": "सार्वजनिक परिवहन (saarvajanik parivahan)" },
+      { "english": "sale deed", "hindi": "बिक्री विलेख (bikri vilekh)" },
+      { "english": "fence", "hindi": "बाड़ (baad)" },
+      { "english": "backyard", "hindi": "पिछवाड़ा (pichhvaada)" },
+      { "english": "frontyard", "hindi": "आगे का आँगन (aage ka aangan)" },
+      { "english": "balcony", "hindi": "बालकनी (balcony)" },
+      { "english": "footpath", "hindi": "फुटपाथ (footpath)" },
+      { "english": "loan", "hindi": "ऋण / कर्ज़ (rin / karz)" },
+      { "english": "lawn", "hindi": "लॉन (lawn)" },
+      { "english": "grass cutting", "hindi": "घास काटना (ghaas kaatna)" },
+      { "english": "equal instalment", "hindi": "समान किस्त (samaan kist)" },
+      { "english": "payment", "hindi": "भुगतान (bhugtaan)" },
+      { "english": "gross income", "hindi": "सकल आय (sakal aay)" },
+      { "english": "assets", "hindi": "संपत्ति (sampatti)" },
+      { "english": "property", "hindi": "संपत्ति / मालिकाना (sampatti)" },
+      { "english": "property tax", "hindi": "संपत्ति कर (sampatti kar)" },
+      { "english": "neighbors", "hindi": "पड़ोसी (padosi)" },
+      { "english": "neighborhood", "hindi": "पड़ोस (pados)" },
+      { "english": "youngsters", "hindi": "युवा (yuva)" },
+      { "english": "seniors", "hindi": "वरिष्ठ नागरिक (varishth naagrik)" },
+      { "english": "parents", "hindi": "माता-पिता (maata-pita)" },
+      { "english": "learning", "hindi": "सीखना (seekhna)" },
+      { "english": "apartment", "hindi": "अपार्टमेंट (apartment)" },
+      { "english": "expensive", "hindi": "महँगा (mahanga)" },
+      { "english": "cheap", "hindi": "सस्ता (sasta)" },
+      { "english": "collection", "hindi": "संग्रह (sangrah)" },
+      { "english": "earning", "hindi": "कमाई (kamaai)" },
+      { "english": "qualified", "hindi": "योग्य (yogya)" },
+      { "english": "reliable", "hindi": "विश्वसनीय (vishvasaneey)" },
+      { "english": "city", "hindi": "शहर (shahar)" },
+      { "english": "seller", "hindi": "विक्रेता (vikreta)" },
+      { "english": "buyer", "hindi": "खरीदार (khariidaar)" },
+      { "english": "amenities", "hindi": "सुविधाएँ (suvidhaayein)" },
+      { "english": "comfortable", "hindi": "आरामदायक (aaraamdaayak)" },
+      { "english": "convenient", "hindi": "सुविधाजनक (suvidhaajanak)" },
+      { "english": "privacy", "hindi": "गोपनीयता (gopneeyata)" },
+      { "english": "previous", "hindi": "पूर्व / पिछला (poorv)" },
+      { "english": "house shifting", "hindi": "घर बदलना (ghar badalna)" },
+      { "english": "annual waste", "hindi": "वार्षिक कचरा (vaarshik kachra)" },
+      { "english": "original", "hindi": "मूल (mool)" },
+      { "english": "packers", "hindi": "पैकर (packer)" },
+      { "english": "expected time", "hindi": "अपेक्षित समय (apekshit samay)" },
+      { "english": "weather", "hindi": "मौसम (mausam)" },
+      { "english": "cyclone", "hindi": "चक्रवात (chakravaat)" },
+      { "english": "strong winds", "hindi": "तेज़ हवाएँ (tez havaayein)" },
+      { "english": "cutting trees", "hindi": "पेड़ काटना (ped kaatna)" },
+      { "english": "forecast", "hindi": "पूर्वानुमान (poorvaanumaan)" },
+      { "english": "short notice", "hindi": "अल्प सूचना (alp soochna)" },
+      { "english": "paint buckets", "hindi": "रंग की बाल्टियाँ (rang ki baaltiyan)" },
+      { "english": "divorce", "hindi": "तलाक (talaak)" },
+      { "english": "live separately", "hindi": "अलग रहना (alag rahna)" },
+      { "english": "council rates", "hindi": "नगर परिषद दरें (nagar parishad darein)" },
+      { "english": "bond refund", "hindi": "बॉन्ड वापसी (bond vaapsi)" },
+      { "english": "real estate agent", "hindi": "रियल एस्टेट एजेंट (real estate agent)" },
+      { "english": "body corporate", "hindi": "बॉडी कॉर्पोरेट (body corporate)" },
+      { "english": "settlement date", "hindi": "निपटान तिथि (nipataan tithi)" },
+      { "english": "inspection report", "hindi": "निरीक्षण रिपोर्ट (nirikshan report)" },
+      { "english": "utilities", "hindi": "उपयोगिताएँ (upyogitaayein)" },
+      { "english": "maintenance", "hindi": "रखरखाव (rakhrakhav)" },
+      { "english": "eviction notice", "hindi": "बेदखली नोटिस (bedakhli notice)" },
+      { "english": "suburb", "hindi": "उपनगर (upnagar)" },
+      { "english": "council approval", "hindi": "नगर परिषद अनुमोदन (nagar parishad anumodan)" },
+      { "english": "building permit", "hindi": "निर्माण परमिट (nirmaan permit)" },
+      { "english": "renovation", "hindi": "नवीनीकरण (naveenikaaran)" },
+      { "english": "electricity bill", "hindi": "बिजली का बिल (bijli ka bill)" },
+      { "english": "water bill", "hindi": "पानी का बिल (paani ka bill)" }
     ]
   },
   {
     "id": "consumer-affairs",
     "domain": "Consumer Affairs",
     "terms": [
-      {
-        "english": "Department",
-        "manglish": "shaakha"
-      },
-      {
-        "english": "consumer law",
-        "manglish": "upabokthru niyamam"
-      },
-      {
-        "english": "declaration form",
-        "manglish": "prathinjaa pathram"
-      },
-      {
-        "english": "government",
-        "manglish": "sarkkaar/ baranakoodam"
-      },
-      {
-        "english": "legal system",
-        "manglish": "niyama vyavastha"
-      },
-      {
-        "english": "punishment",
-        "manglish": "shiksha"
-      },
-      {
-        "english": "penalty",
-        "manglish": "pizha"
-      },
-      {
-        "english": "charges",
-        "manglish": "aaropanam"
-      },
-      {
-        "english": "arrest",
-        "manglish": "bandhikkuka"
-      },
-      {
-        "english": "prohibited",
-        "manglish": "niroodikkuka"
-      },
-      {
-        "english": "stolen",
-        "manglish": "moshticha"
-      },
-      {
-        "english": "court",
-        "manglish": "kodathi"
-      },
-      {
-        "english": "claim",
-        "manglish": "avakasam/ avakaasa vaadam"
-      },
-      {
-        "english": "Insurance",
-        "manglish": "rakshabogam/ suraksha/nastotharavaaditham"
-      },
-      {
-        "english": "disputes",
-        "manglish": "tharkkangal"
-      },
-      {
-        "english": "investment",
-        "manglish": "muthalmudakk/nikshepam"
-      },
-      {
-        "english": "concern",
-        "manglish": "aashanka/ulkanda"
-      },
-      {
-        "english": "share holder",
-        "manglish": "ohari udama"
-      },
-      {
-        "english": "job capacity",
-        "manglish": "thozhil sheshi"
-      },
-      {
-        "english": "sick note",
-        "manglish": "asukha kuripp"
-      },
-      {
-        "english": "leave",
-        "manglish": "avadhi/ viduka"
-      },
-      {
-        "english": "licence",
-        "manglish": "anumathi"
-      },
-      {
-        "english": "passport",
-        "manglish": "yaathraanuvaadha pathram"
-      },
-      {
-        "english": "representative",
-        "manglish": "prathinidhi"
-      },
-      {
-        "english": "Guarentee",
-        "manglish": "urapp"
-      },
-      {
-        "english": "Annual report",
-        "manglish": "vaarshika vivara kuripp"
-      },
-      {
-        "english": "commodities",
-        "manglish": "charakkukal/ulppannangal"
-      },
-      {
-        "english": "online registration",
-        "manglish": "online pathiykkal"
-      },
-      {
-        "english": "communication",
-        "manglish": "aashaya vinimayam"
-      },
-      {
-        "english": "fight",
-        "manglish": "poruthuka/ poraduka/ vazhakk"
-      }
+      { "english": "Department", "hindi": "विभाग (vibhaag)" },
+      { "english": "consumer law", "hindi": "उपभोक्ता कानून (upbhokta kaanoon)" },
+      { "english": "declaration form", "hindi": "घोषणा पत्र (ghoshna patra)" },
+      { "english": "government", "hindi": "सरकार (sarkaar)" },
+      { "english": "legal system", "hindi": "कानूनी व्यवस्था (kaanooni vyavastha)" },
+      { "english": "punishment", "hindi": "सज़ा (sazaa)" },
+      { "english": "penalty", "hindi": "जुर्माना (jurmaana)" },
+      { "english": "charges", "hindi": "आरोप / शुल्क (aarop / shulk)" },
+      { "english": "arrest", "hindi": "गिरफ्तारी (giraftaari)" },
+      { "english": "prohibited", "hindi": "प्रतिबंधित (pratibandith)" },
+      { "english": "stolen", "hindi": "चोरी हुआ (chori hua)" },
+      { "english": "court", "hindi": "अदालत (adaalat)" },
+      { "english": "claim", "hindi": "दावा (daava)" },
+      { "english": "Insurance", "hindi": "बीमा (beema)" },
+      { "english": "disputes", "hindi": "विवाद (vivaad)" },
+      { "english": "investment", "hindi": "निवेश (nivesha)" },
+      { "english": "concern", "hindi": "चिंता (chintaa)" },
+      { "english": "share holder", "hindi": "शेयरधारक (shayar-dharak)" },
+      { "english": "job capacity", "hindi": "कार्य क्षमता (kaary kshamata)" },
+      { "english": "sick note", "hindi": "बीमारी का प्रमाण पत्र (beemaari ka pramaan patra)" },
+      { "english": "leave", "hindi": "छुट्टी (chhuttee)" },
+      { "english": "licence", "hindi": "लाइसेंस (licence)" },
+      { "english": "passport", "hindi": "पासपोर्ट (passport)" },
+      { "english": "representative", "hindi": "प्रतिनिधि (pratinidhi)" },
+      { "english": "Guarantee", "hindi": "गारंटी (guarantee)" },
+      { "english": "Annual report", "hindi": "वार्षिक रिपोर्ट (vaarshik report)" },
+      { "english": "commodities", "hindi": "वस्तुएँ / माल (vastuayein)" },
+      { "english": "online registration", "hindi": "ऑनलाइन पंजीकरण (online panjeekaran)" },
+      { "english": "communication", "hindi": "संचार (sanchaar)" },
+      { "english": "fight", "hindi": "झगड़ा / लड़ाई (jhagda)" },
+      { "english": "warranty", "hindi": "वारंटी (warranty)" },
+      { "english": "consumer rights", "hindi": "उपभोक्ता अधिकार (upbhokta adhikaar)" },
+      { "english": "product recall", "hindi": "उत्पाद वापसी (utpaad vaapsi)" },
+      { "english": "complaint form", "hindi": "शिकायत पत्र (shikaayat patra)" },
+      { "english": "dispute resolution", "hindi": "विवाद निपटान (vivaad nipataan)" },
+      { "english": "compensation", "hindi": "मुआवज़ा (muaavza)" },
+      { "english": "misleading advertising", "hindi": "भ्रामक विज्ञापन (bhramak vigyaapan)" },
+      { "english": "refund policy", "hindi": "धनवापसी नीति (dhanvaapsi neeti)" },
+      { "english": "faulty goods", "hindi": "दोषपूर्ण माल (doshpoorn maal)" },
+      { "english": "cooling off period", "hindi": "विचार अवधि (vichaar avadhi)" },
+      { "english": "consumer tribunal", "hindi": "उपभोक्ता न्यायाधिकरण (upbhokta nyaayaadhikaran)" },
+      { "english": "online shopping", "hindi": "ऑनलाइन खरीदारी (online kharidaari)" },
+      { "english": "delivery", "hindi": "डिलीवरी (delivery)" },
+      { "english": "exchange", "hindi": "अदला-बदली (adla-badli)" },
+      { "english": "price tag", "hindi": "मूल्य टैग (mooly tag)" }
     ]
   },
   {
     "id": "finance",
     "domain": "Finance",
     "terms": [
-      {
-        "english": "financial institution",
-        "manglish": "danakaarya sthapanam"
-      },
-      {
-        "english": "online application form",
-        "manglish": "online apeksha pathram"
-      },
-      {
-        "english": "cash",
-        "manglish": "panam"
-      },
-      {
-        "english": "cost",
-        "manglish": "chilav"
-      },
-      {
-        "english": "advisor",
-        "manglish": "upadeshtaav"
-      },
-      {
-        "english": "review",
-        "manglish": "avalokanam nadathuka"
-      },
-      {
-        "english": "inspection",
-        "manglish": "parishodana"
-      },
-      {
-        "english": "floor",
-        "manglish": "nila/thara"
-      },
-      {
-        "english": "finance department",
-        "manglish": "sambathika vakupp"
-      },
-      {
-        "english": "economics",
-        "manglish": "saambathika saasthram"
-      },
-      {
-        "english": "personal finance",
-        "manglish": "swakaarya danakaaryam"
-      },
-      {
-        "english": "sector",
-        "manglish": "mekhala"
-      },
-      {
-        "english": "structure",
-        "manglish": "gatana"
-      },
-      {
-        "english": "currency",
-        "manglish": "naanayam/ panam"
-      },
-      {
-        "english": "meanwhile",
-        "manglish": "ithinidayil"
-      },
-      {
-        "english": "federal",
-        "manglish": "samyukthamaaya"
-      },
-      {
-        "english": "enterprise",
-        "manglish": "samrambam"
-      },
-      {
-        "english": "bond",
-        "manglish": "kada pathram/ karaar pathram"
-      },
-      {
-        "english": "regulation",
-        "manglish": "niyathranam"
-      },
-      {
-        "english": "intrest rate",
-        "manglish": "palisha nirakk"
-      },
-      {
-        "english": "deposit",
-        "manglish": "nikshepam"
-      }
+      { "english": "financial institution", "hindi": "वित्तीय संस्था (vittiy sanstha)" },
+      { "english": "online application form", "hindi": "ऑनलाइन आवेदन पत्र (online aavedan patra)" },
+      { "english": "cash", "hindi": "नकदी (nakadee)" },
+      { "english": "cost", "hindi": "लागत (laagat)" },
+      { "english": "advisor", "hindi": "सलाहकार (salaahkaar)" },
+      { "english": "review", "hindi": "समीक्षा (sameeksha)" },
+      { "english": "inspection", "hindi": "निरीक्षण (nirikshan)" },
+      { "english": "floor", "hindi": "मंज़िल (manzil)" },
+      { "english": "finance department", "hindi": "वित्त विभाग (vitt vibhaag)" },
+      { "english": "economics", "hindi": "अर्थशास्त्र (arthashaastra)" },
+      { "english": "personal finance", "hindi": "व्यक्तिगत वित्त (vyaktigat vitt)" },
+      { "english": "sector", "hindi": "क्षेत्र (kshetra)" },
+      { "english": "structure", "hindi": "ढाँचा / संरचना (dhaancha)" },
+      { "english": "currency", "hindi": "मुद्रा (mudra)" },
+      { "english": "meanwhile", "hindi": "इस बीच (is beech)" },
+      { "english": "federal", "hindi": "संघीय (sangheeya)" },
+      { "english": "enterprise", "hindi": "उद्यम (udyam)" },
+      { "english": "bond", "hindi": "बॉन्ड / ऋण पत्र (bond)" },
+      { "english": "regulation", "hindi": "विनियमन (viniyaman)" },
+      { "english": "interest rate", "hindi": "ब्याज दर (byaaj dar)" },
+      { "english": "deposit", "hindi": "जमा (jama)" },
+      { "english": "superannuation", "hindi": "सेवानिवृत्ति निधि (sevaanivritti nidhi)" },
+      { "english": "budget", "hindi": "बजट (budget)" },
+      { "english": "tax return", "hindi": "कर वापसी (kar vaapsi)" },
+      { "english": "credit score", "hindi": "क्रेडिट स्कोर (credit score)" },
+      { "english": "overdraft", "hindi": "ओवरड्राफ्ट (overdraft)" },
+      { "english": "dividend", "hindi": "लाभांश (laabhaansh)" },
+      { "english": "financial advisor", "hindi": "वित्तीय सलाहकार (vittiy salaahkaar)" },
+      { "english": "expenditure", "hindi": "व्यय / खर्च (vyay)" },
+      { "english": "account number", "hindi": "खाता संख्या (khaata sankhya)" },
+      { "english": "transaction", "hindi": "लेन-देन (len-den)" },
+      { "english": "withdrawal", "hindi": "निकासी (nikaasi)" },
+      { "english": "credit card", "hindi": "क्रेडिट कार्ड (credit card)" },
+      { "english": "bank statement", "hindi": "बैंक विवरण (bank vivaran)" },
+      { "english": "pension", "hindi": "पेंशन (pension)" },
+      { "english": "income tax", "hindi": "आयकर (aaykar)" },
+      { "english": "capital", "hindi": "पूँजी (poonji)" },
+      { "english": "bankruptcy", "hindi": "दिवालियापन (divaaliayaapan)" },
+      { "english": "receipt", "hindi": "रसीद (raseed)" },
+      { "english": "transfer", "hindi": "स्थानांतरण (sthaanantaran)" },
+      { "english": "debit card", "hindi": "डेबिट कार्ड (debit card)" },
+      { "english": "savings", "hindi": "बचत (bachat)" },
+      { "english": "investment", "hindi": "निवेश (nivesha)" },
+      { "english": "debt", "hindi": "कर्ज़ (karz)" },
+      { "english": "repayment", "hindi": "पुनर्भुगतान (punar-bhugtaan)" },
+      { "english": "Centrelink", "hindi": "सेंटरलिंक (Centrelink)" },
+      { "english": "government benefit", "hindi": "सरकारी लाभ (sarkaari laabh)" },
+      { "english": "GST", "hindi": "जीएसटी - वस्तु और सेवा कर (GST)" },
+      { "english": "school bank account", "hindi": "विद्यालय बचत खाता (vidyaalay bachat khaata)" }
     ]
   },
   {
     "id": "insurance",
     "domain": "Insurance",
     "terms": [
-      {
-        "english": "private insurance",
-        "manglish": "swakaarya suraksha"
-      },
-      {
-        "english": "Health insurance card",
-        "manglish": "arogya suraksha cheett"
-      },
-      {
-        "english": "lost card",
-        "manglish": "nashtappetta cheett"
-      },
-      {
-        "english": "ambulance cover",
-        "manglish": "rogi gathaagath vaahana pariraksha"
-      },
-      {
-        "english": "ambulance",
-        "manglish": "jangama chikilsaalayam"
-      },
-      {
-        "english": "car insurance",
-        "manglish": "car rakshabogam"
-      },
-      {
-        "english": "identity proof",
-        "manglish": "thirichariyal rekha"
-      },
-      {
-        "english": "driving licence",
-        "manglish": "adhikaara pooritha vaahana anumathi"
-      },
-      {
-        "english": "liability",
-        "manglish": "baadyatha"
-      },
-      {
-        "english": "additional coverage",
-        "manglish": "adhika pariraksha"
-      },
-      {
-        "english": "policy holder",
-        "manglish": "padathi edutha aal"
-      },
-      {
-        "english": "damaged part",
-        "manglish": "kedaaya baagam"
-      },
-      {
-        "english": "installation",
-        "manglish": "pradisthaapanam"
-      },
-      {
-        "english": "contract",
-        "manglish": "karaar"
-      },
-      {
-        "english": "amount covered",
-        "manglish": "aake thuka"
-      },
-      {
-        "english": "comprehensive cover",
-        "manglish": "samagramaaya suraksha"
-      },
-      {
-        "english": "insured",
-        "manglish": "nashtotharavaaditham cheyyuka"
-      },
-      {
-        "english": "lease agreement",
-        "manglish": "vaadaka karaar"
-      },
-      {
-        "english": "medical expenses",
-        "manglish": "chikilsa chilavukal"
-      },
-      {
-        "english": "accident",
-        "manglish": "apakadam"
-      },
-      {
-        "english": "incident",
-        "manglish": "sambavam"
-      },
-      {
-        "english": "misunderstanding",
-        "manglish": "thettidarikkuka"
-      },
-      {
-        "english": "collision",
-        "manglish": "koottiyidi"
-      },
-      {
-        "english": "period",
-        "manglish": "kaalagattam"
-      },
-      {
-        "english": "annual",
-        "manglish": "vaarshikam"
-      },
-      {
-        "english": "monthly",
-        "manglish": "prathimaasam"
-      },
-      {
-        "english": "premium term",
-        "manglish": "tavana vyavastha"
-      },
-      {
-        "english": "couple",
-        "manglish": "dampathikal"
-      },
-      {
-        "english": "treatment",
-        "manglish": "chikilsa"
-      },
-      {
-        "english": "observation",
-        "manglish": "nireekshanam"
-      },
-      {
-        "english": "frequency",
-        "manglish": "aavarthi"
-      },
-      {
-        "english": "existing policy",
-        "manglish": "nilavilulla nayam"
-      },
-      {
-        "english": "social service",
-        "manglish": "saamoohika sevanam"
-      },
-      {
-        "english": "gender",
-        "manglish": "lingbedam"
-      },
-      {
-        "english": "volunteer",
-        "manglish": "sannadha sevakan"
-      },
-      {
-        "english": "social workers",
-        "manglish": "saamoohika pravarthakar"
-      },
-      {
-        "english": "inequality",
-        "manglish": "asamathwam"
-      },
-      {
-        "english": "physical",
-        "manglish": "shaareerikamaaya"
-      },
-      {
-        "english": "age pension",
-        "manglish": "vaardakya pension"
-      },
-      {
-        "english": "useful",
-        "manglish": "upayogapradam"
-      },
-      {
-        "english": "development",
-        "manglish": "vikasanam"
-      },
-      {
-        "english": "diability",
-        "manglish": "vaikalyam"
-      },
-      {
-        "english": "civil right",
-        "manglish": "pouraavakaasam"
-      },
-      {
-        "english": "caring",
-        "manglish": "karuthalulla"
-      },
-      {
-        "english": "stay home",
-        "manglish": "veettil thaamasikkuka"
-      },
-      {
-        "english": "social service",
-        "manglish": "samoohya pravarthanam"
-      },
-      {
-        "english": "social welfare",
-        "manglish": "saamoohya kshemam"
-      },
-      {
-        "english": "skills",
-        "manglish": "kazhivukal"
-      },
-      {
-        "english": "individual",
-        "manglish": "vyakthikatha"
-      },
-      {
-        "english": "describing",
-        "manglish": "vivarikkunnu"
-      },
-      {
-        "english": "implemented",
-        "manglish": "nadappilaakki"
-      },
-      {
-        "english": "assumption",
-        "manglish": "daarana"
-      }
+      { "english": "private insurance", "hindi": "निजी बीमा (niji beema)" },
+      { "english": "Health insurance card", "hindi": "स्वास्थ्य बीमा कार्ड (svaasthy beema card)" },
+      { "english": "lost card", "hindi": "खोया हुआ कार्ड (khoya hua card)" },
+      { "english": "ambulance cover", "hindi": "एम्बुलेंस कवर (ambulance cover)" },
+      { "english": "ambulance", "hindi": "एम्बुलेंस (ambulance)" },
+      { "english": "car insurance", "hindi": "कार बीमा (car beema)" },
+      { "english": "identity proof", "hindi": "पहचान प्रमाण (pahchaan pramaan)" },
+      { "english": "driving licence", "hindi": "ड्राइविंग लाइसेंस (driving licence)" },
+      { "english": "liability", "hindi": "दायित्व (daayitv)" },
+      { "english": "additional coverage", "hindi": "अतिरिक्त कवरेज (atirikt coverage)" },
+      { "english": "policy holder", "hindi": "पॉलिसी धारक (policy dhaarak)" },
+      { "english": "damaged part", "hindi": "क्षतिग्रस्त हिस्सा (kshatigrasth hissa)" },
+      { "english": "installation", "hindi": "स्थापना (sthaapna)" },
+      { "english": "contract", "hindi": "अनुबंध (anubandh)" },
+      { "english": "amount covered", "hindi": "कवर की गई राशि (cover ki gayi raashi)" },
+      { "english": "comprehensive cover", "hindi": "व्यापक कवरेज (vyaapak coverage)" },
+      { "english": "insured", "hindi": "बीमाकृत (beemakrit)" },
+      { "english": "lease agreement", "hindi": "किराया समझौता (kiraaya samjhauta)" },
+      { "english": "medical expenses", "hindi": "चिकित्सा व्यय (chikitsa vyay)" },
+      { "english": "accident", "hindi": "दुर्घटना (durghatna)" },
+      { "english": "incident", "hindi": "घटना (ghatna)" },
+      { "english": "misunderstanding", "hindi": "गलतफहमी (galatfahami)" },
+      { "english": "collision", "hindi": "टक्कर (takkar)" },
+      { "english": "period", "hindi": "अवधि (avadhi)" },
+      { "english": "annual", "hindi": "वार्षिक (vaarshik)" },
+      { "english": "monthly", "hindi": "मासिक (maasik)" },
+      { "english": "premium term", "hindi": "प्रीमियम अवधि (premium avadhi)" },
+      { "english": "couple", "hindi": "दंपति (dampati)" },
+      { "english": "treatment", "hindi": "उपचार / इलाज (upchaar)" },
+      { "english": "observation", "hindi": "निरीक्षण (nirikshan)" },
+      { "english": "frequency", "hindi": "आवृत्ति (aavritti)" },
+      { "english": "existing policy", "hindi": "मौजूदा पॉलिसी (maujuda policy)" },
+      { "english": "social service", "hindi": "सामाजिक सेवा (saamaajik seva)" },
+      { "english": "gender", "hindi": "लिंग (ling)" },
+      { "english": "volunteer", "hindi": "स्वयंसेवक (svayamsevak)" },
+      { "english": "social workers", "hindi": "सामाजिक कार्यकर्ता (saamaajik kaaryakarta)" },
+      { "english": "inequality", "hindi": "असमानता (asamaanata)" },
+      { "english": "physical", "hindi": "शारीरिक (shaareerik)" },
+      { "english": "age pension", "hindi": "वृद्धावस्था पेंशन (vriddhaavastha pension)" },
+      { "english": "useful", "hindi": "उपयोगी (upyogi)" },
+      { "english": "development", "hindi": "विकास (vikaas)" },
+      { "english": "disability", "hindi": "विकलांगता (vikalangata)" },
+      { "english": "civil right", "hindi": "नागरिक अधिकार (naagarik adhikaar)" },
+      { "english": "caring", "hindi": "देखभाल करना (dekhbhaal karna)" },
+      { "english": "stay home", "hindi": "घर पर रहना (ghar par rahna)" },
+      { "english": "social welfare", "hindi": "सामाजिक कल्याण (saamaajik kalyaan)" },
+      { "english": "skills", "hindi": "कौशल (kaushal)" },
+      { "english": "individual", "hindi": "व्यक्ति (vyakti)" },
+      { "english": "describing", "hindi": "वर्णन करना (varnan karna)" },
+      { "english": "implemented", "hindi": "लागू किया गया (laagoo kiya gaya)" },
+      { "english": "assumption", "hindi": "धारणा (dhaarana)" },
+      { "english": "premium", "hindi": "प्रीमियम (premium)" },
+      { "english": "excess", "hindi": "अधिशेष / एक्सेस (atirikt)" },
+      { "english": "claim form", "hindi": "दावा पत्र (daava patra)" },
+      { "english": "renewal", "hindi": "नवीनीकरण (naveenikaaran)" },
+      { "english": "beneficiary", "hindi": "लाभार्थी (laabhaarthi)" },
+      { "english": "exclusion", "hindi": "अपवर्जन (apvarjan)" },
+      { "english": "endorsement", "hindi": "समर्थन (samarthan)" },
+      { "english": "lapse", "hindi": "समाप्त होना (samapt hona)" },
+      { "english": "third party", "hindi": "तीसरा पक्ष (teesra paksh)" },
+      { "english": "travel insurance", "hindi": "यात्रा बीमा (yaatra beema)" },
+      { "english": "life insurance", "hindi": "जीवन बीमा (jeevan beema)" },
+      { "english": "home insurance", "hindi": "गृह बीमा (grih beema)" },
+      { "english": "public liability", "hindi": "सार्वजनिक दायित्व (saarvajanik daayitv)" },
+      { "english": "claim settlement", "hindi": "दावा निपटान (daava nipataan)" },
+      { "english": "policy number", "hindi": "पॉलिसी संख्या (policy sankhya)" }
     ]
   },
   {
     "id": "legal",
     "domain": "Legal",
     "terms": [
-      {
-        "english": "Legal aid",
-        "manglish": "niyama sahaayam"
-      },
-      {
-        "english": "legal support",
-        "manglish": "niyaparamaaya pinthuna"
-      },
-      {
-        "english": "Lawyer",
-        "manglish": "abibaashakan"
-      },
-      {
-        "english": "court",
-        "manglish": "kodathi"
-      },
-      {
-        "english": "Home affairs",
-        "manglish": "veettile karyangal/ aabyantharam"
-      },
-      {
-        "english": "secretary",
-        "manglish": "kaarya darshi"
-      },
-      {
-        "english": "Grant",
-        "manglish": "anuvadhikkuka"
-      },
-      {
-        "english": "relevant",
-        "manglish": "prathyakshamaaya"
-      },
-      {
-        "english": "transfer",
-        "manglish": "sthalam maattam"
-      },
-      {
-        "english": "minimum",
-        "manglish": "kuranjath"
-      },
-      {
-        "english": "maximum",
-        "manglish": "paramaavadhi"
-      },
-      {
-        "english": "intreperter",
-        "manglish": "vyaakyaathaav/ rachayithaav"
-      },
-      {
-        "english": "Alternatively",
-        "manglish": "pakaramaayi"
-      },
-      {
-        "english": "certainly",
-        "manglish": "theerchayayum"
-      },
-      {
-        "english": "legal documents",
-        "manglish": "niyamaparamaaya rekhakal"
-      },
-      {
-        "english": "relevant evidence",
-        "manglish": "uchithamaaya thelivukal"
-      },
-      {
-        "english": "worker",
-        "manglish": "thozhilaali"
-      },
-      {
-        "english": "discount",
-        "manglish": "kizhivu"
-      },
-      {
-        "english": "on duty",
-        "manglish": "chumathalayil aan"
-      },
-      {
-        "english": "witness",
-        "manglish": "saakshi"
-      },
-      {
-        "english": "clue",
-        "manglish": "soochana"
-      },
-      {
-        "english": "comprehensive",
-        "manglish": "samagramaaya"
-      },
-      {
-        "english": "reasonable",
-        "manglish": "yukthisahamaaya/nyaayamaaya"
-      },
-      {
-        "english": "identity check",
-        "manglish": "thirichariyal parishodhana"
-      },
-      {
-        "english": "funds",
-        "manglish": "dhanam"
-      },
-      {
-        "english": "factors",
-        "manglish": "gatakangal"
-      },
-      {
-        "english": "proficiency",
-        "manglish": "praaveenyam"
-      },
-      {
-        "english": "mandatory",
-        "manglish": "nirbandhitham"
-      },
-      {
-        "english": "statement",
-        "manglish": "prasthaavana"
-      },
-      {
-        "english": "legal proceedings",
-        "manglish": "niyaparamaaya"
-      },
-      {
-        "english": "over speed",
-        "manglish": "amitha vegam"
-      },
-      {
-        "english": "overseas",
-        "manglish": "videsham"
-      },
-      {
-        "english": "risk",
-        "manglish": "apakada saadyatha"
-      },
-      {
-        "english": "attack",
-        "manglish": "aakramanam"
-      },
-      {
-        "english": "complain",
-        "manglish": "paraathi"
-      },
-      {
-        "english": "Rights",
-        "manglish": "avakaasangal"
-      },
-      {
-        "english": "illegal",
-        "manglish": "niyama virudham"
-      },
-      {
-        "english": "crime",
-        "manglish": "kuttakrithyam"
-      },
-      {
-        "english": "judge",
-        "manglish": "nyaayathipan"
-      },
-      {
-        "english": "testify",
-        "manglish": "saakshikarikkuka"
-      }
+      { "english": "Legal aid", "hindi": "कानूनी सहायता (kaanooni sahaayata)" },
+      { "english": "legal support", "hindi": "कानूनी समर्थन (kaanooni samarthan)" },
+      { "english": "Lawyer", "hindi": "वकील (vakeel)" },
+      { "english": "court", "hindi": "अदालत (adaalat)" },
+      { "english": "Home affairs", "hindi": "गृह मामले (grih maamle)" },
+      { "english": "secretary", "hindi": "सचिव (sachiv)" },
+      { "english": "Grant", "hindi": "अनुदान (anudhaan)" },
+      { "english": "relevant", "hindi": "प्रासंगिक (praasangik)" },
+      { "english": "transfer", "hindi": "स्थानांतरण (sthaanantaran)" },
+      { "english": "minimum", "hindi": "न्यूनतम (nyoonatam)" },
+      { "english": "maximum", "hindi": "अधिकतम (adhikatam)" },
+      { "english": "interpreter", "hindi": "दुभाषिया (dubhaashiya)" },
+      { "english": "Alternatively", "hindi": "वैकल्पिक रूप से (vaikalpik roop se)" },
+      { "english": "certainly", "hindi": "निश्चित रूप से (nishchit roop se)" },
+      { "english": "standard processing time", "hindi": "मानक प्रक्रिया समय (maanak prakriyaa samay)" },
+      { "english": "legal documents", "hindi": "कानूनी दस्तावेज़ (kaanooni dastaavez)" },
+      { "english": "relevant evidence", "hindi": "प्रासंगिक साक्ष्य (praasangik saakshy)" },
+      { "english": "worker", "hindi": "कर्मचारी (karmachaari)" },
+      { "english": "worker compensation commission", "hindi": "कर्मचारी क्षतिपूर्ति आयोग (karmachaari kshtipoorti aayog)" },
+      { "english": "discount", "hindi": "छूट (chhoot)" },
+      { "english": "on duty", "hindi": "ड्यूटी पर (duty par)" },
+      { "english": "witness", "hindi": "गवाह (gavaah)" },
+      { "english": "clue", "hindi": "सुराग (suraag)" },
+      { "english": "comprehensive", "hindi": "व्यापक (vyaapak)" },
+      { "english": "reasonable", "hindi": "उचित / तर्कसंगत (uchit)" },
+      { "english": "identity check", "hindi": "पहचान जाँच (pahchaan jaanch)" },
+      { "english": "investigation officer", "hindi": "जाँच अधिकारी (jaanch adhikaari)" },
+      { "english": "funds", "hindi": "धन / निधि (dhan)" },
+      { "english": "factors", "hindi": "कारक (kaarak)" },
+      { "english": "proficiency", "hindi": "दक्षता (dakshata)" },
+      { "english": "mandatory", "hindi": "अनिवार्य (anivaary)" },
+      { "english": "statement", "hindi": "बयान (bayaan)" },
+      { "english": "legal proceedings", "hindi": "कानूनी कार्यवाही (kaanooni kaaryavaahi)" },
+      { "english": "over speed", "hindi": "अत्यधिक गति (atyadhik gati)" },
+      { "english": "overseas", "hindi": "विदेश (videsh)" },
+      { "english": "risk", "hindi": "जोखिम (jokhim)" },
+      { "english": "attack", "hindi": "हमला (hamla)" },
+      { "english": "complain", "hindi": "शिकायत (shikaayat)" },
+      { "english": "Rights", "hindi": "अधिकार (adhikaar)" },
+      { "english": "illegal", "hindi": "अवैध (avaaidh)" },
+      { "english": "crime", "hindi": "अपराध (aparaadh)" },
+      { "english": "judge", "hindi": "न्यायाधीश (nyaayaadhiish)" },
+      { "english": "testify", "hindi": "गवाही देना (gavaahi dena)" },
+      { "english": "affidavit", "hindi": "शपथ पत्र (shapath patra)" },
+      { "english": "bail", "hindi": "जमानत (jamanat)" },
+      { "english": "fine", "hindi": "जुर्माना (jurmaana)" },
+      { "english": "verdict", "hindi": "फैसला (faisala)" },
+      { "english": "appeal", "hindi": "अपील (appeal)" },
+      { "english": "plaintiff", "hindi": "वादी (vaadi)" },
+      { "english": "defendant", "hindi": "प्रतिवादी (prativaadi)" },
+      { "english": "solicitor", "hindi": "कानूनी सलाहकार (kaanooni salaahkaar)" },
+      { "english": "power of attorney", "hindi": "पावर ऑफ अटॉर्नी (power of attorney)" },
+      { "english": "restraining order", "hindi": "निरोधक आदेश (nirodhak aadesh)" },
+      { "english": "custody", "hindi": "हिरासत / अभिरक्षा (hirasat)" },
+      { "english": "mediation", "hindi": "मध्यस्थता (madhyasthata)" },
+      { "english": "hearing", "hindi": "सुनवाई (sunavaai)" },
+      { "english": "contract breach", "hindi": "अनुबंध उल्लंघन (anubandh ullanghan)" },
+      { "english": "conviction", "hindi": "दोषसिद्धि (dosh-siddhi)" },
+      { "english": "acquittal", "hindi": "बरी करना (bari karna)" },
+      { "english": "magistrate", "hindi": "मजिस्ट्रेट (magistrate)" },
+      { "english": "police report", "hindi": "पुलिस रिपोर्ट (police report)" },
+      { "english": "civil case", "hindi": "दीवानी मामला (divaani maamla)" },
+      { "english": "criminal record", "hindi": "आपराधिक रिकॉर्ड (aaparadhik record)" }
     ]
   },
   {
     "id": "business",
     "domain": "Business",
     "terms": [
-      {
-        "english": "Bussiness",
-        "manglish": "vyaaparam"
-      },
-      {
-        "english": "advertisement",
-        "manglish": "parasyam"
-      },
-      {
-        "english": "buy",
-        "manglish": "vaanguka"
-      },
-      {
-        "english": "consumer/ consumer",
-        "manglish": "upabokthaav"
-      },
-      {
-        "english": "price/rate",
-        "manglish": "vila/ nirakk"
-      },
-      {
-        "english": "cost",
-        "manglish": "chilav"
-      },
-      {
-        "english": "afford",
-        "manglish": "thaangaanavunna"
-      },
-      {
-        "english": "consumer law",
-        "manglish": "upabokthru niyamam"
-      },
-      {
-        "english": "refund",
-        "manglish": "thirike kodukkal"
-      },
-      {
-        "english": "replace",
-        "manglish": "maatti nalkuka"
-      },
-      {
-        "english": "repair",
-        "manglish": "nannakkuka"
-      },
-      {
-        "english": "reciept",
-        "manglish": "raseeth"
-      },
-      {
-        "english": "manager",
-        "manglish": "nirvaahakan"
-      },
-      {
-        "english": "bank loan",
-        "manglish": "bank vaayppa"
-      },
-      {
-        "english": "legal system",
-        "manglish": "niyama vyavastha"
-      },
-      {
-        "english": "tax number",
-        "manglish": "nikuthi sankhya"
-      },
-      {
-        "english": "change",
-        "manglish": "maattam"
-      },
-      {
-        "english": "charge",
-        "manglish": "vila"
-      },
-      {
-        "english": "bussiness owners",
-        "manglish": "vyaapara udamakal"
-      },
-      {
-        "english": "place",
-        "manglish": "sthalam/ sthanam"
-      },
-      {
-        "english": "negotiate",
-        "manglish": "charcha nadathuka/koodiyaalochikkuka"
-      },
-      {
-        "english": "price list",
-        "manglish": "vila nirakk/ vilavivarappattika"
-      },
-      {
-        "english": "prospective buyer",
-        "manglish": "baaviyil vaangunnayaal"
-      },
-      {
-        "english": "commission",
-        "manglish": "vyaapara prathifalam"
-      },
-      {
-        "english": "competition",
-        "manglish": "malsaram"
-      },
-      {
-        "english": "schedule",
-        "manglish": "pattika"
-      },
-      {
-        "english": "meeting",
-        "manglish": "yogam/sammelanam"
-      },
-      {
-        "english": "tax office",
-        "manglish": "nikuthi kaaryaalayam"
-      },
-      {
-        "english": "colleague",
-        "manglish": "sahapravarthakar"
-      },
-      {
-        "english": "advisor",
-        "manglish": "upadeshtaav"
-      },
-      {
-        "english": "advise",
-        "manglish": "upadesham"
-      },
-      {
-        "english": "representative",
-        "manglish": "prathinidhi"
-      },
-      {
-        "english": "products",
-        "manglish": "ulpannam"
-      },
-      {
-        "english": "intrested",
-        "manglish": "thaalparyam"
-      },
-      {
-        "english": "import",
-        "manglish": "irakkumathi"
-      },
-      {
-        "english": "damaged goods",
-        "manglish": "kedaaya saadanangal"
-      },
-      {
-        "english": "finished goods",
-        "manglish": "poorthiyaaya vasthukkal"
-      },
-      {
-        "english": "proposal",
-        "manglish": "nirdesham"
-      },
-      {
-        "english": "bussiness plan",
-        "manglish": "vyaapara padhathi"
-      },
-      {
-        "english": "supply",
-        "manglish": "vitharanam"
-      },
-      {
-        "english": "demand",
-        "manglish": "aavasyam"
-      },
-      {
-        "english": "popular",
-        "manglish": "janapriyam"
-      },
-      {
-        "english": "successful",
-        "manglish": "vijayapradam/safalamaaya"
-      },
-      {
-        "english": "news",
-        "manglish": "varthamaana pathram"
-      },
-      {
-        "english": "agreement",
-        "manglish": "karaar/vyavastha"
-      }
+      { "english": "Business", "hindi": "व्यापार (vyaapaar)" },
+      { "english": "advertisement", "hindi": "विज्ञापन (vigyaapan)" },
+      { "english": "buy", "hindi": "खरीदना (khareedna)" },
+      { "english": "consumer", "hindi": "उपभोक्ता (upbhokta)" },
+      { "english": "price/rate", "hindi": "कीमत / दर (keemat / dar)" },
+      { "english": "cost", "hindi": "लागत (laagat)" },
+      { "english": "afford", "hindi": "वहन करना (vahan karna)" },
+      { "english": "consumer law", "hindi": "उपभोक्ता कानून (upbhokta kaanoon)" },
+      { "english": "refund", "hindi": "धनवापसी (dhanvaapsi)" },
+      { "english": "replace", "hindi": "बदलना (badalna)" },
+      { "english": "repair", "hindi": "मरम्मत (marammat)" },
+      { "english": "receipt", "hindi": "रसीद (raseed)" },
+      { "english": "manager", "hindi": "प्रबंधक (prabhandhak)" },
+      { "english": "bank loan", "hindi": "बैंक ऋण (bank rin)" },
+      { "english": "legal system", "hindi": "कानूनी व्यवस्था (kaanooni vyavastha)" },
+      { "english": "tax number", "hindi": "कर संख्या (kar sankhya)" },
+      { "english": "change", "hindi": "बदलाव (badlaav)" },
+      { "english": "charge", "hindi": "शुल्क (shulk)" },
+      { "english": "business owners", "hindi": "व्यापार मालिक (vyaapaar maalik)" },
+      { "english": "place", "hindi": "स्थान (sthaan)" },
+      { "english": "negotiate", "hindi": "बातचीत करना (baatcheet karna)" },
+      { "english": "price list", "hindi": "मूल्य सूची (mooly soochi)" },
+      { "english": "prospective buyer", "hindi": "संभावित खरीदार (sambhaavit khariidaar)" },
+      { "english": "commission", "hindi": "कमीशन (kamiishon)" },
+      { "english": "competition", "hindi": "प्रतिस्पर्धा (pratispardha)" },
+      { "english": "schedule", "hindi": "कार्यक्रम / अनुसूची (kaaryakram)" },
+      { "english": "meeting", "hindi": "बैठक (baithak)" },
+      { "english": "tax office", "hindi": "कर कार्यालय (kar kaaryaalay)" },
+      { "english": "colleague", "hindi": "सहकर्मी (sahkarmi)" },
+      { "english": "advisor", "hindi": "सलाहकार (salaahkaar)" },
+      { "english": "advise", "hindi": "सलाह देना (salaah dena)" },
+      { "english": "representative", "hindi": "प्रतिनिधि (pratinidhi)" },
+      { "english": "products", "hindi": "उत्पाद (utpaad)" },
+      { "english": "interested", "hindi": "रुचि रखना (ruchi rakhna)" },
+      { "english": "import", "hindi": "आयात (aayaat)" },
+      { "english": "damaged goods", "hindi": "क्षतिग्रस्त माल (kshatigrasth maal)" },
+      { "english": "finished goods", "hindi": "तैयार माल (taiyaar maal)" },
+      { "english": "proposal", "hindi": "प्रस्ताव (prastaav)" },
+      { "english": "business plan", "hindi": "व्यापार योजना (vyaapaar yojnaa)" },
+      { "english": "supply", "hindi": "आपूर्ति (aapoort)" },
+      { "english": "demand", "hindi": "माँग (maang)" },
+      { "english": "popular", "hindi": "लोकप्रिय (lokpriy)" },
+      { "english": "successful", "hindi": "सफल (saphal)" },
+      { "english": "news", "hindi": "समाचार (samaachaar)" },
+      { "english": "agreement", "hindi": "समझौता (samjhauta)" },
+      { "english": "partnership", "hindi": "साझेदारी (saajhedaari)" },
+      { "english": "franchise", "hindi": "फ्रेंचाइज़ (franchise)" },
+      { "english": "trademark", "hindi": "ट्रेडमार्क / व्यापार चिह्न (trademark)" },
+      { "english": "invoice", "hindi": "चालान (chaalan)" },
+      { "english": "tender", "hindi": "निविदा (nivida)" },
+      { "english": "profit margin", "hindi": "लाभ मार्जिन (laabh margin)" },
+      { "english": "shareholder", "hindi": "शेयरधारक (shayar-dharak)" },
+      { "english": "audit", "hindi": "लेखापरीक्षा (lekhapareeksha)" },
+      { "english": "entrepreneur", "hindi": "उद्यमी (udyami)" },
+      { "english": "market research", "hindi": "बाज़ार अनुसंधान (baazaar anusandhaan)" },
+      { "english": "startup", "hindi": "स्टार्टअप / नया उद्यम (startup)" },
+      { "english": "cash flow", "hindi": "नकद प्रवाह (nakad pravaah)" },
+      { "english": "target market", "hindi": "लक्षित बाज़ार (lakshit baazaar)" },
+      { "english": "brand", "hindi": "ब्रांड (brand)" },
+      { "english": "export", "hindi": "निर्यात (niryaat)" },
+      { "english": "profit", "hindi": "लाभ (laabh)" },
+      { "english": "loss", "hindi": "हानि (haani)" },
+      { "english": "revenue", "hindi": "राजस्व / आय (raajasv)" }
     ]
   },
   {
     "id": "health",
     "domain": "Health",
     "terms": [
-      {
-        "english": "Health",
-        "manglish": "aarogyam"
-      },
-      {
-        "english": "Left knee",
-        "manglish": "idathu kaalmutt"
-      },
-      {
-        "english": "right knee",
-        "manglish": "valathu kaal mutt"
-      },
-      {
-        "english": "hospital cover",
-        "manglish": "aashupathri chilavukal"
-      },
-      {
-        "english": "injured",
-        "manglish": "parikketta"
-      },
-      {
-        "english": "insurance claim",
-        "manglish": "rakshaboga nashtaparihaaram"
-      },
-      {
-        "english": "prescription",
-        "manglish": "kurippadi"
-      },
-      {
-        "english": "suggestion",
-        "manglish": "nirdesham"
-      },
-      {
-        "english": "bones",
-        "manglish": "asthikal"
-      },
-      {
-        "english": "psychologyst",
-        "manglish": "manasaasthraknjan"
-      },
-      {
-        "english": "doctor",
-        "manglish": "bishagvaran/ vaidyan"
-      },
-      {
-        "english": "speech therappist",
-        "manglish": "samasara parisheelakan"
-      },
-      {
-        "english": "doctor appoinment",
-        "manglish": "vaidyante niyamanam/ vaidyante koodikkazhcha samayam"
-      },
-      {
-        "english": "Many",
-        "manglish": "niravadhi"
-      },
-      {
-        "english": "basic pack",
-        "manglish": "adisthaana padhathi"
-      },
-      {
-        "english": "optical service",
-        "manglish": "kaazhcha sambandamaaya sevanangal"
-      },
-      {
-        "english": "dental service",
-        "manglish": "dantha sevanangal"
-      },
-      {
-        "english": "allowance",
-        "manglish": "bathha"
-      },
-      {
-        "english": "feeling well",
-        "manglish": "sukham thonnunnu"
-      },
-      {
-        "english": "examine",
-        "manglish": "parishodikkuka"
-      },
-      {
-        "english": "sick note",
-        "manglish": "rogiyude cheett"
-      },
-      {
-        "english": "pharmacy",
-        "manglish": "vaidya shaala"
-      },
-      {
-        "english": "immune system",
-        "manglish": "roga prathiroda sheshi"
-      },
-      {
-        "english": "stroke",
-        "manglish": "aagaatham"
-      },
-      {
-        "english": "infection",
-        "manglish": "baadhikkuka"
-      },
-      {
-        "english": "genetic disease",
-        "manglish": "janithaka rogam"
-      },
-      {
-        "english": "dosage",
-        "manglish": "alav"
-      },
-      {
-        "english": "diagnosed",
-        "manglish": "roga nirnayam"
-      },
-      {
-        "english": "part time",
-        "manglish": "baagika samayam"
-      },
-      {
-        "english": "visitors",
-        "manglish": "sandarshakar"
-      },
-      {
-        "english": "full time",
-        "manglish": "muzhuvan samayam"
-      },
-      {
-        "english": "research",
-        "manglish": "gaveshanam"
-      },
-      {
-        "english": "confirmation",
-        "manglish": "sthireekaranam"
-      },
-      {
-        "english": "isolation",
-        "manglish": "ottappetta"
-      },
-      {
-        "english": "organic",
-        "manglish": "jaiva"
-      },
-      {
-        "english": "life modification",
-        "manglish": "jeevitha parishkaranam"
-      },
-      {
-        "english": "complication",
-        "manglish": "sankeernnam"
-      },
-      {
-        "english": "operation",
-        "manglish": "shasthrakriya"
-      },
-      {
-        "english": "patient transport",
-        "manglish": "rogikalude gathaagatham"
-      },
-      {
-        "english": "govt sposored",
-        "manglish": "sarkkar prayojakar aaya"
-      },
-      {
-        "english": "extreme cases",
-        "manglish": "theevramaaya casukal"
-      },
-      {
-        "english": "support pension",
-        "manglish": "pinthunaa vardakyakaala vethanam"
-      },
-      {
-        "english": "safety and assurance",
-        "manglish": "surakshayum urappum"
-      },
-      {
-        "english": "healthy diet",
-        "manglish": "aarogyakaramaaya bakshanam"
-      }
+      { "english": "Health", "hindi": "स्वास्थ्य (svaasthy)" },
+      { "english": "Left knee", "hindi": "बाया घुटना (baaya ghutna)" },
+      { "english": "right knee", "hindi": "दायाँ घुटना (daayan ghutna)" },
+      { "english": "hospital cover", "hindi": "अस्पताल कवर (aspataal cover)" },
+      { "english": "injured", "hindi": "घायल (ghaayal)" },
+      { "english": "insurance claim", "hindi": "बीमा दावा (beema daava)" },
+      { "english": "prescription", "hindi": "नुस्खा / पर्चा (nuskha)" },
+      { "english": "suggestion", "hindi": "सुझाव (sujhaav)" },
+      { "english": "bones", "hindi": "हड्डियाँ (haddiyan)" },
+      { "english": "psychologist", "hindi": "मनोवैज्ञानिक (mano-vaigyanik)" },
+      { "english": "doctor", "hindi": "डॉक्टर (doctor)" },
+      { "english": "speech therapist", "hindi": "वाक् चिकित्सक (vaak chikitsak)" },
+      { "english": "doctor appointment", "hindi": "डॉक्टर की नियुक्ति (doctor ki niyukti)" },
+      { "english": "private health insurance", "hindi": "निजी स्वास्थ्य बीमा (niji svaasthy beema)" },
+      { "english": "basic pack", "hindi": "बुनियादी पैकेज (buniyaadi package)" },
+      { "english": "optical service", "hindi": "नेत्र सेवाएँ (netr sevaayein)" },
+      { "english": "dental service", "hindi": "दंत सेवाएँ (dant sevaayein)" },
+      { "english": "allowance", "hindi": "भत्ता (bhatta)" },
+      { "english": "feeling well", "hindi": "ठीक महसूस करना (theek mahsoos karna)" },
+      { "english": "examine", "hindi": "जाँच करना (jaanch karna)" },
+      { "english": "sick note", "hindi": "बीमारी का प्रमाण पत्र (beemaari ka pramaan patra)" },
+      { "english": "pharmacy", "hindi": "दवाखाना (davaakhaana)" },
+      { "english": "immune system", "hindi": "रोग प्रतिरोधक क्षमता (rog pratirodhak kshamata)" },
+      { "english": "stroke", "hindi": "पक्षाघात (pakshaaghaat)" },
+      { "english": "infection", "hindi": "संक्रमण (sankraman)" },
+      { "english": "genetic disease", "hindi": "आनुवंशिक रोग (aanuvainshik rog)" },
+      { "english": "dosage", "hindi": "खुराक (khuraak)" },
+      { "english": "diagnosed", "hindi": "निदान किया गया (nidaan kiya gaya)" },
+      { "english": "part time", "hindi": "अंशकालिक (anshkaalik)" },
+      { "english": "visitors", "hindi": "आगंतुक (aagantuk)" },
+      { "english": "full time", "hindi": "पूर्णकालिक (poornkaalik)" },
+      { "english": "research", "hindi": "शोध / अनुसंधान (shodh)" },
+      { "english": "confirmation", "hindi": "पुष्टि (pushti)" },
+      { "english": "isolation", "hindi": "एकांत / अलगाव (ekaant)" },
+      { "english": "organic", "hindi": "जैविक (jaivik)" },
+      { "english": "life modification", "hindi": "जीवनशैली में बदलाव (jeevan shaili mein badlaav)" },
+      { "english": "complication", "hindi": "जटिलता (jatilta)" },
+      { "english": "operation", "hindi": "ऑपरेशन (operation)" },
+      { "english": "patient transport", "hindi": "रोगी परिवहन (rogi parivahan)" },
+      { "english": "government sponsored", "hindi": "सरकार द्वारा प्रायोजित (sarkaar dvaara praayojit)" },
+      { "english": "extreme cases", "hindi": "गंभीर मामले (gambheer maamle)" },
+      { "english": "support pension", "hindi": "सहायता पेंशन (sahaayata pension)" },
+      { "english": "safety and assurance", "hindi": "सुरक्षा और आश्वासन (suraksha aur aashvaasan)" },
+      { "english": "healthy diet", "hindi": "स्वस्थ आहार (svasth aahaar)" },
+      { "english": "blood pressure", "hindi": "रक्तचाप (raktchaap)" },
+      { "english": "diabetes", "hindi": "मधुमेह (madhumeh)" },
+      { "english": "cholesterol", "hindi": "कोलेस्ट्रॉल (cholesterol)" },
+      { "english": "vaccination", "hindi": "टीकाकरण (teekaakaran)" },
+      { "english": "specialist", "hindi": "विशेषज्ञ (visheshagya)" },
+      { "english": "referral", "hindi": "रेफरल (referral)" },
+      { "english": "x-ray", "hindi": "एक्स-रे (X-ray)" },
+      { "english": "allergy", "hindi": "एलर्जी (allergy)" },
+      { "english": "physiotherapy", "hindi": "फिजियोथेरेपी (physiotherapy)" },
+      { "english": "emergency", "hindi": "आपातकाल (aapaatkaaal)" },
+      { "english": "nurse", "hindi": "नर्स (nurse)" },
+      { "english": "medication", "hindi": "दवाई (davaai)" },
+      { "english": "follow-up", "hindi": "अनुवर्ती जाँच (anuvart jaanch)" },
+      { "english": "mental health", "hindi": "मानसिक स्वास्थ्य (maanasik svaasthy)" },
+      { "english": "anxiety", "hindi": "चिंता / घबराहट (chintaa)" },
+      { "english": "depression", "hindi": "अवसाद (avsaad)" },
+      { "english": "chronic illness", "hindi": "दीर्घकालिक बीमारी (deerghkaalik beemaari)" },
+      { "english": "blood test", "hindi": "रक्त परीक्षण (rakt pareekshan)" },
+      { "english": "rehabilitation", "hindi": "पुनर्वास (punarvaas)" },
+      { "english": "outpatient", "hindi": "बाह्य रोगी (baahya rogi)" },
+      { "english": "Medicare", "hindi": "मेडिकेयर (Medicare)" },
+      { "english": "bulk billing", "hindi": "बल्क बिलिंग (bulk billing)" },
+      { "english": "GP", "hindi": "सामान्य चिकित्सक (saamaany chikitsak)" }
     ]
   },
   {
     "id": "office",
     "domain": "Office",
     "terms": [
-      {
-        "english": "Import",
-        "manglish": "irakkumathi"
-      },
-      {
-        "english": "export",
-        "manglish": "kayattumathi"
-      },
-      {
-        "english": "tax",
-        "manglish": "nikuthi"
-      },
-      {
-        "english": "sales",
-        "manglish": "vilppana"
-      },
-      {
-        "english": "profit",
-        "manglish": "laabam"
-      },
-      {
-        "english": "loss",
-        "manglish": "nashtam"
-      },
-      {
-        "english": "produce",
-        "manglish": "ulpaadippikkuka"
-      },
-      {
-        "english": "industry",
-        "manglish": "vyavasaayam"
-      },
-      {
-        "english": "conference",
-        "manglish": "sammelanam"
-      },
-      {
-        "english": "meeting",
-        "manglish": "yogam"
-      },
-      {
-        "english": "agenda",
-        "manglish": "vishayavivara pathrika"
-      },
-      {
-        "english": "world wide",
-        "manglish": "lokamembaadum"
-      },
-      {
-        "english": "international market",
-        "manglish": "anthaaraashta vipani"
-      },
-      {
-        "english": "domestic market",
-        "manglish": "aabyanthara  vipani"
-      },
-      {
-        "english": "revenue",
-        "manglish": "varumaanam"
-      },
-      {
-        "english": "leaflet",
-        "manglish": "lakhulekha"
-      },
-      {
-        "english": "innauguration",
-        "manglish": "ulgaadanam"
-      },
-      {
-        "english": "department",
-        "manglish": "vakupp"
-      },
-      {
-        "english": "branch",
-        "manglish": "shaakha"
-      },
-      {
-        "english": "officer",
-        "manglish": "udyogasthan"
-      },
-      {
-        "english": "function",
-        "manglish": "pravarthanam"
-      },
-      {
-        "english": "broker",
-        "manglish": "dallaal"
-      },
-      {
-        "english": "liability",
-        "manglish": "baadyatha"
-      },
-      {
-        "english": "public",
-        "manglish": "pothu"
-      },
-      {
-        "english": "private",
-        "manglish": "swakaarya"
-      },
-      {
-        "english": "review",
-        "manglish": "avalokanam"
-      },
-      {
-        "english": "additional",
-        "manglish": "adhika"
-      },
-      {
-        "english": "request",
-        "manglish": "abyarthana"
-      },
-      {
-        "english": "inflation",
-        "manglish": "vilakkayattam"
-      },
-      {
-        "english": "idea",
-        "manglish": "aashayam"
-      },
-      {
-        "english": "hike",
-        "manglish": "kayattam/vardanav"
-      },
-      {
-        "english": "progress",
-        "manglish": "purogathi"
-      },
-      {
-        "english": "increase",
-        "manglish": "vardikkuka"
-      },
-      {
-        "english": "annual",
-        "manglish": "vaarshikam"
-      },
-      {
-        "english": "building",
-        "manglish": "kettidam"
-      },
-      {
-        "english": "appoinment",
-        "manglish": "niyamanam"
-      },
-      {
-        "english": "resignation",
-        "manglish": "raaji"
-      },
-      {
-        "english": "help",
-        "manglish": "sahaayam"
-      },
-      {
-        "english": "if possible",
-        "manglish": "saadyamenkil"
-      },
-      {
-        "english": "forgive",
-        "manglish": "sahapravarthakan"
-      },
-      {
-        "english": "security purpose",
-        "manglish": "suraksha aavasyangal"
-      },
-      {
-        "english": "quality",
-        "manglish": "gunanilavaaram"
-      },
-      {
-        "english": "service",
-        "manglish": "sevanam"
-      },
-      {
-        "english": "quantity",
-        "manglish": "alav"
-      },
-      {
-        "english": "address",
-        "manglish": "vilaasam"
-      },
-      {
-        "english": "cancel",
-        "manglish": "raddaakkuka"
-      },
-      {
-        "english": "last date",
-        "manglish": "avasana theeyathi"
-      },
-      {
-        "english": "completed",
-        "manglish": "poorthiyaayi"
-      }
+      { "english": "Import", "hindi": "आयात (aayaat)" },
+      { "english": "export", "hindi": "निर्यात (niryaat)" },
+      { "english": "tax", "hindi": "कर (kar)" },
+      { "english": "sales", "hindi": "बिक्री (bikri)" },
+      { "english": "profit", "hindi": "लाभ (laabh)" },
+      { "english": "loss", "hindi": "हानि (haani)" },
+      { "english": "produce", "hindi": "उत्पादन करना (utpaadan karna)" },
+      { "english": "industry", "hindi": "उद्योग (udyog)" },
+      { "english": "conference", "hindi": "सम्मेलन (sammelan)" },
+      { "english": "meeting", "hindi": "बैठक (baithak)" },
+      { "english": "agenda", "hindi": "एजेंडा / कार्यसूची (agenda)" },
+      { "english": "world wide", "hindi": "विश्वव्यापी (vishvawyaapi)" },
+      { "english": "international market", "hindi": "अंतर्राष्ट्रीय बाज़ार (antarraashtreey baazaar)" },
+      { "english": "domestic market", "hindi": "घरेलू बाज़ार (ghareloo baazaar)" },
+      { "english": "revenue", "hindi": "राजस्व / आय (raajasv)" },
+      { "english": "leaflet", "hindi": "पर्चा (parcha)" },
+      { "english": "inauguration", "hindi": "उद्घाटन (udghaatan)" },
+      { "english": "department", "hindi": "विभाग (vibhaag)" },
+      { "english": "branch", "hindi": "शाखा (shaakhaa)" },
+      { "english": "officer", "hindi": "अधिकारी (adhikaari)" },
+      { "english": "function", "hindi": "कार्य / कार्यक्रम (kaary)" },
+      { "english": "broker", "hindi": "दलाल (dalaal)" },
+      { "english": "liability", "hindi": "दायित्व (daayitv)" },
+      { "english": "public", "hindi": "सार्वजनिक (saarvajanik)" },
+      { "english": "private", "hindi": "निजी (niji)" },
+      { "english": "review", "hindi": "समीक्षा (sameeksha)" },
+      { "english": "additional", "hindi": "अतिरिक्त (atirikt)" },
+      { "english": "request", "hindi": "अनुरोध (anurodh)" },
+      { "english": "inflation", "hindi": "मुद्रास्फीति (mudrasfeeti)" },
+      { "english": "idea", "hindi": "विचार (vichaar)" },
+      { "english": "hike", "hindi": "वृद्धि (vriddhi)" },
+      { "english": "progress", "hindi": "प्रगति (pragati)" },
+      { "english": "increase", "hindi": "वृद्धि / बढ़ोतरी (vriddhi)" },
+      { "english": "annual", "hindi": "वार्षिक (vaarshik)" },
+      { "english": "building", "hindi": "इमारत (imaarat)" },
+      { "english": "appointment", "hindi": "नियुक्ति (niyukti)" },
+      { "english": "resignation", "hindi": "इस्तीफा (isteefa)" },
+      { "english": "help", "hindi": "सहायता (sahaayata)" },
+      { "english": "if possible", "hindi": "यदि संभव हो (yadi sambhav ho)" },
+      { "english": "security purpose", "hindi": "सुरक्षा उद्देश्य (suraksha uddeshya)" },
+      { "english": "quality", "hindi": "गुणवत्ता (gunvatta)" },
+      { "english": "service", "hindi": "सेवा (seva)" },
+      { "english": "quantity", "hindi": "मात्रा (maatra)" },
+      { "english": "address", "hindi": "पता (pata)" },
+      { "english": "cancel", "hindi": "रद्द करना (radd karna)" },
+      { "english": "last date", "hindi": "अंतिम तिथि (antim tithi)" },
+      { "english": "completed", "hindi": "पूर्ण हुआ (poorn hua)" },
+      { "english": "overtime", "hindi": "ओवरटाइम (overtime)" },
+      { "english": "salary", "hindi": "वेतन (vetan)" },
+      { "english": "payslip", "hindi": "वेतन पर्ची (vetan parchi)" },
+      { "english": "annual leave", "hindi": "वार्षिक छुट्टी (vaarshik chhuttee)" },
+      { "english": "sick leave", "hindi": "बीमारी की छुट्टी (beemaari ki chhuttee)" },
+      { "english": "maternity leave", "hindi": "मातृत्व अवकाश (maatrtv avakaash)" },
+      { "english": "performance review", "hindi": "प्रदर्शन समीक्षा (pradarshan sameeksha)" },
+      { "english": "promotion", "hindi": "पदोन्नति (padonnati)" },
+      { "english": "redundancy", "hindi": "अतिरिक्तता / नौकरी जाना (atiriktata)" },
+      { "english": "termination", "hindi": "नौकरी समाप्ति (naukari samaapti)" },
+      { "english": "notice period", "hindi": "नोटिस अवधि (notice avadhi)" },
+      { "english": "work from home", "hindi": "घर से काम (ghar se kaam)" },
+      { "english": "human resources", "hindi": "मानव संसाधन (maanav sansaadhan)" },
+      { "english": "workplace", "hindi": "कार्यस्थल (kaaryasthal)" },
+      { "english": "supervisor", "hindi": "पर्यवेक्षक (paryavekshak)" },
+      { "english": "staff meeting", "hindi": "कर्मचारी बैठक (karmachaari baithak)" },
+      { "english": "training", "hindi": "प्रशिक्षण (prashikshan)" },
+      { "english": "reimbursement", "hindi": "प्रतिपूर्ति (pratipoorti)" },
+      { "english": "employee benefits", "hindi": "कर्मचारी लाभ (karmachaari laabh)" }
     ]
   },
   {
     "id": "immigration",
     "domain": "Immigration",
     "terms": [
-      {
-        "english": "immigration",
-        "manglish": "kudiyettam"
-      },
-      {
-        "english": "settlement",
-        "manglish": "othutheerpp/ kanakku theerkkal"
-      },
-      {
-        "english": "settled",
-        "manglish": "sthirappettu/othutheerppayi/ kanakku theerthu"
-      },
-      {
-        "english": "migrant",
-        "manglish": "kudiyettakkaaran"
-      },
-      {
-        "english": "immigrants",
-        "manglish": "kudiyettakkaar"
-      },
-      {
-        "english": "immigration agent",
-        "manglish": "kudiyetta prathinidhi"
-      },
-      {
-        "english": "office",
-        "manglish": "kaaryaalayam"
-      },
-      {
-        "english": "approval",
-        "manglish": "sammatham"
-      },
-      {
-        "english": "immigration law",
-        "manglish": "kudiyetta niyamam"
-      },
-      {
-        "english": "community",
-        "manglish": "samooham"
-      },
-      {
-        "english": "offence",
-        "manglish": "kuttakaram"
-      },
-      {
-        "english": "customs office",
-        "manglish": "chungam kaaryaalayam"
-      },
-      {
-        "english": "under the limit",
-        "manglish": "paridhiyil"
-      },
-      {
-        "english": "high range",
-        "manglish": "uyarnna sreni"
-      },
-      {
-        "english": "analysis",
-        "manglish": "vishakalanam"
-      },
-      {
-        "english": "compromise",
-        "manglish": "othu theerpp"
-      },
-      {
-        "english": "follow the rules",
-        "manglish": "niyamam paalikkuka"
-      },
-      {
-        "english": "co operative",
-        "manglish": "sahakarikkuka"
-      },
-      {
-        "english": "take action",
-        "manglish": "nadapadi edukkuka"
-      },
-      {
-        "english": "trained",
-        "manglish": "parisheelanam labicha"
-      },
-      {
-        "english": "comulsory",
-        "manglish": "nirbandhitham"
-      },
-      {
-        "english": "terms and conditions",
-        "manglish": "niyamangalum nibandhanakalum"
-      },
-      {
-        "english": "privacy",
-        "manglish": "swakaaryatha"
-      },
-      {
-        "english": "deposit",
-        "manglish": "nikshepam"
-      },
-      {
-        "english": "procedure",
-        "manglish": "nadapadi kramam"
-      },
-      {
-        "english": "selection",
-        "manglish": "therenjedukkal"
-      },
-      {
-        "english": "stress",
-        "manglish": "sammardam"
-      },
-      {
-        "english": "exchange information",
-        "manglish": "kai maatta vivaram"
-      },
-      {
-        "english": "oppurtunity",
-        "manglish": "avasaram"
-      },
-      {
-        "english": "wait",
-        "manglish": "kaathirikkuka"
-      },
-      {
-        "english": "investigation officer",
-        "manglish": "anweshana udyogasthan"
-      },
-      {
-        "english": "estimated price",
-        "manglish": "kanakkaakkiya chilav"
-      },
-      {
-        "english": "accept",
-        "manglish": "sweekarichu"
-      },
-      {
-        "english": "develope",
-        "manglish": "vikasippikkuka"
-      },
-      {
-        "english": "joint account",
-        "manglish": "onnichulla account"
-      },
-      {
-        "english": "actual situation",
-        "manglish": "yathaartha sandarbam"
-      },
-      {
-        "english": "declaration form",
-        "manglish": "prakyaapana form"
-      },
-      {
-        "english": "passenger",
-        "manglish": "yaathrakkaran"
-      },
-      {
-        "english": "declared",
-        "manglish": "prakyaapichu"
-      }
+      { "english": "immigration", "hindi": "आव्रजन / प्रवासन (aavrajn)" },
+      { "english": "settlement", "hindi": "बसाव / निपटान (basaav)" },
+      { "english": "settled", "hindi": "बस जाना (bas jaana)" },
+      { "english": "migrant", "hindi": "प्रवासी (pravaasi)" },
+      { "english": "immigrants", "hindi": "आप्रवासी (aapravaasi)" },
+      { "english": "immigration agent", "hindi": "आव्रजन एजेंट (aavrajn agent)" },
+      { "english": "office", "hindi": "कार्यालय (kaaryaalay)" },
+      { "english": "approval", "hindi": "अनुमोदन / मंजूरी (anumodan)" },
+      { "english": "immigration law", "hindi": "आव्रजन कानून (aavrajn kaanoon)" },
+      { "english": "community", "hindi": "समुदाय (samudaay)" },
+      { "english": "offence", "hindi": "अपराध / उल्लंघन (aparaadh)" },
+      { "english": "customs office", "hindi": "सीमाशुल्क कार्यालय (seemaa shulk kaaryaalay)" },
+      { "english": "under the limit", "hindi": "सीमा के भीतर (seema ke bheetar)" },
+      { "english": "high range", "hindi": "उच्च श्रेणी (ucch shreni)" },
+      { "english": "analysis", "hindi": "विश्लेषण (vishleshan)" },
+      { "english": "compromise", "hindi": "समझौता (samjhauta)" },
+      { "english": "follow the rules", "hindi": "नियमों का पालन करना (niyamon ka paalan karna)" },
+      { "english": "co operative", "hindi": "सहयोगी (sahyogi)" },
+      { "english": "take action", "hindi": "कार्रवाई करना (kaarvaai karna)" },
+      { "english": "trained", "hindi": "प्रशिक्षित (prashikshit)" },
+      { "english": "compulsory", "hindi": "अनिवार्य (anivaary)" },
+      { "english": "terms and conditions", "hindi": "नियम और शर्तें (niyam aur shartein)" },
+      { "english": "privacy", "hindi": "गोपनीयता (gopneeyata)" },
+      { "english": "deposit", "hindi": "जमा (jama)" },
+      { "english": "procedure", "hindi": "प्रक्रिया (prakriyaa)" },
+      { "english": "selection", "hindi": "चयन (chayan)" },
+      { "english": "stress", "hindi": "तनाव (tanaav)" },
+      { "english": "exchange information", "hindi": "जानकारी साझा करना (jaankari saajha karna)" },
+      { "english": "opportunity", "hindi": "अवसर (avsar)" },
+      { "english": "wait", "hindi": "प्रतीक्षा करना (prateeksha karna)" },
+      { "english": "investigation officer", "hindi": "जाँच अधिकारी (jaanch adhikaari)" },
+      { "english": "estimated price", "hindi": "अनुमानित मूल्य (anumaanit mooly)" },
+      { "english": "accept", "hindi": "स्वीकार करना (sveekaar karna)" },
+      { "english": "develop", "hindi": "विकसित करना (vikasit karna)" },
+      { "english": "joint account", "hindi": "संयुक्त खाता (sanyukt khaata)" },
+      { "english": "actual situation", "hindi": "वास्तविक स्थिति (vaastavik sthiti)" },
+      { "english": "declaration form", "hindi": "घोषणा पत्र (ghoshna patra)" },
+      { "english": "passenger", "hindi": "यात्री (yaatri)" },
+      { "english": "declared", "hindi": "घोषित किया (ghoshit kiya)" },
+      { "english": "visa application", "hindi": "वीज़ा आवेदन (visa aavedan)" },
+      { "english": "permanent residency", "hindi": "स्थायी निवास (sthaayee nivaas)" },
+      { "english": "citizenship", "hindi": "नागरिकता (naagarikta)" },
+      { "english": "sponsor", "hindi": "प्रायोजक (praayojak)" },
+      { "english": "nomination", "hindi": "नामांकन (naamankaan)" },
+      { "english": "character assessment", "hindi": "चरित्र मूल्यांकन (charitr moolyaankaan)" },
+      { "english": "health assessment", "hindi": "स्वास्थ्य मूल्यांकन (svaasthy moolyaankaan)" },
+      { "english": "skills assessment", "hindi": "कौशल मूल्यांकन (kaushal moolyaankaan)" },
+      { "english": "student visa", "hindi": "छात्र वीज़ा (chhatra visa)" },
+      { "english": "work visa", "hindi": "कार्य वीज़ा (kaary visa)" },
+      { "english": "family visa", "hindi": "पारिवारिक वीज़ा (paarivaarik visa)" },
+      { "english": "refugee", "hindi": "शरणार्थी (sharnaarth)" },
+      { "english": "migration agent", "hindi": "प्रवासन एजेंट (pravaasan agent)" },
+      { "english": "entry permit", "hindi": "प्रवेश परमिट (pravesh permit)" },
+      { "english": "expiry date", "hindi": "समाप्ति तिथि (samaapti tithi)" },
+      { "english": "extension", "hindi": "विस्तार (vistaaar)" },
+      { "english": "cancellation", "hindi": "रद्दीकरण (raddikaran)" },
+      { "english": "appeal tribunal", "hindi": "अपील न्यायाधिकरण (appeal nyaayaadhikaran)" },
+      { "english": "citizenship test", "hindi": "नागरिकता परीक्षण (naagarikta pareekshan)" },
+      { "english": "residence permit", "hindi": "निवास परमिट (nivaas permit)" },
+      { "english": "border", "hindi": "सीमा (seema)" },
+      { "english": "deportation", "hindi": "निर्वासन (nirvaasan)" }
+    ]
+  },
+  {
+    "id": "employment",
+    "domain": "Employment",
+    "terms": [
+      { "english": "job application", "hindi": "नौकरी आवेदन (naukari aavedan)" },
+      { "english": "resume", "hindi": "बायोडेटा / सीवी (biodata)" },
+      { "english": "interview", "hindi": "साक्षात्कार (saakshaatkaaar)" },
+      { "english": "employer", "hindi": "नियोक्ता (niyokta)" },
+      { "english": "employee", "hindi": "कर्मचारी (karmachaari)" },
+      { "english": "full time employment", "hindi": "पूर्णकालिक रोज़गार (poornkaalik rozgaar)" },
+      { "english": "part time employment", "hindi": "अंशकालिक रोज़गार (anshkaalik rozgaar)" },
+      { "english": "casual work", "hindi": "आकस्मिक काम (aakasmik kaam)" },
+      { "english": "job offer", "hindi": "नौकरी का प्रस्ताव (naukari ka prastaav)" },
+      { "english": "probation period", "hindi": "परिवीक्षा अवधि (pariviksha avadhi)" },
+      { "english": "minimum wage", "hindi": "न्यूनतम वेतन (nyoonatam vetan)" },
+      { "english": "fair work", "hindi": "उचित रोज़गार (uchit rozgaar)" },
+      { "english": "unfair dismissal", "hindi": "अनुचित बर्खास्तगी (anuchit barkhaastagi)" },
+      { "english": "workplace rights", "hindi": "कार्यस्थल अधिकार (kaaryasthal adhikaar)" },
+      { "english": "union", "hindi": "श्रमिक संघ (shramik sangh)" },
+      { "english": "leave entitlement", "hindi": "छुट्टी का अधिकार (chhuttee ka adhikaar)" },
+      { "english": "superannuation", "hindi": "सेवानिवृत्ति निधि (sevaanivritti nidhi)" },
+      { "english": "tax file number", "hindi": "कर फ़ाइल संख्या (kar file sankhya)" },
+      { "english": "payroll", "hindi": "वेतन सूची (vetan soochi)" },
+      { "english": "job seeker", "hindi": "नौकरी ढूँढने वाला (naukari dhoondhne vaala)" },
+      { "english": "employment agency", "hindi": "रोज़गार एजेंसी (rozgaar agency)" },
+      { "english": "reference letter", "hindi": "संदर्भ पत्र (sandarbh patra)" },
+      { "english": "work experience", "hindi": "कार्य अनुभव (kaary anubhav)" },
+      { "english": "job description", "hindi": "नौकरी विवरण (naukari vivaran)" },
+      { "english": "roster", "hindi": "रोस्टर / समय-सारणी (roster)" },
+      { "english": "shift", "hindi": "पाली (paali)" },
+      { "english": "resignation letter", "hindi": "इस्तीफा पत्र (isteefa patra)" },
+      { "english": "redundancy pay", "hindi": "अतिरिक्तता मुआवज़ा (atiriktata muaavza)" },
+      { "english": "Centrelink", "hindi": "सेंटरलिंक (Centrelink)" },
+      { "english": "performance appraisal", "hindi": "प्रदर्शन मूल्यांकन (pradarshan moolyaankaan)" }
+    ]
+  },
+  {
+    "id": "social-services",
+    "domain": "Social Services",
+    "terms": [
+      { "english": "social worker", "hindi": "सामाजिक कार्यकर्ता (saamaajik kaaryakarta)" },
+      { "english": "welfare", "hindi": "कल्याण (kalyaan)" },
+      { "english": "child support", "hindi": "बाल सहायता (baal sahaayata)" },
+      { "english": "family support", "hindi": "परिवार सहायता (parivaar sahaayata)" },
+      { "english": "domestic violence", "hindi": "घरेलू हिंसा (ghareloo hinsa)" },
+      { "english": "counselling", "hindi": "परामर्श (paraamarsh)" },
+      { "english": "support group", "hindi": "सहायता समूह (sahaayata samooh)" },
+      { "english": "government assistance", "hindi": "सरकारी सहायता (sarkaari sahaayata)" },
+      { "english": "disability support", "hindi": "विकलांगता सहायता (vikalangata sahaayata)" },
+      { "english": "aged care", "hindi": "वृद्ध देखभाल (vriddh dekhbhaal)" },
+      { "english": "youth services", "hindi": "युवा सेवाएँ (yuva sevaayein)" },
+      { "english": "emergency housing", "hindi": "आपातकालीन आवास (aapaatkaleen aavaas)" },
+      { "english": "food bank", "hindi": "खाद्य बैंक (khaady bank)" },
+      { "english": "mental health support", "hindi": "मानसिक स्वास्थ्य सहायता (maanasik svaasthy sahaayata)" },
+      { "english": "interpreter services", "hindi": "दुभाषिया सेवाएँ (dubhaashiya sevaayein)" },
+      { "english": "carer", "hindi": "देखभालकर्ता (dekhbhaalakarta)" },
+      { "english": "respite care", "hindi": "अस्थायी देखभाल (asthaayee dekhbhaal)" },
+      { "english": "NDIS", "hindi": "एनडीआईएस - विकलांगता बीमा (NDIS)" },
+      { "english": "crisis support", "hindi": "संकट सहायता (sankat sahaayata)" },
+      { "english": "case worker", "hindi": "केस कार्यकर्ता (case kaaryakarta)" },
+      { "english": "housing support", "hindi": "आवास सहायता (aavaas sahaayata)" },
+      { "english": "pension", "hindi": "पेंशन (pension)" },
+      { "english": "benefit", "hindi": "लाभ (laabh)" },
+      { "english": "allowance", "hindi": "भत्ता (bhatta)" },
+      { "english": "concession card", "hindi": "रियायत कार्ड (riyaayat card)" },
+      { "english": "health care card", "hindi": "स्वास्थ्य देखभाल कार्ड (svaasthy dekhbhaal card)" },
+      { "english": "crisis accommodation", "hindi": "आपातकालीन आवास (aapaatkaleen aavaas)" },
+      { "english": "community support", "hindi": "सामुदायिक सहायता (saamaadaayik sahaayata)" },
+      { "english": "outreach", "hindi": "आउटरीच सेवा (outreach seva)" },
+      { "english": "referral service", "hindi": "रेफरल सेवा (referral seva)" }
     ]
   }
 ]

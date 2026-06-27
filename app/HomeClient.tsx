@@ -148,6 +148,17 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
               </Link>
             );
           })}
+          <a
+            href="/api/vocab-download"
+            download="naati-ccl-malayalam-vocabulary.csv"
+            className="flex items-center gap-3 bg-white rounded-xl px-4 py-4 border border-slate-100 hover:border-emerald-300 hover:shadow-sm transition-all group"
+          >
+            <span className="text-2xl shrink-0">⬇️</span>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-slate-800 group-hover:text-emerald-700">Download all vocabulary</p>
+              <p className="text-xs text-slate-400 mt-0.5">CSV file · all {vocabularies.reduce((n, v) => n + v.terms.length, 0)} words</p>
+            </div>
+          </a>
           <Link
             href="/vocab/quiz"
             className="flex items-center gap-3 bg-indigo-600 rounded-xl px-4 py-4 border border-indigo-600 hover:bg-indigo-700 transition-all group"
@@ -176,7 +187,7 @@ export default function HomeClient({ dialogues, orderedDomains, byDomain, vocabu
       {/* ── SCRIPTS ───────────────────────────────────────────── */}
       {tab === 'scripts' && (
         <div className="space-y-2 animate-fadeUp">
-          <p className="text-sm text-slate-500 mb-4">Read the full conversation in Manglish and English — great warmup before flashcard practice.</p>
+          <p className="text-sm text-slate-500 mb-4">Read the full conversation in Hindi and English — great warmup before flashcard practice.</p>
           {scripts.map((s) => {
             const icon = DOMAIN_ICONS[s.domain] ?? '📚';
             return (

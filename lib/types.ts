@@ -1,8 +1,8 @@
 export interface Exchange {
   prompt: string;
   answer: string;
-  manglishPrompt: string;
-  manglishAnswer: string;
+  hindiPrompt: string;
+  hindiAnswer: string;
 }
 
 export interface Dialogue {

@@ -5,7 +5,7 @@ import type { Script } from '@/lib/script-data';
 
 interface Props { script: Script; }
 
-type ShowMode = 'both' | 'manglish' | 'english';
+type ShowMode = 'both' | 'hindi' | 'english';
 
 export default function ScriptClient({ script }: Props) {
   const [show, setShow] = useState<ShowMode>('both');
@@ -31,7 +31,7 @@ export default function ScriptClient({ script }: Props) {
         <div className="flex items-center bg-white border border-slate-200 rounded-lg p-0.5 gap-0.5">
           {([
             { key: 'both',     label: 'Both' },
-            { key: 'manglish', label: 'Manglish only' },
+            { key: 'hindi', label: 'Hindi only' },
             { key: 'english',  label: 'English only' },
           ] as { key: ShowMode; label: string }[]).map(({ key, label }) => (
             <button
@@ -56,7 +56,7 @@ export default function ScriptClient({ script }: Props) {
 
       {isCover && (
         <p className="text-xs text-slate-400 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
-          {show === 'manglish' ? 'Manglish' : 'English'} is hidden. Read each line and tap to reveal the translation.
+          {show === 'hindi' ? 'Hindi' : 'English'} is hidden. Read each line and tap to reveal the translation.
         </p>
       )}
 
@@ -64,8 +64,8 @@ export default function ScriptClient({ script }: Props) {
       <div className="space-y-3">
         {script.exchanges.map((ex, i) => {
           const isRevealed = revealed.has(i) || show === 'both';
-          const manglishVisible = show !== 'english';
-          const englishVisible  = show !== 'manglish';
+          const hindiVisible = show !== 'english';
+          const englishVisible  = show !== 'hindi';
 
           return (
             <div
@@ -75,18 +75,18 @@ export default function ScriptClient({ script }: Props) {
               }`}
               onClick={isCover ? () => toggleReveal(i) : undefined}
             >
-              {/* Manglish side */}
-              {ex.manglish && (
+              {/* Hindi side */}
+              {ex.hindi && (
                 <div className={`px-4 py-3 flex items-start gap-3 ${!englishVisible ? '' : 'border-b border-slate-100'}`}>
                   <span className="shrink-0 mt-0.5 text-xs font-semibold bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">
-                    Manglish
+                    Hindi
                   </span>
                   <p className={`text-sm text-slate-800 leading-relaxed transition-all ${
-                    manglishVisible || isRevealed ? 'opacity-100' : 'opacity-0 blur-sm select-none pointer-events-none'
+                    hindiVisible || isRevealed ? 'opacity-100' : 'opacity-0 blur-sm select-none pointer-events-none'
                   }`}>
-                    {ex.manglish}
+                    {ex.hindi}
                   </p>
-                  {!manglishVisible && !isRevealed && (
+                  {!hindiVisible && !isRevealed && (
                     <span className="text-xs text-slate-400 ml-auto mt-0.5 shrink-0">tap to reveal</span>
                   )}
                 </div>

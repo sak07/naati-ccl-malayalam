@@ -1,7 +1,7 @@
 import rawData from './scripts.json';
 
 export interface ScriptExchange {
-  manglish: string;
+  hindi: string;
   english: string;
 }
 

@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { VocabTerm } from '@/lib/vocab-data';
 import { useProgress } from '@/lib/useProgress';
 
 interface TermWithDomain extends VocabTerm { domain: string; }
-
 interface Props { allTerms: TermWithDomain[]; }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -17,73 +16,83 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const BATCH = 20;
+function parseHindi(h: string) {
+  const m = h.match(/^(.+?)\s*\(([^)]+)\)/);
+  return m ? { script: m[1].trim(), roman: m[2].trim() } : { script: h, roman: '' };
+}
+
+function getOptions(correct: TermWithDomain, pool: TermWithDomain[]): TermWithDomain[] {
+  const others = shuffle(pool.filter(t => t.hindi !== correct.hindi));
+  return shuffle([correct, ...others.slice(0, 3)]);
+}
+
+const BATCH = 15;
 
 export default function VocabQuizClient({ allTerms }: Props) {
-  const [queue, setQueue]         = useState<TermWithDomain[]>(() => shuffle(allTerms).slice(0, BATCH));
+  const [restartKey, setRestartKey] = useState(0);
+  const [queue]    = useState<TermWithDomain[]>(() => shuffle(allTerms).slice(0, BATCH));
   const [index, setIndex]         = useState(0);
-  const [input, setInput]         = useState('');
-  const [result, setResult]       = useState<'correct' | 'wrong' | null>(null);
+  const [selected, setSelected]   = useState<string | null>(null);
   const [score, setScore]         = useState(0);
   const [done, setDone]           = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [options, setOptions]     = useState<TermWithDomain[]>([]);
   const { recordVocabKnown } = useProgress();
 
   const term = queue[index];
 
-  const submit = useCallback(() => {
-    if (!term || result !== null) return;
-    const correct = input.trim().toLowerCase() === term.manglish.trim().toLowerCase();
-    setResult(correct ? 'correct' : 'wrong');
-    if (correct) { setScore(s => s + 1); recordVocabKnown(1); }
-  }, [term, input, result, recordVocabKnown]);
+  useEffect(() => {
+    if (term) setOptions(getOptions(term, allTerms));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
 
-  const next = useCallback(() => {
-    if (index < queue.length - 1) {
-      setIndex(i => i + 1);
-      setInput('');
-      setResult(null);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    } else {
-      setDone(true);
+  const pick = useCallback((opt: TermWithDomain) => {
+    if (selected !== null) return;
+    setSelected(opt.hindi);
+    if (opt.hindi === term.hindi) {
+      setScore(s => s + 1);
+      recordVocabKnown(1);
     }
-  }, [index, queue.length]);
+    setTimeout(() => {
+      if (index < queue.length - 1) {
+        setIndex(i => i + 1);
+        setSelected(null);
+      } else {
+        setDone(true);
+      }
+    }, 1400);
+  }, [selected, term, index, queue.length, recordVocabKnown]);
 
   const restart = useCallback(() => {
-    setQueue(shuffle(allTerms).slice(0, BATCH));
-    setIndex(0);
-    setInput('');
-    setResult(null);
-    setScore(0);
-    setDone(false);
-  }, [allTerms]);
+    setRestartKey(k => k + 1);
+  }, []);
 
-  useEffect(() => {
-    const onKey = (e: globalThis.KeyboardEvent) => {
-      if (e.key === 'Enter') { result === null ? submit() : next(); }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [result, submit, next]);
+  if (restartKey > 0) {
+    return <VocabQuizClient allTerms={allTerms} />;
+  }
 
   if (done) {
+    const pct = Math.round((score / queue.length) * 100);
     return (
-      <div className="flex flex-col items-center py-16 gap-5 text-center animate-popIn">
-        <div className="text-6xl animate-bounce-slow">{score === queue.length ? '🌟' : '💪'}</div>
-        <h2 className="text-xl font-bold text-slate-800">
-          {score === queue.length ? 'Perfect score!' : `${score} / ${queue.length} correct`}
-        </h2>
+      <div className="flex flex-col items-center py-12 gap-5 text-center animate-popIn">
+        <div className="text-7xl">{score === queue.length ? '🌟' : score >= queue.length * 0.7 ? '💪' : '📚'}</div>
+        <div>
+          <h2 className="text-2xl font-bold text-slate-900">{score} / {queue.length}</h2>
+          <p className="text-slate-500 text-sm mt-1">{pct}% correct</p>
+        </div>
+        <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+          <div
+            className={`h-full rounded-full transition-all duration-700 ${score === queue.length ? 'bg-emerald-500' : 'bg-indigo-500'}`}
+            style={{ width: `${pct}%` }}
+          />
+        </div>
         <p className="text-slate-500 text-sm max-w-xs">
-          {score === queue.length ? 'You nailed every word!' : 'Keep practising — you\'ll get them all!'}
+          {score === queue.length ? 'Perfect! Every word correct.' : score >= queue.length * 0.7 ? 'Great work — keep practising!' : 'Keep going, you\'ll get there!'}
         </p>
-        <div className="flex gap-3">
-          <button
-            onClick={restart}
-            className="px-5 py-2.5 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all"
-          >
-            New batch
+        <div className="flex gap-3 w-full">
+          <button onClick={restart} className="flex-1 py-3 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
+            Try again
           </button>
-          <a href="/" className="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-all">
+          <a href="/" className="flex-1 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-all text-center">
             Back to home
           </a>
         </div>
@@ -91,71 +100,70 @@ export default function VocabQuizClient({ allTerms }: Props) {
     );
   }
 
-  if (!term) return null;
+  if (!term || options.length < 2) return null;
+
+  const pct = Math.round((index / queue.length) * 100);
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center gap-3">
-        <span className="text-sm text-slate-500">
-          <span className="font-bold text-slate-800">{index + 1}</span> of {queue.length}
-        </span>
-        <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+    <div className="space-y-5">
+      {/* Progress */}
+      <div className="space-y-1.5">
+        <div className="flex justify-between text-xs text-slate-400">
+          <span><span className="font-semibold text-slate-700">{index + 1}</span> of {queue.length}</span>
+          <span className="text-emerald-600 font-semibold">{score} correct</span>
+        </div>
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
           <div
             className="h-full bg-indigo-500 rounded-full transition-all duration-300"
-            style={{ width: `${((index + 1) / queue.length) * 100}%` }}
+            style={{ width: `${pct}%` }}
           />
         </div>
-        <span className="text-xs text-emerald-600 font-medium">{score} correct</span>
       </div>
 
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center animate-popIn">
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">English</p>
-        <p className="text-2xl font-bold text-slate-800 mb-2">{term.english}</p>
-        <span className="inline-block text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{term.domain}</span>
+      {/* Question card */}
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm px-6 py-8 text-center">
+        <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">What is the Hindi for…</p>
+        <p className="text-3xl font-bold text-slate-900 leading-tight">{term.english}</p>
+        <span className="inline-block mt-3 text-xs text-slate-400 bg-slate-100 px-3 py-1 rounded-full">{term.domain}</span>
       </div>
 
-      <div className="space-y-2">
-        <input
-          ref={inputRef}
-          value={input}
-          onChange={e => { if (result === null) setInput(e.target.value); }}
-          placeholder="Type the Manglish word…"
-          disabled={result !== null}
-          autoFocus
-          className={`w-full px-4 py-3 text-base rounded-xl border-2 focus:outline-none transition-all ${
-            result === 'correct' ? 'border-emerald-400 bg-emerald-50 text-emerald-800' :
-            result === 'wrong'   ? 'border-red-300 bg-red-50 text-red-800' :
-            'border-slate-200 bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100'
-          }`}
-        />
+      {/* Multiple choice options */}
+      <div className="grid grid-cols-2 gap-3">
+        {options.map((opt, i) => {
+          const { script, roman } = parseHindi(opt.hindi);
+          const isCorrect = opt.hindi === term.hindi;
+          const isSelected = selected === opt.hindi;
 
-        {result === 'wrong' && (
-          <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700 animate-slideDown">
-            Correct answer: <span className="font-bold">{term.manglish}</span>
-          </div>
-        )}
-        {result === 'correct' && (
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 text-sm text-emerald-700 animate-slideDown">
-            Correct!
-          </div>
-        )}
+          let bg = 'bg-white border-slate-200 hover:border-indigo-300 hover:shadow-sm active:scale-[0.97]';
+          if (selected !== null) {
+            if (isCorrect) bg = 'bg-emerald-50 border-emerald-400 shadow-sm';
+            else if (isSelected) bg = 'bg-red-50 border-red-400';
+            else bg = 'bg-white border-slate-100 opacity-50';
+          }
+
+          return (
+            <button
+              key={i}
+              onClick={() => pick(opt)}
+              className={`rounded-2xl border-2 px-4 py-4 text-center transition-all cursor-pointer ${bg}`}
+            >
+              <p className="text-xl font-bold text-slate-900 leading-snug">{script}</p>
+              {roman && <p className="text-xs text-slate-400 mt-1 font-medium">{roman}</p>}
+              {selected !== null && isCorrect && (
+                <span className="inline-block mt-1.5 text-xs font-bold text-emerald-600">✓ correct</span>
+              )}
+              {selected !== null && isSelected && !isCorrect && (
+                <span className="inline-block mt-1.5 text-xs font-bold text-red-500">✗ wrong</span>
+              )}
+            </button>
+          );
+        })}
       </div>
 
-      {result === null ? (
-        <button
-          onClick={submit}
-          disabled={!input.trim()}
-          className="w-full py-4 rounded-2xl bg-indigo-600 text-white text-base font-bold hover:bg-indigo-700 active:scale-[0.98] transition-all shadow-md shadow-indigo-200 disabled:opacity-40"
-        >
-          Check
-        </button>
-      ) : (
-        <button
-          onClick={next}
-          className="w-full py-4 rounded-2xl bg-indigo-600 text-white text-base font-bold hover:bg-indigo-700 active:scale-[0.98] transition-all shadow-md shadow-indigo-200"
-        >
-          {index < queue.length - 1 ? 'Next →' : 'See results'}
-        </button>
+      {selected !== null && (
+        <p className="text-xs text-slate-400 text-center animate-fadeIn">
+          {selected === term.hindi ? '✓ Correct! Moving on…' : 'Wrong — the correct answer is highlighted above'}
+        </p>
       )}
     </div>
   );

@@ -19,7 +19,7 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-base font-bold text-slate-900 leading-none">NAATI CCL Practice</h1>
-            <p className="text-xs text-slate-400 mt-0.5">Malayalam · English</p>
+            <p className="text-xs text-slate-400 mt-0.5">Hindi · English</p>
           </div>
         </div>
       </header>

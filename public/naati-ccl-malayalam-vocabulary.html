@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAATI CCL Malayalam — Study Mode</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0EEE9; --surface: #FFFFFF; --surface2: #F7F6F2;
+  --ink: #1A1A2C; --ink2: #5A5A72; --accent: #3B5BDB; --accent-dim: #EEF2FF;
+  --got: #2F9E44; --got-dim: #EBFBEE; --retry: #D9480F; --retry-dim: #FFF4E6;
+  --border: #E2E0D8; --radius: 14px;
+}
+body { background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 10; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.logo-text { font-size: 15px; font-weight: 600; }
+.logo-sub { font-size: 12px; color: var(--ink2); }
+.header-stats { display: flex; gap: 20px; font-size: 13px; color: var(--ink2); }
+.stat-val { font-weight: 700; color: var(--ink); }
+.progress-track { height: 3px; background: var(--border); position: sticky; top: 56px; z-index: 9; }
+.progress-fill { height: 100%; background: var(--got); transition: width 0.4s ease; width: 0%; }
+.domain-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; overflow-x: auto; display: flex; gap: 6px; align-items: center; height: 52px; scrollbar-width: none; position: sticky; top: 59px; z-index: 8; }
+.domain-bar::-webkit-scrollbar { display: none; }
+.chip { flex-shrink: 0; padding: 5px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 500; cursor: pointer; border: 1.5px solid transparent; background: var(--surface2); color: var(--ink2); transition: all 0.15s; white-space: nowrap; user-select: none; }
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.active { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
+main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 24px 64px; gap: 24px; max-width: 640px; width: 100%; margin: 0 auto; }
+.score-row { display: flex; gap: 8px; width: 100%; }
+.score-pill { flex: 1; padding: 8px 12px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.score-pill-got { background: var(--got-dim); color: var(--got); }
+.score-pill-retry { background: var(--retry-dim); color: var(--retry); }
+.score-pill-rem { background: var(--surface2); color: var(--ink2); }
+.score-num { font-size: 1.2rem; font-weight: 700; }
+.score-label { font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+.card-wrap { width: 100%; perspective: 1200px; cursor: pointer; }
+.card { width: 100%; min-height: 240px; position: relative; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); border-radius: var(--radius); }
+.card.flipped { transform: rotateY(180deg); }
+.card-face { position: absolute; inset: 0; border-radius: var(--radius); backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 36px; text-align: center; border: 1.5px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.06); background: var(--surface); }
+.card-back { transform: rotateY(180deg); }
+.card-domain { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--accent-dim); padding: 3px 10px; border-radius: 20px; margin-bottom: 28px; }
+.card-word { font-size: 2rem; font-weight: 700; color: var(--ink); line-height: 1.2; text-wrap: balance; letter-spacing: -0.5px; }
+.card-hint { margin-top: 20px; font-size: 12.5px; color: var(--ink2); }
+.card-manglish { font-size: 1.6rem; font-weight: 600; color: var(--accent); font-style: italic; line-height: 1.3; text-wrap: balance; }
+.card-english-small { margin-bottom: 16px; font-size: 13px; color: var(--ink2); font-weight: 500; }
+.actions { display: flex; gap: 12px; width: 100%; }
+.btn { flex: 1; padding: 14px 20px; border-radius: 12px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: transform 0.1s, opacity 0.15s; }
+.btn:active { transform: scale(0.97); }
+.btn:disabled { opacity: 0.35; cursor: default; }
+.btn-got { background: var(--got); color: #fff; box-shadow: 0 2px 8px rgba(47,158,68,0.3); }
+.btn-retry { background: var(--retry-dim); color: var(--retry); border: 1.5px solid #ffcdb2; }
+.nav-row { display: flex; gap: 12px; width: 100%; align-items: center; justify-content: center; }
+.btn-nav { background: var(--surface); border: 1.5px solid var(--border); color: var(--ink); padding: 9px 18px; border-radius: 10px; font-size: 13.5px; font-weight: 500; cursor: pointer; transition: border-color 0.15s; }
+.btn-nav:hover { border-color: var(--accent); color: var(--accent); }
+.btn-shuffle { background: var(--surface); border: 1.5px solid var(--border); color: var(--ink2); padding: 9px 14px; border-radius: 10px; font-size: 13px; cursor: pointer; }
+.btn-shuffle:hover { border-color: var(--accent); color: var(--accent); }
+.empty { text-align: center; padding: 60px 0; color: var(--ink2); }
+.empty h2 { font-size: 1.4rem; color: var(--ink); margin-bottom: 8px; }
+.empty p { font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+.btn-reset { background: var(--accent); color: #fff; padding: 10px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; margin: 4px; }
+.btn-reset.retry-btn { background: var(--retry); }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .progress-fill { transition: none; } }
+@media (max-width: 480px) { .card-word { font-size: 1.6rem; } .card-manglish { font-size: 1.3rem; } .header-stats { display: none; } }
+</style>
+</head>
+<body>
+<script type="application/json" id="vocab-data">[{"id":"education","domain":"Education","terms":[{"english":"course","manglish":"paadyakramam/sreni"},{"english":"post graduate","manglish":"birudaandara birudam"},{"english":"graduation","manglish":"birudam"},{"english":"graduate","manglish":"birudadaari"},{"english":"college","manglish":"kalaalayam"},{"english":"university","manglish":"sarvakalaasaala"},{"english":"teacher","manglish":"adyaapika/adyaapakan"},{"english":"friends","manglish":"snehithar/ suhruthukkal"},{"english":"eligibility","manglish":"yogyatha"},{"english":"term","manglish":"kaalaavadhi"},{"english":"branch","manglish":"shaakha"},{"english":"mistakes","manglish":"thettukal"},{"english":"exam","manglish":"pareeksha"},{"english":"qualification","manglish":"yogyatha/ arhatha"},{"english":"document transalation","manglish":"pramaanam vivarthanam cheyyuka"},{"english":"excellent","manglish":"mikachath"},{"english":"appreciate","manglish":"abinandikkuka"},{"english":"satisfied","manglish":"samthripthanakuka"},{"english":"tour","manglish":"sanchaaram"},{"english":"lake","manglish":"thadaakam"},{"english":"lessons","manglish":"paadam"},{"english":"Music classes","manglish":"sangeetha paadangal"},{"english":"instruments","manglish":"upakaranangal"},{"english":"swimming classes","manglish":"neenthal classukal"},{"english":"background","manglish":"pashchaathalam"},{"english":"positions","manglish":"sthaanam"},{"english":"memmory","manglish":"orma"},{"english":"thinking capacity","manglish":"chinthaa sheshi"},{"english":"request","manglish":"apeksha/ abyarthana"},{"english":"knowledge","manglish":"arivu"},{"english":"summary","manglish":"saaraamsam/ samgraham"},{"english":"scheme","manglish":"padhathi"},{"english":"scholarship","manglish":"paandithyathinaayi labikkunna vethanam"},{"english":"profit","manglish":"laabham"},{"english":"pass","manglish":"jayikkuka"},{"english":"continue","manglish":"thudaruka"},{"english":"undergraduate","manglish":"sarva kalaasaala birudam nediyittillatha vidyaarthi"},{"english":"contribute","manglish":"sambaavana cheyyuka"},{"english":"attendance","manglish":"haajarath"},{"english":"certificate","manglish":"sanad/ praamaana pathram"},{"english":"enrolment","manglish":"pravesanam"},{"english":"assignment","manglish":"niyoga pathram"},{"english":"tuition fee","manglish":"paadana shulkam"},{"english":"campus","manglish":"vidyaalaya praangkanam"},{"english":"semester","manglish":"ardha vaarshikam"},{"english":"principal","manglish":"pradhaana adyaapakan"},{"english":"lecture","manglish":"pravachanam"},{"english":"library","manglish":"granthashaala"},{"english":"thesis","manglish":"pradhaana prabandham"},{"english":"internship","manglish":"parisheelanam"},{"english":"curriculum","manglish":"paadya padhathi"},{"english":"fees","manglish":"shulkam"},{"english":"deadline","manglish":"avasaana theeyathi"},{"english":"research paper","manglish":"gaveshana pathram"},{"english":"student loan","manglish":"vidyaarthi vaayppa"},{"english":"results","manglish":"phalam"},{"english":"subject","manglish":"vishayam"},{"english":"grade","manglish":"greddu/ tharam"}]},{"id":"housing","domain":"Housing","terms":[{"english":"Community cente","manglish":"saamoohika kendram"},{"english":"Poeple","manglish":"janangal"},{"english":"Group","manglish":"samooham"},{"english":"Team","manglish":"sangam"},{"english":"Family members","manglish":"kudumbaangangal"},{"english":"Housing","manglish":"paarppidam"},{"english":"Resident","manglish":"sthala vaasi"},{"english":"residence","manglish":"sthiravaasam/griham"},{"english":"rent","manglish":"vaadaka"},{"english":"tenant","manglish":"vaadakakkaar"},{"english":"cheque","manglish":"dhana vinimaya cheett"},{"english":"savings account","manglish":"sambadya account"},{"english":"bank loan","manglish":"bank vaayppa"},{"english":"rental agreement","manglish":"vaadaka karaar"},{"english":"housing department","manglish":"bhavana vakupp"},{"english":"mortgage","manglish":"panayappeduthuka"},{"english":"instalment","manglish":"thavanakal"},{"english":"monthly plan","manglish":"prathimaasa padhathi"},{"english":"yearly plan","manglish":"vaarshika padhathi"},{"english":"planning","manglish":"aasoothranam"},{"english":"policy","manglish":"nayam"},{"english":"reference number","manglish":"soochana sankya"},{"english":"house owner","manglish":"veettudamasthan"},{"english":"landlords","manglish":"boovudamakal/ janmi"},{"english":"purchase","manglish":"vaangal"},{"english":"shopping mall","manglish":"vilpana kendram"},{"english":"train station","manglish":"theevandi kathirippu kendram"},{"english":"working hours","manglish":"joli samayam/pravarthana samayam"},{"english":"public transport","manglish":"pothu gathaagatham"},{"english":"sale deed","manglish":"vilpana karaar"},{"english":"fence","manglish":"veli"},{"english":"backyard","manglish":"pinmuttam"},{"english":"frontyard","manglish":"munmuttam"},{"english":"balcony","manglish":"nilamuttam"},{"english":"footpath/road","manglish":"nadavazhi/ nadappatha"},{"english":"loan","manglish":"vaayppa"},{"english":"lawn","manglish":"pulthakidi"},{"english":"grass cutting","manglish":"pullu vettuka"},{"english":"equal instalment","manglish":"thulya thavana"},{"english":"payment","manglish":"panam adaykkal/ kodukkal"},{"english":"gross income","manglish":"aake varumanam"},{"english":"assets","manglish":"aasthi"},{"english":"property","manglish":"swath/vasthu"},{"english":"property tax","manglish":"vasthu nikuthi"},{"english":"neighbors","manglish":"ayalvaasikal"},{"english":"neighborhood","manglish":"ayalpakkam"},{"english":"youngsters","manglish":"yuvaakkal/ cheruppakkar"},{"english":"seniors","manglish":"muthirnnavar"},{"english":"parents","manglish":"maathapithakkal"},{"english":"learning","manglish":"padanam"},{"english":"apartment","manglish":"bavanam"},{"english":"expensive","manglish":"vila koodiyath"},{"english":"cheap","manglish":"vila kuranjath"},{"english":"collection","manglish":"shekharam/ samaaharam"},{"english":"earning","manglish":"sambadyam"},{"english":"qualified","manglish":"yogyatha ulla"},{"english":"reliable","manglish":"viswasaneeyamaaya"},{"english":"city","manglish":"nagaram/pattanam"},{"english":"seller","manglish":"vilpanakkaran"},{"english":"buyer","manglish":"vangunnayaal"},{"english":"amenities","manglish":"soukaryangal"},{"english":"comfortabale","manglish":"sukhakaramaaya"},{"english":"convenient","manglish":"soukryapradamaaya"},{"english":"privacy","manglish":"swakaaryatha"},{"english":"previous","manglish":"munpathe/ munpulla"},{"english":"house shifting","manglish":"veed maattam"},{"english":"annual waste","manglish":"vaarshika maalinyam"},{"english":"original","manglish":"yathaarthamaaya"},{"english":"packers","manglish":"pothiyunnavar"},{"english":"expected time","manglish":"pratheekshicha samayam"},{"english":"weather","manglish":"kaalavastha"},{"english":"cyclone","manglish":"kodunkaatt"},{"english":"strong winds","manglish":"shakthamaaya kaatt"},{"english":"cutting trees","manglish":"vrikshanagl murikkal"},{"english":"forcast","manglish":"pravachanam"},{"english":"short notice","manglish":"hriswa ariyipp"},{"english":"paint buckets","manglish":"chaaya thottikal"},{"english":"divorce","manglish":"vivaaha mochanam"},{"english":"Live seperately","manglish":"vere thaamasikkuka"},{"english":"council rates","manglish":"nagarasabha nirakk"},{"english":"bond refund","manglish":"amaanath thirike nalkuka"},{"english":"real estate agent","manglish":"bhoomi vikraya prathinidhi"},{"english":"body corporate","manglish":"koottu udamasthitham"},{"english":"settlement date","manglish":"kaara kootal theeyathi"},{"english":"inspection report","manglish":"parishodhana vivara pathram"},{"english":"utilities","manglish":"soukaryangal"},{"english":"maintenance","manglish":"paalana poshana"},{"english":"eviction notice","manglish":"oozhiyakkuka ariyippu"},{"english":"suburb","manglish":"nagara padham"},{"english":"council approval","manglish":"nagarasabha anumathi"},{"english":"building permit","manglish":"nirmana anumathi"},{"english":"renovation","manglish":"parishkaranam"},{"english":"electricity bill","manglish":"vidhyuth kaadanu"},{"english":"water bill","manglish":"vella kaadanu"}]},{"id":"consumer-affairs","domain":"Consumer Affairs","terms":[{"english":"Department","manglish":"shaakha"},{"english":"consumer law","manglish":"upabokthru niyamam"},{"english":"declaration form","manglish":"prathinjaa pathram"},{"english":"government","manglish":"sarkkaar/ baranakoodam"},{"english":"legal system","manglish":"niyama vyavastha"},{"english":"punishment","manglish":"shiksha"},{"english":"penalty","manglish":"pizha"},{"english":"charges","manglish":"aaropanam"},{"english":"arrest","manglish":"bandhikkuka"},{"english":"prohibited","manglish":"niroodikkuka"},{"english":"stolen","manglish":"moshticha"},{"english":"court","manglish":"kodathi"},{"english":"claim","manglish":"avakasam/ avakaasa vaadam"},{"english":"Insurance","manglish":"rakshabogam/ suraksha/nastotharavaaditham"},{"english":"disputes","manglish":"tharkkangal"},{"english":"investment","manglish":"muthalmudakk/nikshepam"},{"english":"concern","manglish":"aashanka/ulkanda"},{"english":"share holder","manglish":"ohari udama"},{"english":"job capacity","manglish":"thozhil sheshi"},{"english":"sick note","manglish":"asukha kuripp"},{"english":"leave","manglish":"avadhi/ viduka"},{"english":"licence","manglish":"anumathi"},{"english":"passport","manglish":"yaathraanuvaadha pathram"},{"english":"representative","manglish":"prathinidhi"},{"english":"Guarentee","manglish":"urapp"},{"english":"Annual report","manglish":"vaarshika vivara kuripp"},{"english":"commodities","manglish":"charakkukal/ulppannangal"},{"english":"online registration","manglish":"online pathiykkal"},{"english":"communication","manglish":"aashaya vinimayam"},{"english":"fight","manglish":"poruthuka/ poraduka/ vazhakk"},{"english":"warranty","manglish":"prathijnja/ jaaminam"},{"english":"consumer rights","manglish":"upabokthru avakasangal"},{"english":"product recall","manglish":"ulpanna thirika edukkal"},{"english":"complaint form","manglish":"paraathi pathram"},{"english":"dispute resolution","manglish":"tharku niraakaranam"},{"english":"compensation","manglish":"nashtaparihaaram"},{"english":"misleading advertising","manglish":"thettidakkum parasyam"},{"english":"refund policy","manglish":"thirike panam nalkuka nayam"},{"english":"faulty goods","manglish":"thettulla saadanangal"},{"english":"cooling off period","manglish":"manampiriyum kaalavadhi"},{"english":"consumer tribunal","manglish":"upabokthru tharku peedham"},{"english":"online shopping","manglish":"online vilpana"},{"english":"delivery","manglish":"yeettikodu"},{"english":"exchange","manglish":"pakaara nalkuka"},{"english":"price tag","manglish":"vila cheett"}]},{"id":"finance","domain":"Finance","terms":[{"english":"financial institution","manglish":"danakaarya sthapanam"},{"english":"online application form","manglish":"online apeksha pathram"},{"english":"cash","manglish":"panam"},{"english":"cost","manglish":"chilav"},{"english":"advisor","manglish":"upadeshtaav"},{"english":"review","manglish":"avalokanam nadathuka"},{"english":"inspection","manglish":"parishodana"},{"english":"floor","manglish":"nila/thara"},{"english":"finance department","manglish":"sambathika vakupp"},{"english":"economics","manglish":"saambathika saasthram"},{"english":"personal finance","manglish":"swakaarya danakaaryam"},{"english":"sector","manglish":"mekhala"},{"english":"structure","manglish":"gatana"},{"english":"currency","manglish":"naanayam/ panam"},{"english":"meanwhile","manglish":"ithinidayil"},{"english":"federal","manglish":"samyukthamaaya"},{"english":"enterprise","manglish":"samrambam"},{"english":"bond","manglish":"kada pathram/ karaar pathram"},{"english":"regulation","manglish":"niyathranam"},{"english":"intrest rate","manglish":"palisha nirakk"},{"english":"deposit","manglish":"nikshepam"},{"english":"superannuation","manglish":"nivrutthi laabham"},{"english":"budget","manglish":"aayavyaya pattika"},{"english":"tax return","manglish":"nikuthi vivara pathram"},{"english":"credit score","manglish":"vilmathi vishwaasa sankya"},{"english":"overdraft","manglish":"khadaya athinetham edukkuka"},{"english":"dividend","manglish":"laabha vikasam"},{"english":"financial advisor","manglish":"sambathika upadeshtaav"},{"english":"expenditure","manglish":"chilavukal"},{"english":"account number","manglish":"khaata sankya"},{"english":"transaction","manglish":"kaadavayarram"},{"english":"withdrawal","manglish":"panam thirika edukkuka"},{"english":"credit card","manglish":"vilmathi cheett"},{"english":"bank statement","manglish":"bank vivara pathram"},{"english":"pension","manglish":"vardakya vethanam"},{"english":"income tax","manglish":"aadaaya nikuthi"},{"english":"capital","manglish":"mudal"},{"english":"bankruptcy","manglish":"paana paaniyam"},{"english":"receipt","manglish":"raseeth"},{"english":"transfer","manglish":"panam maattuka"},{"english":"debit card","manglish":"debit cheett"}]},{"id":"insurance","domain":"Insurance","terms":[{"english":"private insurance","manglish":"swakaarya suraksha"},{"english":"Health insurance card","manglish":"arogya suraksha cheett"},{"english":"lost card","manglish":"nashtappetta cheett"},{"english":"ambulance cover","manglish":"rogi gathaagath vaahana pariraksha"},{"english":"ambulance","manglish":"jangama chikilsaalayam"},{"english":"car insurance","manglish":"car rakshabogam"},{"english":"identity proof","manglish":"thirichariyal rekha"},{"english":"driving licence","manglish":"adhikaara pooritha vaahana anumathi"},{"english":"liability","manglish":"baadyatha"},{"english":"additional coverage","manglish":"adhika pariraksha"},{"english":"policy holder","manglish":"padathi edutha aal"},{"english":"damaged part","manglish":"kedaaya baagam"},{"english":"installation","manglish":"pradisthaapanam"},{"english":"contract","manglish":"karaar"},{"english":"amount covered","manglish":"aake thuka"},{"english":"comprehensive cover","manglish":"samagramaaya suraksha"},{"english":"insured","manglish":"nashtotharavaaditham cheyyuka"},{"english":"lease agreement","manglish":"vaadaka karaar"},{"english":"medical expenses","manglish":"chikilsa chilavukal"},{"english":"accident","manglish":"apakadam"},{"english":"incident","manglish":"sambavam"},{"english":"misunderstanding","manglish":"thettidarikkuka"},{"english":"collision","manglish":"koottiyidi"},{"english":"period","manglish":"kaalagattam"},{"english":"annual","manglish":"vaarshikam"},{"english":"monthly","manglish":"prathimaasam"},{"english":"premium term","manglish":"tavana vyavastha"},{"english":"couple","manglish":"dampathikal"},{"english":"treatment","manglish":"chikilsa"},{"english":"observation","manglish":"nireekshanam"},{"english":"frequency","manglish":"aavarthi"},{"english":"existing policy","manglish":"nilavilulla nayam"},{"english":"social service","manglish":"saamoohika sevanam"},{"english":"gender","manglish":"lingbedam"},{"english":"volunteer","manglish":"sannadha sevakan"},{"english":"social workers","manglish":"saamoohika pravarthakar"},{"english":"inequality","manglish":"asamathwam"},{"english":"physical","manglish":"shaareerikamaaya"},{"english":"age pension","manglish":"vaardakya pension"},{"english":"useful","manglish":"upayogapradam"},{"english":"development","manglish":"vikasanam"},{"english":"diability","manglish":"vaikalyam"},{"english":"civil right","manglish":"pouraavakaasam"},{"english":"caring","manglish":"karuthalulla"},{"english":"stay home","manglish":"veettil thaamasikkuka"},{"english":"social service","manglish":"samoohya pravarthanam"},{"english":"social welfare","manglish":"saamoohya kshemam"},{"english":"skills","manglish":"kazhivukal"},{"english":"individual","manglish":"vyakthikatha"},{"english":"describing","manglish":"vivarikkunnu"},{"english":"implemented","manglish":"nadappilaakki"},{"english":"assumption","manglish":"daarana"},{"english":"premium","manglish":"prathiphala tavana"},{"english":"excess","manglish":"ninakam kazhikkunna tuka"},{"english":"claim form","manglish":"nashtam apekshikunna pathram"},{"english":"renewal","manglish":"punarnavaeekaranam"},{"english":"beneficiary","manglish":"laabha gruheetta"},{"english":"exclusion","manglish":"oozhiyakkappettath"},{"english":"endorsement","manglish":"padathi thirutham"},{"english":"lapse","manglish":"kaalavadhi kazhinju nirttuka"},{"english":"third party","manglish":"moonnaam kaksham"},{"english":"travel insurance","manglish":"yaathra suraksha"},{"english":"life insurance","manglish":"jeevitha suraksha"},{"english":"home insurance","manglish":"veedu suraksha"},{"english":"public liability","manglish":"pothu baadyatha"},{"english":"claim settlement","manglish":"nashtaparihaara theerpp"},{"english":"policy number","manglish":"padathi sankya"}]},{"id":"legal","domain":"Legal","terms":[{"english":"Legal aid","manglish":"niyama sahaayam"},{"english":"legal support","manglish":"niyaparamaaya pinthuna"},{"english":"Lawyer","manglish":"abibaashakan"},{"english":"court","manglish":"kodathi"},{"english":"Home affairs","manglish":"veettile karyangal/ aabyantharam"},{"english":"secretary","manglish":"kaarya darshi"},{"english":"Grant","manglish":"anuvadhikkuka"},{"english":"relevant","manglish":"prathyakshamaaya"},{"english":"transfer","manglish":"sthalam maattam"},{"english":"minimum","manglish":"kuranjath"},{"english":"maximum","manglish":"paramaavadhi"},{"english":"intreperter","manglish":"vyaakyaathaav/ rachayithaav"},{"english":"Alternatively","manglish":"pakaramaayi"},{"english":"certainly","manglish":"theerchayayum"},{"english":"legal documents","manglish":"niyamaparamaaya rekhakal"},{"english":"relevant evidence","manglish":"uchithamaaya thelivukal"},{"english":"worker","manglish":"thozhilaali"},{"english":"discount","manglish":"kizhivu"},{"english":"on duty","manglish":"chumathalayil aan"},{"english":"witness","manglish":"saakshi"},{"english":"clue","manglish":"soochana"},{"english":"comprehensive","manglish":"samagramaaya"},{"english":"reasonable","manglish":"yukthisahamaaya/nyaayamaaya"},{"english":"identity check","manglish":"thirichariyal parishodhana"},{"english":"funds","manglish":"dhanam"},{"english":"factors","manglish":"gatakangal"},{"english":"proficiency","manglish":"praaveenyam"},{"english":"mandatory","manglish":"nirbandhitham"},{"english":"statement","manglish":"prasthaavana"},{"english":"legal proceedings","manglish":"niyaparamaaya"},{"english":"over speed","manglish":"amitha vegam"},{"english":"overseas","manglish":"videsham"},{"english":"risk","manglish":"apakada saadyatha"},{"english":"attack","manglish":"aakramanam"},{"english":"complain","manglish":"paraathi"},{"english":"Rights","manglish":"avakaasangal"},{"english":"illegal","manglish":"niyama virudham"},{"english":"crime","manglish":"kuttakrithyam"},{"english":"judge","manglish":"nyaayathipan"},{"english":"testify","manglish":"saakshikarikkuka"},{"english":"affidavit","manglish":"sathya pramaana pathram"},{"english":"bail","manglish":"aapath jaaminam"},{"english":"fine","manglish":"pirha"},{"english":"verdict","manglish":"tharppana"},{"english":"appeal","manglish":"maruparisodhana"},{"english":"plaintiff","manglish":"vaadi"},{"english":"defendant","manglish":"prathivaadi"},{"english":"solicitor","manglish":"niyama upadeshtaav"},{"english":"power of attorney","manglish":"apaar shaakti pathram"},{"english":"restraining order","manglish":"nivarana aajna"},{"english":"custody","manglish":"paalana adhikaaram"},{"english":"mediation","manglish":"samaadhaana niyojanam"},{"english":"hearing","manglish":"vichaarana"},{"english":"contract breach","manglish":"karaar langan"},{"english":"conviction","manglish":"kuttam sthireekarichu"},{"english":"acquittal","manglish":"vimukthi"},{"english":"magistrate","manglish":"nyaaya magistraatt"},{"english":"police report","manglish":"policce vivara pathram"},{"english":"civil case","manglish":"paurava vazhakk"},{"english":"criminal record","manglish":"kuttakrutha rekha"}]},{"id":"business","domain":"Business","terms":[{"english":"Bussiness","manglish":"vyaaparam"},{"english":"advertisement","manglish":"parasyam"},{"english":"buy","manglish":"vaanguka"},{"english":"consumer/ consumer","manglish":"upabokthaav"},{"english":"price/rate","manglish":"vila/ nirakk"},{"english":"cost","manglish":"chilav"},{"english":"afford","manglish":"thaangaanavunna"},{"english":"consumer law","manglish":"upabokthru niyamam"},{"english":"refund","manglish":"thirike kodukkal"},{"english":"replace","manglish":"maatti nalkuka"},{"english":"repair","manglish":"nannakkuka"},{"english":"reciept","manglish":"raseeth"},{"english":"manager","manglish":"nirvaahakan"},{"english":"bank loan","manglish":"bank vaayppa"},{"english":"legal system","manglish":"niyama vyavastha"},{"english":"tax number","manglish":"nikuthi sankhya"},{"english":"change","manglish":"maattam"},{"english":"charge","manglish":"vila"},{"english":"bussiness owners","manglish":"vyaapara udamakal"},{"english":"place","manglish":"sthalam/ sthanam"},{"english":"negotiate","manglish":"charcha nadathuka/koodiyaalochikkuka"},{"english":"price list","manglish":"vila nirakk/ vilavivarappattika"},{"english":"prospective buyer","manglish":"baaviyil vaangunnayaal"},{"english":"commission","manglish":"vyaapara prathifalam"},{"english":"competition","manglish":"malsaram"},{"english":"schedule","manglish":"pattika"},{"english":"meeting","manglish":"yogam/sammelanam"},{"english":"tax office","manglish":"nikuthi kaaryaalayam"},{"english":"colleague","manglish":"sahapravarthakar"},{"english":"advisor","manglish":"upadeshtaav"},{"english":"advise","manglish":"upadesham"},{"english":"representative","manglish":"prathinidhi"},{"english":"products","manglish":"ulpannam"},{"english":"intrested","manglish":"thaalparyam"},{"english":"import","manglish":"irakkumathi"},{"english":"damaged goods","manglish":"kedaaya saadanangal"},{"english":"finished goods","manglish":"poorthiyaaya vasthukkal"},{"english":"proposal","manglish":"nirdesham"},{"english":"bussiness plan","manglish":"vyaapara padhathi"},{"english":"supply","manglish":"vitharanam"},{"english":"demand","manglish":"aavasyam"},{"english":"popular","manglish":"janapriyam"},{"english":"successful","manglish":"vijayapradam/safalamaaya"},{"english":"news","manglish":"varthamaana pathram"},{"english":"agreement","manglish":"karaar/vyavastha"},{"english":"partnership","manglish":"panku udamasthitham"},{"english":"franchise","manglish":"anumathippatta vyaapara samrambham"},{"english":"trademark","manglish":"vyaapara mudra"},{"english":"invoice","manglish":"raseeth pathram"},{"english":"tender","manglish":"lelppadam"},{"english":"profit margin","manglish":"laabha anupaadam"},{"english":"shareholder","manglish":"panku udama"},{"english":"audit","manglish":"khaazhanaa parishodhana"},{"english":"entrepreneur","manglish":"udyamiyaal"},{"english":"market research","manglish":"vipani gaveshanam"},{"english":"startup","manglish":"puthiya thozhil thodakkam"},{"english":"cash flow","manglish":"panam varavu poku"},{"english":"interest rate","manglish":"palisha nirakk"},{"english":"target market","manglish":"lakshya vipani"},{"english":"brand","manglish":"vyaapara naama mudra"}]},{"id":"health","domain":"Health","terms":[{"english":"Health","manglish":"aarogyam"},{"english":"Left knee","manglish":"idathu kaalmutt"},{"english":"right knee","manglish":"valathu kaal mutt"},{"english":"hospital cover","manglish":"aashupathri chilavukal"},{"english":"injured","manglish":"parikketta"},{"english":"insurance claim","manglish":"rakshaboga nashtaparihaaram"},{"english":"prescription","manglish":"kurippadi"},{"english":"suggestion","manglish":"nirdesham"},{"english":"bones","manglish":"asthikal"},{"english":"psychologyst","manglish":"manasaasthraknjan"},{"english":"doctor","manglish":"bishagvaran/ vaidyan"},{"english":"speech therappist","manglish":"samasara parisheelakan"},{"english":"doctor appoinment","manglish":"vaidyante niyamanam/ vaidyante koodikkazhcha samayam"},{"english":"Many","manglish":"niravadhi"},{"english":"basic pack","manglish":"adisthaana padhathi"},{"english":"optical service","manglish":"kaazhcha sambandamaaya sevanangal"},{"english":"dental service","manglish":"dantha sevanangal"},{"english":"allowance","manglish":"bathha"},{"english":"feeling well","manglish":"sukham thonnunnu"},{"english":"examine","manglish":"parishodikkuka"},{"english":"sick note","manglish":"rogiyude cheett"},{"english":"pharmacy","manglish":"vaidya shaala"},{"english":"immune system","manglish":"roga prathiroda sheshi"},{"english":"stroke","manglish":"aagaatham"},{"english":"infection","manglish":"baadhikkuka"},{"english":"genetic disease","manglish":"janithaka rogam"},{"english":"dosage","manglish":"alav"},{"english":"diagnosed","manglish":"roga nirnayam"},{"english":"part time","manglish":"baagika samayam"},{"english":"visitors","manglish":"sandarshakar"},{"english":"full time","manglish":"muzhuvan samayam"},{"english":"research","manglish":"gaveshanam"},{"english":"confirmation","manglish":"sthireekaranam"},{"english":"isolation","manglish":"ottappetta"},{"english":"organic","manglish":"jaiva"},{"english":"life modification","manglish":"jeevitha parishkaranam"},{"english":"complication","manglish":"sankeernnam"},{"english":"operation","manglish":"shasthrakriya"},{"english":"patient transport","manglish":"rogikalude gathaagatham"},{"english":"govt sposored","manglish":"sarkkar prayojakar aaya"},{"english":"extreme cases","manglish":"theevramaaya casukal"},{"english":"support pension","manglish":"pinthunaa vardakyakaala vethanam"},{"english":"safety and assurance","manglish":"surakshayum urappum"},{"english":"healthy diet","manglish":"aarogyakaramaaya bakshanam"},{"english":"blood pressure","manglish":"raktha sammardam"},{"english":"diabetes","manglish":"madhura meham"},{"english":"cholesterol","manglish":"kozhuppu"},{"english":"vaccination","manglish":"krimi prathiroodha kuri"},{"english":"specialist","manglish":"visheshajan"},{"english":"referral","manglish":"oothukku viduka"},{"english":"x-ray","manglish":"shakshi chithram"},{"english":"allergy","manglish":"anaasakti"},{"english":"physiotherapy","manglish":"shareera chikilsa"},{"english":"emergency","manglish":"avasara sthhithi"},{"english":"nurse","manglish":"porichaarika"},{"english":"medication","manglish":"oushadham"},{"english":"follow-up","manglish":"thudar parishodana"},{"english":"mental health","manglish":"maanasika aarogyam"},{"english":"anxiety","manglish":"udvegam"},{"english":"depression","manglish":"nirasha"},{"english":"chronic illness","manglish":"maaraatha rogam"},{"english":"blood test","manglish":"raktha parishodana"},{"english":"rehabilitation","manglish":"punar vasathi"},{"english":"outpatient","manglish":"bahir rogi"}]},{"id":"office","domain":"Office","terms":[{"english":"Import","manglish":"irakkumathi"},{"english":"export","manglish":"kayattumathi"},{"english":"tax","manglish":"nikuthi"},{"english":"sales","manglish":"vilppana"},{"english":"profit","manglish":"laabam"},{"english":"loss","manglish":"nashtam"},{"english":"produce","manglish":"ulpaadippikkuka"},{"english":"industry","manglish":"vyavasaayam"},{"english":"conference","manglish":"sammelanam"},{"english":"meeting","manglish":"yogam"},{"english":"agenda","manglish":"vishayavivara pathrika"},{"english":"world wide","manglish":"lokamembaadum"},{"english":"international market","manglish":"anthaaraashta vipani"},{"english":"domestic market","manglish":"aabyanthara  vipani"},{"english":"revenue","manglish":"varumaanam"},{"english":"leaflet","manglish":"lakhulekha"},{"english":"innauguration","manglish":"ulgaadanam"},{"english":"department","manglish":"vakupp"},{"english":"branch","manglish":"shaakha"},{"english":"officer","manglish":"udyogasthan"},{"english":"function","manglish":"pravarthanam"},{"english":"broker","manglish":"dallaal"},{"english":"liability","manglish":"baadyatha"},{"english":"public","manglish":"pothu"},{"english":"private","manglish":"swakaarya"},{"english":"review","manglish":"avalokanam"},{"english":"additional","manglish":"adhika"},{"english":"request","manglish":"abyarthana"},{"english":"inflation","manglish":"vilakkayattam"},{"english":"idea","manglish":"aashayam"},{"english":"hike","manglish":"kayattam/vardanav"},{"english":"progress","manglish":"purogathi"},{"english":"increase","manglish":"vardikkuka"},{"english":"annual","manglish":"vaarshikam"},{"english":"building","manglish":"kettidam"},{"english":"appoinment","manglish":"niyamanam"},{"english":"resignation","manglish":"raaji"},{"english":"help","manglish":"sahaayam"},{"english":"if possible","manglish":"saadyamenkil"},{"english":"forgive","manglish":"sahapravarthakan"},{"english":"security purpose","manglish":"suraksha aavasyangal"},{"english":"quality","manglish":"gunanilavaaram"},{"english":"service","manglish":"sevanam"},{"english":"quantity","manglish":"alav"},{"english":"address","manglish":"vilaasam"},{"english":"cancel","manglish":"raddaakkuka"},{"english":"last date","manglish":"avasana theeyathi"},{"english":"completed","manglish":"poorthiyaayi"},{"english":"overtime","manglish":"samayathin atheithe jooli"},{"english":"salary","manglish":"vethanam"},{"english":"payslip","manglish":"vethanam cheett"},{"english":"annual leave","manglish":"vaarshika avadhi"},{"english":"sick leave","manglish":"roga avadhi"},{"english":"maternity leave","manglish":"prasava avadhi"},{"english":"performance review","manglish":"pravartthana avalokanam"},{"english":"promotion","manglish":"udyoga uyartham"},{"english":"redundancy","manglish":"jooli nashtappadu"},{"english":"termination","manglish":"udyoga samaapti"},{"english":"notice period","manglish":"ariyippu kaalavadhi"},{"english":"work from home","manglish":"veettil ninnum jooli"},{"english":"human resources","manglish":"maanava sampadana kaaryam"},{"english":"workplace","manglish":"pravartthana idam"},{"english":"supervisor","manglish":"pradhaan nireekhshakan"},{"english":"staff meeting","manglish":"udyogasthar yogam"},{"english":"training","manglish":"parisheelanam"},{"english":"reimbursement","manglish":"chilavinathe thirike nalkuka"},{"english":"employee benefits","manglish":"udyogastha suvidhakal"},{"english":"deadline","manglish":"avasaana samayam"}]},{"id":"immigration","domain":"Immigration","terms":[{"english":"immigration","manglish":"kudiyettam"},{"english":"settlement","manglish":"othutheerpp/ kanakku theerkkal"},{"english":"settled","manglish":"sthirappettu/othutheerppayi/ kanakku theerthu"},{"english":"migrant","manglish":"kudiyettakkaaran"},{"english":"immigrants","manglish":"kudiyettakkaar"},{"english":"immigration agent","manglish":"kudiyetta prathinidhi"},{"english":"office","manglish":"kaaryaalayam"},{"english":"approval","manglish":"sammatham"},{"english":"immigration law","manglish":"kudiyetta niyamam"},{"english":"community","manglish":"samooham"},{"english":"offence","manglish":"kuttakaram"},{"english":"customs office","manglish":"chungam kaaryaalayam"},{"english":"under the limit","manglish":"paridhiyil"},{"english":"high range","manglish":"uyarnna sreni"},{"english":"analysis","manglish":"vishakalanam"},{"english":"compromise","manglish":"othu theerpp"},{"english":"follow the rules","manglish":"niyamam paalikkuka"},{"english":"co operative","manglish":"sahakarikkuka"},{"english":"take action","manglish":"nadapadi edukkuka"},{"english":"trained","manglish":"parisheelanam labicha"},{"english":"comulsory","manglish":"nirbandhitham"},{"english":"terms and conditions","manglish":"niyamangalum nibandhanakalum"},{"english":"privacy","manglish":"swakaaryatha"},{"english":"deposit","manglish":"nikshepam"},{"english":"procedure","manglish":"nadapadi kramam"},{"english":"selection","manglish":"therenjedukkal"},{"english":"stress","manglish":"sammardam"},{"english":"exchange information","manglish":"kai maatta vivaram"},{"english":"oppurtunity","manglish":"avasaram"},{"english":"wait","manglish":"kaathirikkuka"},{"english":"investigation officer","manglish":"anweshana udyogasthan"},{"english":"estimated price","manglish":"kanakkaakkiya chilav"},{"english":"accept","manglish":"sweekarichu"},{"english":"develope","manglish":"vikasippikkuka"},{"english":"joint account","manglish":"onnichulla account"},{"english":"actual situation","manglish":"yathaartha sandarbam"},{"english":"declaration form","manglish":"prakyaapana form"},{"english":"passenger","manglish":"yaathrakkaran"},{"english":"declared","manglish":"prakyaapichu"},{"english":"visa application","manglish":"visaa apeksha"},{"english":"permanent residency","manglish":"sthira thamasam"},{"english":"citizenship","manglish":"pauratthwam"},{"english":"sponsor","manglish":"poshakan"},{"english":"nomination","manglish":"naamanirgayanam"},{"english":"character assessment","manglish":"swabhaava parishodana"},{"english":"health assessment","manglish":"aarogya parishodana"},{"english":"skills assessment","manglish":"kasav parishodana"},{"english":"student visa","manglish":"vidyaarthi visaa"},{"english":"work visa","manglish":"thozhil visaa"},{"english":"family visa","manglish":"kudumba visaa"},{"english":"refugee","manglish":"sharanaartthi"},{"english":"migration agent","manglish":"kudiyetta prathinidhi"},{"english":"entry permit","manglish":"pravesa anumathi"},{"english":"expiry date","manglish":"kaalavadhi kaziyunna theeyathi"},{"english":"extension","manglish":"kaalavadhi neetukal"},{"english":"cancellation","manglish":"raddakkal"},{"english":"appeal tribunal","manglish":"maruparisodhana peedham"},{"english":"citizenship test","manglish":"pauratthwa pareeksha"},{"english":"residence permit","manglish":"thamasam anumathi"}]},{"id":"employment","domain":"Employment","terms":[{"english":"job application","manglish":"thozhil apeksha"},{"english":"resume","manglish":"jeevan vrithantha pathram"},{"english":"interview","manglish":"acchedanam"},{"english":"employer","manglish":"udyogadaatha"},{"english":"employee","manglish":"udyogasthan"},{"english":"full time employment","manglish":"muzhuvan samayam thozhil"},{"english":"part time employment","manglish":"baagika samayam thozhil"},{"english":"casual work","manglish":"athanatheth jooli"},{"english":"job offer","manglish":"thozhil sambhavana"},{"english":"probation period","manglish":"aadhya parisheelanam kaalavadhi"},{"english":"minimum wage","manglish":"kuranjath vethanam"},{"english":"fair work","manglish":"niyaama thozhil"},{"english":"unfair dismissal","manglish":"nyayarahitha parachal"},{"english":"workplace rights","manglish":"pravarthana sthala avakasangal"},{"english":"union","manglish":"thozhilali sangham"},{"english":"leave entitlement","manglish":"avadhi avakasam"},{"english":"superannuation","manglish":"nivrutthi nidhi"},{"english":"tax file number","manglish":"nikuthi pathram sankya"},{"english":"payroll","manglish":"vethaana pattika"},{"english":"job seeker","manglish":"thozhil avaneshakan"},{"english":"employment agency","manglish":"thozhil prathinidhi sthapanam"},{"english":"reference letter","manglish":"soochana pathram"},{"english":"work experience","manglish":"thozhil anubhavam"},{"english":"job description","manglish":"thozhil vivaram"},{"english":"roster","manglish":"samayapattika"},{"english":"shift","manglish":"jalaka jooli"},{"english":"resignation letter","manglish":"raaji pathram"},{"english":"redundancy pay","manglish":"jooli nashtaparihaaram"},{"english":"centrelink","manglish":"kendretha sevanam"},{"english":"performance appraisal","manglish":"pravartthana mulyanirnayam"}]},{"id":"social-services","domain":"Social Services","terms":[{"english":"social worker","manglish":"saamoohika pravarthakan"},{"english":"welfare","manglish":"kshemam"},{"english":"child support","manglish":"kuzhandakalude sahaayam"},{"english":"family support","manglish":"kudumba sahaayam"},{"english":"domestic violence","manglish":"kudumba anaacharitham"},{"english":"counselling","manglish":"upadesha sevanam"},{"english":"support group","manglish":"sahaaya sangham"},{"english":"government assistance","manglish":"sarkaar sahaayam"},{"english":"disability support","manglish":"vaikalya sahaayam"},{"english":"aged care","manglish":"muthirnavar paripaalana sevanam"},{"english":"youth services","manglish":"yuva sevanangal"},{"english":"emergency housing","manglish":"avasara paarppida sevanam"},{"english":"food bank","manglish":"bhakshana sahaaya kendram"},{"english":"mental health support","manglish":"maanasika aarogya sahaayam"},{"english":"interpreter services","manglish":"bhasha vyaakyaana sevanam"},{"english":"carer","manglish":"paripaalanakkaaran"},{"english":"respite care","manglish":"vishranti paripaalanam"},{"english":"ndis","manglish":"vaikalya bheema padhathi"},{"english":"crisis support","manglish":"aapathkaala sahaayam"},{"english":"case worker","manglish":"kesu pravarthakan"},{"english":"housing support","manglish":"paarppida sahaayam"},{"english":"pension","manglish":"vardakya vethanam"},{"english":"benefit","manglish":"laabham"},{"english":"allowance","manglish":"bathha"},{"english":"concession card","manglish":"riayath cheett"},{"english":"health care card","manglish":"aarogya sevanam cheett"},{"english":"crisis accommodation","manglish":"aapathkaala thamasam"},{"english":"community support","manglish":"saamoohika sahaayam"},{"english":"outreach","manglish":"therajaneeya sevanam"},{"english":"referral service","manglish":"ooothukku viduka sevanam"}]}]</script>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">N</div>
+    <div><div class="logo-text">NAATI CCL</div><div class="logo-sub">Malayalam · Study Mode</div></div>
+  </div>
+  <div class="header-stats"><div><span class="stat-val" id="hdr-got">0</span> known</div><div><span class="stat-val" id="hdr-rem">—</span> left</div></div>
+</header>
+
+<div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+<div class="domain-bar" id="domain-bar"></div>
+
+<main id="main">
+  <div class="score-row" id="score-row">
+    <div class="score-pill score-pill-got"><span class="score-num" id="count-got">0</span><span class="score-label">Got it</span></div>
+    <div class="score-pill score-pill-rem"><span class="score-num" id="count-rem">—</span><span class="score-label">Remaining</span></div>
+    <div class="score-pill score-pill-retry"><span class="score-num" id="count-retry">0</span><span class="score-label">Try again</span></div>
+  </div>
+  <div class="card-wrap" id="card-wrap">
+    <div class="card" id="card">
+      <div class="card-face card-front" id="card-front">
+        <div class="card-domain" id="cf-domain"></div>
+        <div class="card-word" id="cf-word"></div>
+        <div class="card-hint">Click to reveal Manglish</div>
+      </div>
+      <div class="card-face card-back" id="card-back">
+        <div class="card-english-small" id="cb-word-small"></div>
+        <div class="card-manglish" id="cb-manglish"></div>
+      </div>
+    </div>
+  </div>
+  <div class="actions" id="actions">
+    <button class="btn btn-retry" id="btn-retry" disabled>↩ Try again</button>
+    <button class="btn btn-got" id="btn-got" disabled>✓ Got it</button>
+  </div>
+  <div class="nav-row">
+    <button class="btn-nav" id="btn-prev">&larr; Prev</button>
+    <button class="btn-shuffle" id="btn-shuffle">&hArr; Shuffle</button>
+    <button class="btn-nav" id="btn-next">Next &rarr;</button>
+  </div>
+</main>
+
+<script>
+var ALL = JSON.parse(document.getElementById('vocab-data').textContent);
+var ICONS = {"Education":"\uD83C\uDF93","Housing":"\uD83C\uDFE0","Finance":"\uD83D\uDCB0","Insurance":"\uD83D\uDEE1\uFE0F","Legal":"\u2696\uFE0F","Business":"\uD83D\uDCBC","Health":"\u2764\uFE0F","Office":"\uD83D\uDDC2\uFE0F","Consumer Affairs":"\uD83D\uDED2","Immigration":"\u2708\uFE0F","Employment":"\uD83D\uDCBC","Social Services":"\uD83E\uDD1D"};
+
+var activeDomain = "all";
+var queue = [];
+var idx = 0;
+var gotSet = new Set();
+var retrySet = new Set();
+var flipped = false;
+
+function buildQueue() {
+  var cards = [];
+  for (var di = 0; di < ALL.length; di++) {
+    var domain = ALL[di];
+    if (activeDomain !== "all" && domain.id !== activeDomain) continue;
+    for (var ti = 0; ti < domain.terms.length; ti++) {
+      var term = domain.terms[ti];
+      cards.push({ domain: domain.domain, id: domain.id, english: term.english, manglish: term.manglish });
+    }
+  }
+  return cards;
+}
+
+function init() {
+  queue = buildQueue();
+  gotSet = new Set();
+  retrySet = new Set();
+  idx = 0;
+  renderDomainBar();
+  renderCard();
+  updateStats();
+}
+
+function renderDomainBar() {
+  var bar = document.getElementById("domain-bar");
+  var total = ALL.reduce(function(n, d) { return n + d.terms.length; }, 0);
+  var html = "";
+  html += "<button class=\"chip " + (activeDomain === "all" ? "active" : "") + "\" data-domain=\"all\">All (" + total + ")</button>";
+  for (var i = 0; i < ALL.length; i++) {
+    var d = ALL[i];
+    var icon = ICONS[d.domain] || "\uD83D\uDCDA";
+    html += "<button class=\"chip " + (activeDomain === d.id ? "active" : "") + "\" data-domain=\"" + d.id + "\">" + icon + " " + d.domain + " (" + d.terms.length + ")</button>";
+  }
+  bar.innerHTML = html;
+  bar.addEventListener("click", function(e) {
+    var btn = e.target.closest("[data-domain]");
+    if (btn) { activeDomain = btn.getAttribute("data-domain"); init(); }
+  }, { once: true });
+}
+
+function remaining() {
+  var rem = [];
+  for (var i = 0; i < queue.length; i++) { if (!gotSet.has(i)) rem.push(i); }
+  return rem;
+}
+
+function renderCard() {
+  var rem = remaining();
+  if (rem.length === 0) { showComplete(); return; }
+  while (gotSet.has(idx)) { idx = (idx + 1) % queue.length; }
+  var card = queue[idx];
+  document.getElementById("cf-domain").textContent = (ICONS[card.domain] || "") + " " + card.domain;
+  document.getElementById("cf-word").textContent = card.english;
+  document.getElementById("cb-word-small").textContent = card.english;
+  document.getElementById("cb-manglish").textContent = card.manglish;
+  flipped = false;
+  document.getElementById("card").classList.remove("flipped");
+  document.getElementById("btn-got").disabled = true;
+  document.getElementById("btn-retry").disabled = true;
+  document.getElementById("card-wrap").style.cursor = "pointer";
+}
+
+function flipCard() {
+  if (flipped) return;
+  flipped = true;
+  document.getElementById("card").classList.add("flipped");
+  document.getElementById("btn-got").disabled = false;
+  document.getElementById("btn-retry").disabled = false;
+  document.getElementById("card-wrap").style.cursor = "default";
+}
+
+function markGot() {
+  if (!flipped) return;
+  gotSet.add(idx);
+  retrySet.delete(idx);
+  nextCard();
+}
+
+function markRetry() {
+  if (!flipped) return;
+  retrySet.add(idx);
+  nextCard();
+}
+
+function nextCard() {
+  updateStats();
+  var rem = remaining();
+  if (rem.length === 0) { showComplete(); return; }
+  var next = (idx + 1) % queue.length;
+  var safety = 0;
+  while (gotSet.has(next) && safety < queue.length) { next = (next + 1) % queue.length; safety++; }
+  idx = next;
+  renderCard();
+}
+
+function prevCard() {
+  var prev = (idx - 1 + queue.length) % queue.length;
+  var safety = 0;
+  while (gotSet.has(prev) && safety < queue.length) { prev = (prev - 1 + queue.length) % queue.length; safety++; }
+  idx = prev;
+  flipped = false;
+  document.getElementById("card").classList.remove("flipped");
+  document.getElementById("btn-got").disabled = true;
+  document.getElementById("btn-retry").disabled = true;
+  renderCard();
+}
+
+function shuffle() {
+  var rem = [];
+  for (var i = 0; i < queue.length; i++) { if (!gotSet.has(i)) rem.push(i); }
+  for (var i = rem.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = queue[rem[i]]; queue[rem[i]] = queue[rem[j]]; queue[rem[j]] = tmp;
+  }
+  idx = rem[0] || 0;
+  renderCard();
+}
+
+function updateStats() {
+  var g = gotSet.size;
+  var rem = queue.length - g;
+  var r = retrySet.size;
+  document.getElementById("count-got").textContent = g;
+  document.getElementById("count-rem").textContent = rem;
+  document.getElementById("count-retry").textContent = r;
+  document.getElementById("hdr-got").textContent = g;
+  document.getElementById("hdr-rem").textContent = rem;
+  var pct = queue.length ? (g / queue.length * 100) : 0;
+  document.getElementById("progress").style.width = pct + "%";
+}
+
+function showComplete() {
+  var g = gotSet.size;
+  var r = retrySet.size;
+  var retryIdxArr = Array.from(retrySet);
+  document.getElementById("main").innerHTML =
+    "<div class=\"empty\">" +
+    "<div style=\"font-size:3rem;margin-bottom:16px\">\uD83C\uDF89</div>" +
+    "<h2>All done!</h2>" +
+    "<p>You reviewed all " + queue.length + " words.<br>" +
+    "<span style=\"color:var(--got);font-weight:600\">" + g + " known</span> &middot; " +
+    "<span style=\"color:var(--retry);font-weight:600\">" + r + " to retry</span></p>" +
+    "<div style=\"display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap\">" +
+    (r > 0 ? "<button class=\"btn-reset retry-btn\" id=\"btn-do-retry\">Retry missed (" + r + ")</button>" : "") +
+    "<button class=\"btn-reset\" id=\"btn-restart\">Start over</button>" +
+    "</div></div>";
+  var restartBtn = document.getElementById("btn-restart");
+  if (restartBtn) restartBtn.addEventListener("click", init);
+  var retryBtn = document.getElementById("btn-do-retry");
+  if (retryBtn) retryBtn.addEventListener("click", function() {
+    var newQueue = retryIdxArr.map(function(i) { return queue[i]; });
+    queue = newQueue; gotSet = new Set(); retrySet = new Set(); idx = 0;
+    rebuildMain();
+    renderCard(); updateStats();
+  });
+}
+
+function rebuildMain() {
+  document.getElementById("main").innerHTML =
+    "<div class=\"score-row\" id=\"score-row\">" +
+    "<div class=\"score-pill score-pill-got\"><span class=\"score-num\" id=\"count-got\">0</span><span class=\"score-label\">Got it</span></div>" +
+    "<div class=\"score-pill score-pill-rem\"><span class=\"score-num\" id=\"count-rem\">0</span><span class=\"score-label\">Remaining</span></div>" +
+    "<div class=\"score-pill score-pill-retry\"><span class=\"score-num\" id=\"count-retry\">0</span><span class=\"score-label\">Try again</span></div>" +
+    "</div>" +
+    "<div class=\"card-wrap\" id=\"card-wrap\">" +
+    "<div class=\"card\" id=\"card\">" +
+    "<div class=\"card-face card-front\" id=\"card-front\"><div class=\"card-domain\" id=\"cf-domain\"></div><div class=\"card-word\" id=\"cf-word\"></div><div class=\"card-hint\">Click to reveal Manglish</div></div>" +
+    "<div class=\"card-face card-back\" id=\"card-back\"><div class=\"card-english-small\" id=\"cb-word-small\"></div><div class=\"card-manglish\" id=\"cb-manglish\"></div></div>" +
+    "</div></div>" +
+    "<div class=\"actions\" id=\"actions\">" +
+    "<button class=\"btn btn-retry\" id=\"btn-retry\" disabled>\u21A9 Try again</button>" +
+    "<button class=\"btn btn-got\" id=\"btn-got\" disabled>\u2713 Got it</button>" +
+    "</div>" +
+    "<div class=\"nav-row\">" +
+    "<button class=\"btn-nav\" id=\"btn-prev\">&larr; Prev</button>" +
+    "<button class=\"btn-shuffle\" id=\"btn-shuffle\">&hArr; Shuffle</button>" +
+    "<button class=\"btn-nav\" id=\"btn-next\">Next &rarr;</button>" +
+    "</div>";
+  wireButtons();
+}
+
+function wireButtons() {
+  document.getElementById("card-wrap").addEventListener("click", flipCard);
+  document.getElementById("btn-got").addEventListener("click", markGot);
+  document.getElementById("btn-retry").addEventListener("click", markRetry);
+  document.getElementById("btn-prev").addEventListener("click", prevCard);
+  document.getElementById("btn-next").addEventListener("click", nextCard);
+  document.getElementById("btn-shuffle").addEventListener("click", shuffle);
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === " " || e.key === "Enter") { e.preventDefault(); if (!flipped) flipCard(); }
+  if (e.key === "ArrowRight") nextCard();
+  if (e.key === "ArrowLeft") prevCard();
+  if (e.key === "1" && flipped) markRetry();
+  if (e.key === "2" && flipped) markGot();
+});
+
+wireButtons();
+init();
+</script>
+</body>
+</html>

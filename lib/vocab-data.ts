@@ -2,7 +2,7 @@ import rawData from './vocabularies.json';
 
 export interface VocabTerm {
   english: string;
-  manglish: string;
+  hindi: string;
 }
 
 export interface VocabList {

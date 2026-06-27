@@ -16,6 +16,11 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+function parseHindi(h: string) {
+  const m = h.match(/^(.+?)\s*\(([^)]+)\)/);
+  return m ? { script: m[1].trim(), roman: m[2].trim() } : { script: h, roman: '' };
+}
+
 export default function VocabClient({ vocab }: Props) {
   const [mode, setMode] = useState<'flashcard' | 'list'>('flashcard');
   const [current, setCurrent] = useState(0);
@@ -24,12 +29,11 @@ export default function VocabClient({ vocab }: Props) {
   const [done, setDone] = useState(false);
   const [search, setSearch] = useState('');
 
-  const [showSettings, setShowSettings] = useState(false);
-  const [direction, setDirection] = useState<'en-to-ml' | 'ml-to-en'>('en-to-ml');
+  const [direction, setDirection] = useState<'en-to-hi' | 'hi-to-en'>('en-to-hi');
 
   const [showAddForm, setShowAddForm] = useState(false);
   const [newEnglish, setNewEnglish] = useState('');
-  const [newManglish, setNewManglish] = useState('');
+  const [newHindi, setNewHindi] = useState('');
   const [addError, setAddError] = useState('');
   const [saving, setSaving] = useState(false);
 
@@ -42,8 +46,8 @@ export default function VocabClient({ vocab }: Props) {
   useEffect(() => { setOrdered(shuffle(allTerms)); }, [vocab.terms, additions]);
 
   const term = ordered[current];
-  const front = direction === 'en-to-ml' ? term?.english : term?.manglish;
-  const back  = direction === 'en-to-ml' ? term?.manglish : term?.english;
+  const front = direction === 'en-to-hi' ? term?.english : term?.hindi;
+  const back  = direction === 'en-to-hi' ? term?.hindi : term?.english;
 
   const reveal = useCallback(() => setRevealed(true), []);
 
@@ -80,26 +84,26 @@ export default function VocabClient({ vocab }: Props) {
 
   const filteredList = allTerms.filter(t =>
     t.english.toLowerCase().includes(search.toLowerCase()) ||
-    t.manglish.toLowerCase().includes(search.toLowerCase())
+    t.hindi.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleAddTerm = useCallback(async () => {
-    if (!newEnglish.trim() || !newManglish.trim()) { setAddError('Both fields required.'); return; }
+    if (!newEnglish.trim() || !newHindi.trim()) { setAddError('Both fields required.'); return; }
     const duplicate = allTerms.some(t => t.english.toLowerCase() === newEnglish.trim().toLowerCase());
     if (duplicate) { setAddError('This English word already exists in the list.'); return; }
     setSaving(true);
     setAddError('');
     try {
-      await addTerm(newEnglish.trim(), newManglish.trim());
+      await addTerm(newEnglish.trim(), newHindi.trim());
       setNewEnglish('');
-      setNewManglish('');
+      setNewHindi('');
       setShowAddForm(false);
     } catch {
       setAddError('Failed to save. Try again.');
     } finally {
       setSaving(false);
     }
-  }, [newEnglish, newManglish, addTerm]);
+  }, [newEnglish, newHindi, addTerm]);
 
   // ── Completion ────────────────────────────────────────────────
   if (done && mode === 'flashcard') {
@@ -128,8 +132,8 @@ export default function VocabClient({ vocab }: Props) {
 
   return (
     <div>
-      {/* Mode switcher + settings */}
-      <div className="flex items-center justify-between mb-6">
+      {/* Mode switcher + inline direction toggle */}
+      <div className="flex items-center gap-2 mb-6 flex-wrap">
         <div className="flex bg-white border border-slate-200 rounded-xl p-1 gap-1">
           <button
             onClick={() => setMode('flashcard')}
@@ -141,32 +145,11 @@ export default function VocabClient({ vocab }: Props) {
           >Word list</button>
         </div>
 
-        {mode === 'flashcard' && (
-          <button
-            onClick={() => setShowSettings(v => !v)}
-            className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${showSettings ? 'bg-indigo-100 text-indigo-600' : 'text-slate-400 hover:text-slate-600 hover:bg-slate-100'}`}
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </button>
-        )}
-      </div>
-
-      {/* Settings panel */}
-      {showSettings && mode === 'flashcard' && (
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4 animate-slideDown">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Settings</p>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-slate-700">Direction</span>
-            <div className="flex bg-white border border-slate-200 rounded-lg p-0.5 gap-0.5">
-              <button onClick={() => setDirection('en-to-ml')} className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${direction === 'en-to-ml' ? 'bg-indigo-600 text-white' : 'text-slate-500'}`}>EN → ML</button>
-              <button onClick={() => setDirection('ml-to-en')} className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${direction === 'ml-to-en' ? 'bg-indigo-600 text-white' : 'text-slate-500'}`}>ML → EN</button>
-            </div>
-          </div>
+        <div className="flex bg-white border border-slate-200 rounded-xl p-1 gap-1 ml-auto">
+          <button onClick={() => setDirection('en-to-hi')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${direction === 'en-to-hi' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-800'}`}>EN → HI</button>
+          <button onClick={() => setDirection('hi-to-en')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${direction === 'hi-to-en' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-800'}`}>HI → EN</button>
         </div>
-      )}
+      </div>
 
       {/* ── FLASHCARD ────────────────────────────────────────── */}
       {mode === 'flashcard' && (
@@ -184,11 +167,21 @@ export default function VocabClient({ vocab }: Props) {
             <span className="text-xs text-emerald-600 font-medium">{known.size} known</span>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center animate-popIn">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center animate-popIn min-h-[160px] flex flex-col items-center justify-center">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
-              {direction === 'en-to-ml' ? 'English' : 'Manglish'}
+              {direction === 'en-to-hi' ? 'English' : 'Hindi'}
             </p>
-            <p className="text-2xl font-bold text-slate-800">{front}</p>
+            {direction === 'hi-to-en' && front ? (() => {
+              const { script, roman } = parseHindi(front);
+              return (
+                <>
+                  <p className="text-3xl font-bold text-slate-900 leading-snug">{script}</p>
+                  {roman && <p className="text-sm text-slate-400 mt-2 font-medium">{roman}</p>}
+                </>
+              );
+            })() : (
+              <p className="text-2xl font-bold text-slate-800">{front}</p>
+            )}
           </div>
 
           {!revealed ? (
@@ -202,9 +195,19 @@ export default function VocabClient({ vocab }: Props) {
             <>
               <div className="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 text-center animate-slideDown">
                 <p className="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-3">
-                  {direction === 'en-to-ml' ? 'Manglish' : 'English'}
+                  {direction === 'en-to-hi' ? 'Hindi' : 'English'}
                 </p>
-                <p className="text-xl font-bold text-slate-800">{back}</p>
+                {direction === 'en-to-hi' && back ? (() => {
+                  const { script, roman } = parseHindi(back);
+                  return (
+                    <>
+                      <p className="text-3xl font-bold text-slate-900 leading-snug">{script}</p>
+                      {roman && <p className="text-sm text-slate-400 mt-2 font-medium">{roman}</p>}
+                    </>
+                  );
+                })() : (
+                  <p className="text-xl font-bold text-slate-800">{back}</p>
+                )}
               </div>
 
               <div className="flex gap-3 animate-fadeIn">
@@ -247,17 +250,18 @@ export default function VocabClient({ vocab }: Props) {
             )}
             {filteredList.map((t, i) => {
               const isAddition = 'id' in t;
+              const { script, roman } = parseHindi(t.hindi);
               return (
                 <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
                   <span className="text-sm font-medium text-slate-800 flex-1">{t.english}</span>
-                  <svg className="w-3 h-3 text-slate-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  <span className="text-sm text-indigo-600 font-medium flex-1 text-right">{t.manglish}</span>
+                  <div className="text-right shrink-0">
+                    <p className="text-base font-bold text-indigo-700 leading-tight">{script}</p>
+                    {roman && <p className="text-xs text-slate-400 mt-0.5">{roman}</p>}
+                  </div>
                   {isAddition && (
                     <button
                       onClick={() => deleteTerm((t as VocabTerm & { id: string }).id)}
-                      className="ml-2 w-5 h-5 flex items-center justify-center text-slate-200 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 shrink-0"
+                      className="w-5 h-5 flex items-center justify-center text-slate-200 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 shrink-0"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -281,9 +285,9 @@ export default function VocabClient({ vocab }: Props) {
                   className="flex-1 px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                 />
                 <input
-                  value={newManglish}
-                  onChange={e => setNewManglish(e.target.value)}
-                  placeholder="Manglish"
+                  value={newHindi}
+                  onChange={e => setNewHindi(e.target.value)}
+                  placeholder="Hindi"
                   onKeyDown={e => { if (e.key === 'Enter') handleAddTerm(); }}
                   className="flex-1 px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                 />
@@ -291,7 +295,7 @@ export default function VocabClient({ vocab }: Props) {
               {addError && <p className="text-xs text-red-500">{addError}</p>}
               <div className="flex gap-2">
                 <button
-                  onClick={() => { setShowAddForm(false); setNewEnglish(''); setNewManglish(''); setAddError(''); }}
+                  onClick={() => { setShowAddForm(false); setNewEnglish(''); setNewHindi(''); setAddError(''); }}
                   className="flex-1 py-2 rounded-xl border border-slate-200 text-slate-500 text-sm font-medium hover:bg-slate-50 transition-all"
                 >
                   Cancel

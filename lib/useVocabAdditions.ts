@@ -20,13 +20,13 @@ export function useVocabAdditions(vocabId: string) {
       .then(({ data }) => { if (data) setAdditions(data as Addition[]); });
   }, [vocabId]);
 
-  const addTerm = useCallback(async (english: string, manglish: string) => {
+  const addTerm = useCallback(async (english: string, hindi: string) => {
     const id = `add-${Date.now()}`;
     const { error } = await supabase
       .from('vocab_additions')
-      .insert({ id, vocab_id: vocabId, english, manglish });
+      .insert({ id, vocab_id: vocabId, english, hindi });
     if (error) throw error;
-    setAdditions(prev => [...prev, { id, english, manglish }]);
+    setAdditions(prev => [...prev, { id, english, hindi }]);
   }, [vocabId]);
 
   const deleteTerm = useCallback(async (id: string) => {

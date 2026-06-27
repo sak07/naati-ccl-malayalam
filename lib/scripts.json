@@ -6,23 +6,28 @@
     "exchanges": [
       {
         "manglish": "namaskaram , ente per john. njan aan ee vidhyalayathile  kala classukal edukkunnath . njan thangaleyinnu engneyaan sahayikkendath ?",
-        "english": "Hello Mr. John. I am here to know about my son's participation in the concert being held next month."
+        "english": "Hello Mr. John. I am here to know about my son's participation in the concert being held next month.",
+        "hindi": "हेलो मिस्टर जॉन. मैं यहां अगले महीने होने वाले कॉन्सर्ट में अपने बेटे की भागीदारी के बारे में जानने के लिए आया हूं।"
       },
       {
         "manglish": "theerchayayum. thangalude makan nannayi cheyyunnund . paripady aduthirikkunnathinal njangal eeyide kooduthal parisheelana classukal nadathunnund. valare nalla oru paripady  aayirikkum ann .",
-        "english": "Happy to hear  that . My son is tensed to go on the stage and perform in front of  other people. Singing and dancing stresses him a lot. He is not even eating properly lately."
+        "english": "Happy to hear  that . My son is tensed to go on the stage and perform in front of  other people. Singing and dancing stresses him a lot. He is not even eating properly lately.",
+        "hindi": "यह सुन कर खुश हुया । मेरा बेटा मंच पर जाकर अन्य लोगों के सामने प्रस्तुति देने को लेकर तनावग्रस्त है। गायन और नृत्य से उन्हें बहुत तनाव होता है। वह हाल ही में ठीक से खाना भी नहीं खा रहे हैं."
       },
       {
         "manglish": "enikk manassilavum . kaanikalk  munnil veedhiyil paripady avadhirippikkuka ennath athra eluppamulla kaaryamilla. thaangalude makante class adhyapika ikkaryam ennod paranjirunnu.",
-        "english": "Yes, I understand that this is a great opportunity for him. I really want him to attend the concert because it will be a great experience for him. But all I can say is that he should not be overly concerned about this and that it should not cause any problems to his health."
+        "english": "Yes, I understand that this is a great opportunity for him. I really want him to attend the concert because it will be a great experience for him. But all I can say is that he should not be overly concerned about this and that it should not cause any problems to his health.",
+        "hindi": "हाँ, मैं समझता हूँ कि यह उसके लिए बहुत अच्छा अवसर है। मैं सचमुच चाहता हूं कि वह कॉन्सर्ट में शामिल हों क्योंकि यह उनके लिए एक शानदार अनुभव होगा। लेकिन मैं बस इतना कह सकता हूं कि उन्हें इस बात को लेकर ज्यादा चिंतित नहीं होना चाहिए और इससे उनकी सेहत को कोई परेशानी नहीं होनी चाहिए।"
       },
       {
         "manglish": "thangal ennod ith charcha cheyyan vannathil enikk santhoshamund. avan sangeetha paripaadiyil  pankedukkanamennan  thangal  aagrahikkunnathenn  njan manassilakkunnu. avante abhiprayam enthan? njangalude vidhyarthikale aareyum nirbandhikkan njangal aagrahikkunnilla.",
-        "english": "Yes, he told me he'd love to be a part of all backstage works"
+        "english": "Yes, he told me he'd love to be a part of all backstage works",
+        "hindi": "हां, उन्होंने मुझसे कहा कि वह मंच के पीछे के सभी कार्यों का हिस्सा बनना पसंद करेंगे"
       },
       {
         "manglish": "avanoru anugraheetha kalakaran aan . avan nannayi paadukayum nritham cheyyukayum cheyyunnund . athinal enikk thonnunnath , ithavana, namukkavanod pinnaniyil ninnum paadan aavashyapedam . pineed saavadhanam avante sabhakambam namukk maattiyedukkam .  ithil thangalude abhiprayam enthan?",
-        "english": "I think that's a good idea. I will talk to him about it. I am sure he will be very happy and he will be able to enjoy the program very well . Thank you very much."
+        "english": "I think that's a good idea. I will talk to him about it. I am sure he will be very happy and he will be able to enjoy the program very well . Thank you very much.",
+        "hindi": "मुझे लगता है कि यह एक अच्छा विचार है. मैं इस बारे में उनसे बात करूंगा.' मुझे यकीन है कि वह बहुत खुश होंगे और कार्यक्रम का भरपूर आनंद उठा सकेंगे। आपका बहुत-बहुत धन्यवाद।"
       }
     ]
   },
@@ -33,23 +38,28 @@
     "exchanges": [
       {
         "manglish": "Njangalude bankilekk swaagatham . ente peru jack. thaankalk oru vyaakyaathavine avasyamund enn formil ninn njan manasilakkunnu.njan ningalkaayi oraale erppadakkiyittund.njan innu ningale engane sahaayikkanam Hi jack , i am new to Australia. I am still learning English. Thank you for arranging the interpreter.I would like to open a school bank accountfor my 9 years old daughter. we didn't have such a  facility back in our country. so, i do not have much idea about this Theerchayaayum school bank accountukal ippol valare janapriyamaan sambaadyathinte pradaanyathe kurich janangale padippikkanulla nalloru vazhiyaanith. thaankalude makal eth vidyaalayathilaan padikkunnath",
-        "english": "She goes to a local private school. i saw a letter in the notice board encouraging parents to open a school account for their children. so, i came here straightaway. could you please help me with this?"
+        "english": "She goes to a local private school. i saw a letter in the notice board encouraging parents to open a school account for their children. so, i came here straightaway. could you please help me with this?",
+        "hindi": "वह एक स्थानीय निजी स्कूल में जाती है। मैंने नोटिस बोर्ड पर एक पत्र देखा जिसमें माता-पिता को अपने बच्चों के लिए एक स्कूल खाता खोलने के लिए प्रोत्साहित किया गया था। इसलिए, मैं सीधे यहां आ गया। क्या आप कृपया इसमें मेरी मदद कर सकते हैं?"
       },
       {
         "manglish": "theerchayaayum ith thra sankeernnamaaya karyamalla.kuttikalil ambaadya heelam prolsaahippikkunnathinaan ee paripadi avatharippichath. ella vidyaalayangalum aazhchayil oru divas am bank dinamaayi  pravarthikkunnund.vidyaarthikalk avar swaroopicha panam avide nikshepikkam .ee accountukalk bankukal oru feesum eedakkunnilla",
-        "english": "This is indeed a great initiative. I want my daughter to learn the importance of savings. few of her school friends have already opened the account."
+        "english": "This is indeed a great initiative. I want my daughter to learn the importance of savings. few of her school friends have already opened the account.",
+        "hindi": "ये वाकई एक बेहतरीन पहल है. मैं चाहता हूं कि मेरी बेटी बचत का महत्व सीखे। उसके कुछ स्कूली दोस्तों ने पहले ही खाता खोल लिया है।"
       },
       {
         "manglish": "Athe ath sheriyaan. thankalude makalude peril thaankalk thane oru account thurakkavunnathaan. ith  online aayo ee form poorippicho cheyyam.ithinaayi thaankal kurach rekhakalum samarppikkendathund",
-        "english": "I am on leave today, so i have the time to open the account now. I have brought my daughter's school id and also my government id. i have also brought my daughter's birth certificate. Are there any other documents that i need to submit? I also have some money to deposit straight away"
+        "english": "I am on leave today, so i have the time to open the account now. I have brought my daughter's school id and also my government id. i have also brought my daughter's birth certificate. Are there any other documents that i need to submit? I also have some money to deposit straight away",
+        "hindi": "मैं आज छुट्टी पर हूं, इसलिए मेरे पास अभी खाता खोलने का समय है। मैं अपनी बेटी की स्कूल आईडी और अपनी सरकारी आईडी भी लाया हूं। मैं अपनी बेटी का जन्म प्रमाण पत्र भी लाया हूँ। क्या कोई अन्य दस्तावेज़ हैं जो मुझे जमा करने होंगे? मेरे पास सीधे जमा करने के लिए कुछ पैसे भी हैं"
       },
       {
         "manglish": "Ath gambeeramaayirikkunnu thaankalude makalude rand photoyum koode njangalk aavasyamund. ath ippolthaankalude pakkal illa enn aanenkil vidyaalayathile adutha bank dinathil bandappetta udyogastharkk ath samarppichal mathiyakum. aadyathe nikshepam thaankalude makal nadathatte ennan njan nirdeshikkuka. appol nadapadi kramangalengane aan ennullath avalk manasilakkamallo. ennirunnalum ath thaankalude theerumanamaan",
-        "english": "Oh yes, that is a great idea. i will tell her once she come back home from school. she will be very excited"
+        "english": "Oh yes, that is a great idea. i will tell her once she come back home from school. she will be very excited",
+        "hindi": "अरे हाँ, यह एक बढ़िया विचार है। जब वह स्कूल से घर वापस आएगी तो मैं उसे बताऊंगा। वह बहुत उत्साहित होगी"
       },
       {
         "manglish": "njan thaankalk ippol oru welcome p[ack nalkaam. athiloru bank pusthakam. nikshepa cheett. koode oru panappettiyum undakum. aa panappettiyil ella divasavum valare cheriya oru thuka ittu vekkan ningal makalod aavasyappeduka, thudarnn aazhchayil orikkalo maasathil orikkalo aa thuka school bank accountilekk nikshepikkavunnathaan",
-        "english": "I am sure she will like the money box. thank you very much for explaining me everything very well."
+        "english": "I am sure she will like the money box. thank you very much for explaining me everything very well.",
+        "hindi": "मुझे यकीन है कि उसे मनी बॉक्स पसंद आएगा। मुझे सब कुछ बहुत अच्छे से समझाने के लिए आपका बहुत-बहुत धन्यवाद।"
       }
     ]
   },
@@ -60,35 +70,43 @@
     "exchanges": [
       {
         "manglish": "Shubasaayahnam, ith constable Jackson , njan inn ningale engane sahaayikkanam Namaskaaram , ente ayalvaasiyude veetil nadakkunna partye kurich paraathippedaan aan njan vilikkunnath, shabdam valare adhikamaan",
-        "english": "Hello , I am calling to complain about a party going on at my neighbor's house, sound is too much"
+        "english": "Hello , I am calling to complain about a party going on at my neighbor's house, sound is too much",
+        "hindi": "नमस्ते, मैं अपने पड़ोसी के घर पर हो रही एक पार्टी के बारे में शिकायत करने के लिए फोन कर रहा हूं, आवाज बहुत ज्यादा है"
       },
       {
         "manglish": "Ente kudumbam athaazham kazhikkan thudangiya samayath aan ith aarambichath, ekadesham 6 mani. appol muthal ith thudarunnu. ippol avide irupatholam perund",
-        "english": "All right, i need some details when did the party starts and how many people are are there in the house now? Sheri, enik kurach vishadaamshangal aavasyamund, eppol aan party thudangiyath , ippol aa veettil ethra peru und"
+        "english": "All right, i need some details when did the party starts and how many people are are there in the house now? Sheri, enik kurach vishadaamshangal aavasyamund, eppol aan party thudangiyath , ippol aa veettil ethra peru und",
+        "hindi": "ठीक है, मुझे कुछ विवरण चाहिए कि पार्टी कब शुरू हुई और अब घर में कितने लोग हैं? शेरी, एनिक कुरच विशदामशांगल अवस्यामुंड, इप्पोल आन पार्टी थुडांगियाथ, इप्पोल आ वेट्टिल एथरा पेरू अंड"
       },
       {
         "manglish": "Appol party thudangiyitt ekadesham 7 manikkoor aayi, ningal enth kondaan vishamikkunnath enn enik manasilaayi. ee ayalkkaar eppozhum itharam partykal nadathaarundo?",
-        "english": "So party has been going for almost 7 hours. I can see why you are upset. Do these neighbors often hold such parties?"
+        "english": "So party has been going for almost 7 hours. I can see why you are upset. Do these neighbors often hold such parties?",
+        "hindi": "तो करीब 7 घंटे से पार्टी चल रही है. मैं देख सकता हूँ कि आप क्यों परेशान हैं। क्या ये पड़ोसी अक्सर ऐसी पार्टियाँ आयोजित करते हैं?"
       },
       {
         "manglish": "Athe und, ellaa vaaranthyangalilum avar itharam partykal nadathaar und,ath kondaan njan ningale vilichath ith vallappozhum mathram ulloovenkilum athra prashnam illa,",
-        "english": "They are breaking residential noise restrictions, by making such loud noise after midnight, if you can hear from inside from your house, i can imagine how loud it is"
+        "english": "They are breaking residential noise restrictions, by making such loud noise after midnight, if you can hear from inside from your house, i can imagine how loud it is",
+        "hindi": "वे आधी रात के बाद इतनी तेज़ आवाज़ करके आवासीय शोर प्रतिबंधों को तोड़ रहे हैं, अगर आप अपने घर के अंदर से सुन सकते हैं, तो मैं कल्पना कर सकता हूँ कि यह कितना तेज़ है"
       },
       {
         "manglish": "Ardha raathrikk shesham itharathil valiya shabdam undakkunnath vazhi avar paarppida shabda niyanthranangal lamgikkukayaan cheyyunnath, ningalk veedinte ullil ninn thane ithrayum shabdam sravikkan kazhiyunnundenkil athethra maathram uchathilaanenn enik oohikkaan kazhiyum Avare ithellam baadikkunnundenn enik thonnunnilla, njangal avarod samsarikkan sremichuvenilum orathekich maatam onnum undaayilla venalkkaalath janaalakal thurannidumbol aan ettavum budhimutt",
-        "english": "I dont think they are worried about this . we tried to talk to them  about this but no use. it is especially worrying in summer season when we leave our windows open"
+        "english": "I dont think they are worried about this . we tried to talk to them  about this but no use. it is especially worrying in summer season when we leave our windows open",
+        "hindi": "मुझे नहीं लगता कि वे इस बारे में चिंतित हैं. हमने उनसे इस बारे में बात करने की कोशिश की लेकिन कोई फायदा नहीं हुआ। गर्मियों के मौसम में यह विशेष रूप से चिंताजनक होता है जब हम अपनी खिड़कियाँ खुली छोड़ देते हैं"
       },
       {
         "manglish": "sheri, njan 2 udyogasthare ningalude veettilekk ayakkukayum shabdam kurakkan aavasyapedukayum cheyyaam. avar niyamam langikkukaayan enna munnariyipp nalkukayum cheyyam Njaanaan paraathi nalkiyath enn avar ariyaruth. kazhinja thavana shabdam kurakkan paranjappol avarkk sherikkum deshyam vannirunnu I dont want to know them that i made the complaint. last time i asked them to reduce the noise they got really agitated Don't worry , officers will not mention your name, we will take care of the rest",
-        "english": "Alright, i will send two officers to your neighbors house and ask them to reduce the noise and warn them that they are breaking the rules"
+        "english": "Alright, i will send two officers to your neighbors house and ask them to reduce the noise and warn them that they are breaking the rules",
+        "hindi": "ठीक है, मैं आपके पड़ोसियों के घर दो अधिकारियों को भेजूंगा और उनसे शोर कम करने के लिए कहूंगा और उन्हें चेतावनी दूंगा कि वे नियम तोड़ रहे हैं"
       },
       {
         "manglish": "vishamikkanada udyogasthar ningalude peru parayilla bakki njangal nokkikolaam",
-        "english": "Orupad nanni constable Jackson"
+        "english": "Orupad nanni constable Jackson",
+        "hindi": "ओरुपद नन्नी कांस्टेबल जैक्सन"
       },
       {
         "manglish": "",
-        "english": "Thanks alot constable jackson"
+        "english": "Thanks alot constable jackson",
+        "hindi": "बहुत बहुत धन्यवाद कांस्टेबल जैक्सन"
       }
     ]
   },
@@ -99,27 +117,33 @@
     "exchanges": [
       {
         "manglish": "ningal vega Paridhi marikadannan vaahanam odikkunnath enn ningalk ariyamo,dayavaayi ningalude aahanam ente idathu vashathekkaayi matti nirthoo",
-        "english": "yes sure, but i was not driving above the speed limit, i am sure that i was driven within the speed limit"
+        "english": "yes sure, but i was not driving above the speed limit, i am sure that i was driven within the speed limit",
+        "hindi": "हां निश्चित है, लेकिन मैं गति सीमा से ऊपर गाड़ी नहीं चला रहा था, मुझे यकीन है कि मैं गति सीमा के भीतर गाड़ी चला रहा था"
       },
       {
         "manglish": "enik ningalude licence onn kanan kazhiyumo, ningal madyapichittila enn urappu varuthaanayi ee swasana maapiniyilekk onn oothaamo, ningalude rakthathile madyathinte sandratha  anuvadaneeyamaaya paridhikk ukalil anenn kanikkuka anenkilningalk izha athramalla 4 ayogyatha pointukal oodi nashtamakum enn ariyaamo",
-        "english": "Do i need  to breath into the breath analyser i know that we are not allowed to drunk drive in Australia"
+        "english": "Do i need  to breath into the breath analyser i know that we are not allowed to drunk drive in Australia",
+        "hindi": "क्या मुझे ब्रेथ एनालाइज़र में सांस लेने की ज़रूरत है? मुझे पता है कि हमें ऑस्ट्रेलिया में नशे में गाड़ी चलाने की अनुमति नहीं है"
       },
       {
         "manglish": "njan samsayichath pole ningalude rakthathile madyathinte sandratha 1.5 aan ath Victoria yil anuvadhaneeyamayathinekkaal 30 madangu kooduthal aan. ningal oru p plate holder aanennan kanikkunnath athin prakaram ningalk vaahanam odikkumbol oru thulli madyam polum kazhikkan anuvaadham illa",
-        "english": "ok, i thought drinking a little alcohol won't make any difference. what can i tell you officer,i am suffering  alot, i think i should just die, i dont want to live anymore"
+        "english": "ok, i thought drinking a little alcohol won't make any difference. what can i tell you officer,i am suffering  alot, i think i should just die, i dont want to live anymore",
+        "hindi": "ठीक है, मैंने सोचा कि थोड़ी सी शराब पीने से कोई फर्क नहीं पड़ेगा। मैं आपको क्या बताऊं अधिकारी, मैं बहुत पीड़ित हूं, मुझे लगता है कि मुझे मर जाना चाहिए, मैं अब जीना नहीं चाहता"
       },
       {
         "manglish": "Oh appol ningal parayunnath ningal vishamathil aayathinaalaan madyam kazhichath ennano, ennal ningal drive cheyyan paadilla maam, nirbaagya vashaal madyapich vaahanam odichathinu pizha chumathukayaan",
-        "english": "I am out of luck these days , my boy friend of 8 years left me for a permanent resident girl, my friends made me a little to forget my stress. i am not at all intoxicated. i don't know how i got happiness in in this?"
+        "english": "I am out of luck these days , my boy friend of 8 years left me for a permanent resident girl, my friends made me a little to forget my stress. i am not at all intoxicated. i don't know how i got happiness in in this?",
+        "hindi": "मैं इन दिनों किस्मत से बाहर हूं, मेरे 8 साल के बॉयफ्रेंड ने मुझे एक स्थायी निवासी लड़की के लिए छोड़ दिया, मेरे दोस्तों ने मुझे अपना तनाव भुलाने के लिए थोड़ा प्रेरित किया। मैं बिल्कुल भी नशे में नहीं हूं. मुझे नहीं पता कि इसमें मुझे ख़ुशी कैसे मिली?"
       },
       {
         "manglish": "njan poornamayum manasilakkunnu,ennirunnalum ningalude asradha moolam sambavikkan idayulla naasha nashtangalude alav enkilum ningalk kanakkakkan kazhiyumo,ningal thenkilum apakadathil pettirunnuvenkil ingalude mathramalla mattu chila niraparaadhikalude Jeevan koodi apakadathil ayene",
-        "english": "I am sorry , i apologise for this, can't this be resolved in any other way? can we settle it somehow? i am already going through alot"
+        "english": "I am sorry , i apologise for this, can't this be resolved in any other way? can we settle it somehow? i am already going through alot",
+        "hindi": "मुझे खेद है, मैं इसके लिए माफी मांगता हूं, क्या इसे किसी अन्य तरीके से हल नहीं किया जा सकता? क्या हम इसे किसी तरह सुलझा सकते हैं? मैं पहले से ही बहुत कुछ झेल रहा हूं"
       },
       {
         "manglish": "Ippol, oru police udyogasthan kaikooli vaagdaanam cheythathin ningalkethiril pizha chumathum , ningalude pizha kath vazhi labikkum",
-        "english": ""
+        "english": "",
+        "hindi": ""
       }
     ]
   },
@@ -130,27 +154,33 @@
     "exchanges": [
       {
         "manglish": "Theerchayaayum. Veed kanuvanulla karyangal krameekarikkan njangalk  saadhikkum. Enn pokuvaanaan  thaankalk thaalparyam",
-        "english": "Property inspection Hello, I'm interested in scheduling a property inspection for the house I'm considering renting. Is that possible?"
+        "english": "Property inspection Hello, I'm interested in scheduling a property inspection for the house I'm considering renting. Is that possible?",
+        "hindi": "संपत्ति निरीक्षण नमस्ते, मैं जिस घर को किराए पर लेने पर विचार कर रहा हूं, उसके लिए संपत्ति निरीक्षण का समय निर्धारित करने में रुचि रखता हूं। संभव है कि?"
       },
       {
         "manglish": "Njangalk ucha thirinj 2 manikum 4 manikum njaayarazhcha slotukal labyamaayittund .  Ivayil samayamaan thaankalk  thiranjedukkan thaalparyam",
-        "english": "I would prefer to visit on the weekend. Can we schedule it for Saturday morning? Kshamikkanam sheniyaazhcha ravile saadhikkilla . Njaayarazhcha ucha kazhinj pattumo Sunday afternoon works for me. What time would be convenient?"
+        "english": "I would prefer to visit on the weekend. Can we schedule it for Saturday morning? Kshamikkanam sheniyaazhcha ravile saadhikkilla . Njaayarazhcha ucha kazhinj pattumo Sunday afternoon works for me. What time would be convenient?",
+        "hindi": "मैं सप्ताहांत पर यात्रा करना पसंद करूंगा। क्या हम इसे शनिवार की सुबह के लिए शेड्यूल कर सकते हैं? क्षमिक्कणं शेन्याअज़्चा रवीले साधिक्किला। नजायाराज़चा उचा काझिंज पत्तुमो रविवार की दोपहर मेरे लिए काम करती है। कौन सा समय सुविधाजनक होगा?"
       },
       {
         "manglish": "Theerchayayum vasthuvinte melvilaasavum mattu vishadaamshangalum adangunna oru email njan  thankalk ayakkam",
-        "english": "4 PM would be better for me. Could you please provide me with the address of the property?"
+        "english": "4 PM would be better for me. Could you please provide me with the address of the property?",
+        "hindi": "शाम 4 बजे मेरे लिए बेहतर रहेगा. क्या आप कृपया मुझे संपत्ति का पता प्रदान कर सकते हैं?"
       },
       {
         "manglish": "Theerchayayum.  Veed kaanaanayi thankalk thangalude  oru  suhruthineyo kudumbathile oramgatheyo  kond varavunnathaan",
-        "english": "Thank you. I have one more question. During the property inspection, can I bring along a friend to get their opinion as well?"
+        "english": "Thank you. I have one more question. During the property inspection, can I bring along a friend to get their opinion as well?",
+        "hindi": "धन्यवाद। मेरे पास एक और प्रश्न है। संपत्ति निरीक्षण के दौरान, क्या मैं किसी मित्र को भी उनकी राय जानने के लिए साथ ला सकता हूँ?"
       },
       {
         "manglish": "Santhosham njaayarazhcha 4 manik veed kanuvaan pokunna samayath namuk veendum  kaanam. Enthenkilum undenkil ennod chodikkan madikkendathilla",
-        "english": "That's great to hear. I appreciate your assistance. I look forward to the property inspection on Sunday at 4 PM."
+        "english": "That's great to hear. I appreciate your assistance. I look forward to the property inspection on Sunday at 4 PM.",
+        "hindi": "सुनकर अच्छा लगा। मैं आपकी सहायता की सराहना करता हूँ. मैं रविवार को शाम 4 बजे संपत्ति निरीक्षण का इंतजार कर रहा हूं।"
       },
       {
         "manglish": "",
-        "english": "Thank you once again. I'll be sure to reach out if I have any additional queries before the inspection"
+        "english": "Thank you once again. I'll be sure to reach out if I have any additional queries before the inspection",
+        "hindi": "एक बार फिर आपका धन्यवाद। यदि निरीक्षण से पहले मेरे पास कोई अतिरिक्त प्रश्न हो तो मैं निश्चित रूप से आपसे संपर्क करूंगा"
       }
     ]
   },
@@ -161,27 +191,33 @@
     "exchanges": [
       {
         "manglish": "Akathekk  varu, irikku. Njan thangale  inn enganeyan  sahayikkendath?",
-        "english": "Thank you for for this meeting David. I have come today to discuss few things about my job"
+        "english": "Thank you for for this meeting David. I have come today to discuss few things about my job",
+        "hindi": "इस मुलाकात के लिए धन्यवाद डेविड। मैं आज अपनी नौकरी के बारे में कुछ बातें करने आया हूं"
       },
       {
         "manglish": "Kazhinja moonu masamayi  thaangal njangalodoppam  joli cheyyunnu enn njan  manassilakkunnu . childrensprogram enna padhadhiyude  chumathala thaangalkkanalle? Ellam engne  pokunnu? Ippozhathe joliyil  thangal samthripthanano?",
-        "english": "Absolutely . I am thoroughly enjoying this job.  But some kids are having trouble doing their home work. I have come up with a plan to help them."
+        "english": "Absolutely . I am thoroughly enjoying this job.  But some kids are having trouble doing their home work. I have come up with a plan to help them.",
+        "hindi": "बिल्कुल । मैं इस काम का पूरा आनंद ले रहा हूं।'  लेकिन कुछ बच्चों को अपना गृह कार्य करने में परेशानी हो रही है। मैं उनकी मदद करने के लिए एक योजना लेकर आया हूं।'"
       },
       {
         "manglish": "Ithippolpalappozhayi  sambavikkunund. Njngalude shradhayilum  pettittund ee  karym.  Ennal njangalude  jeevanakkar  matt jolikalil  valare thirakkilan. Thaangalkkenthenkilum nirtheshangal  undo?",
-        "english": "I am thinking of after school homework club.  We can also seek help from other  parents and staff members for this"
+        "english": "I am thinking of after school homework club.  We can also seek help from other  parents and staff members for this",
+        "hindi": "मैं स्कूल के बाद के होमवर्क क्लब के बारे में सोच रहा हूं।  इसके लिए हम अन्य अभिभावकों और स्टाफ सदस्यों से भी मदद ले सकते हैं"
       },
       {
         "manglish": "Sheri. Ith sangadippikkan thangalude joli samayathil  ninnum  pradhidinam 2 manikoor edutholu . nammude aadhyapadi  enthan  ?",
-        "english": "Ith valare nalla  oru aashayaman . pakshe ee karyam  shariyayi nadathuvanayi  namukk shariyaya aalukaleyum aavashyamund . thaangalk ithil  munparichayam undo Yes, in my previous job I was the home work club leader for 5 years . There is no other job that I have enjoyed so much. We were also able to bring about a positive change among the students. Atheyo.  Eppozhan enikk  aashvasamayath. Nammude vidhyalayathile aadyathe grihapada  samajam thudanguvan  theerthum aaveshathilan . naalazhchakkullil namukkith thudangan  saadhikkum enn  thaangal karuthunnundo  ? Thank you so much for your encouragement  .Of course,  if we can organize a team quickly we can start it in four weeks. I would definitely set aside a part of my working hours for this."
+        "english": "Ith valare nalla  oru aashayaman . pakshe ee karyam  shariyayi nadathuvanayi  namukk shariyaya aalukaleyum aavashyamund . thaangalk ithil  munparichayam undo Yes, in my previous job I was the home work club leader for 5 years . There is no other job that I have enjoyed so much. We were also able to bring about a positive change among the students. Atheyo.  Eppozhan enikk  aashvasamayath. Nammude vidhyalayathile aadyathe grihapada  samajam thudanguvan  theerthum aaveshathilan . naalazhchakkullil namukkith thudangan  saadhikkum enn  thaangal karuthunnundo  ? Thank you so much for your encouragement  .Of course,  if we can organize a team quickly we can start it in four weeks. I would definitely set aside a part of my working hours for this.",
+        "hindi": "इथ वलारे नल्ला ओरु आशायमन। पक्षे ई कार्यम शरीरयि नदाथुवनायि नमुक्क शरीरय आलुकेलेयुम अवश्यमुंद। थंगालक इथिल मुनपरिचयम् पूर्ववत हां, अपनी पिछली नौकरी में मैं 5 वर्षों तक होम वर्क क्लब लीडर था। ऐसा कोई दूसरा काम नहीं है जिसमें मैंने इतना आनंद उठाया हो। हम छात्रों में सकारात्मक बदलाव लाने में भी सफल रहे। अथेयो.  इप्पोझन एनिक्क अश्वसमयथ। नम्मुडे विध्यालयथिले आद्याथे गृहपाद समाजम तुडंगुवन थीर्थुम आवेषथिलन। नालज़चक्कुल्लिल नमुक्किथ थुडांगन साधिक्कुम एन्न थांगल करुथुन्नुंदो? आपके प्रोत्साहन के लिए बहुत बहुत धन्यवाद। बेशक, अगर हम जल्दी से एक टीम संगठित कर सकें तो हम इसे चार सप्ताह में शुरू कर सकते हैं�� मैं निश्चित रूप से इसके लिए अपने काम के घंटों का एक हिस्सा अलग रखूंगा।"
       },
       {
         "manglish": "Gambeeramaayirikkunnu . ith  vijayakaramanenkil , baaviyil  ith vipuleekarikkunnathine kurichulla karyngalum namukkalochikkam",
-        "english": "Firstly, I'll organize a meeting with all the parents and staff and ask for their help. Even if people are reluctant in the beginning, I'm sure we'll get a lot of volunteers once we start the program"
+        "english": "Firstly, I'll organize a meeting with all the parents and staff and ask for their help. Even if people are reluctant in the beginning, I'm sure we'll get a lot of volunteers once we start the program",
+        "hindi": "सबसे पहले, मैं सभी अभिभावकों और कर्मचारियों के साथ एक बैठक आयोजित करूंगा और उनसे मदद मांगूंगा। भले ही शुरुआत में लोग अनिच्छुक हों, मुझे यकीन है कि कार्यक्रम शुरू करने के बाद हमें बहुत सारे स्वयंसेवक मिलेंगे"
       },
       {
         "manglish": "",
-        "english": "Thank you. I am very eager to start this. I'm sure many kids will find this club helpful"
+        "english": "Thank you. I am very eager to start this. I'm sure many kids will find this club helpful",
+        "hindi": "धन्यवाद। मैं इसे शुरू करने के लिए बहुत उत्सुक हूं.' मुझे यकीन है कि कई बच्चों को यह क्लब मददगार लगेगा"
       }
     ]
   },
@@ -192,27 +228,33 @@
     "exchanges": [
       {
         "manglish": "Namaskaaram ente peru sally.  Thaankale inn njan engane aan sahaayikkendath",
-        "english": "Hi Sally ,I came to know from my friend that you offer computer courses here . I am here to know more details about your computer courses."
+        "english": "Hi Sally ,I came to know from my friend that you offer computer courses here . I am here to know more details about your computer courses.",
+        "hindi": "हाय सैली, मुझे अपने दोस्त से पता चला कि आप यहां कंप्यूटर पाठ्यक्रम प्रदान करते हैं। मैं आपके कंप्यूटर पाठ्यक्रमों के बारे में अधिक जानकारी जानने के लिए यहां हूं।"
       },
       {
         "manglish": "Theerchayayum thankale ee karyathil njan sahaayikkam . aadyamaayi thaankal enth aavasyathinaan computer classil cheran aagarahikkunnath enn parayamo. Ningal nedan aagrahikkunna kazhivukale adisthaanathil  namukkivide palatharathilulla coursukal labyamaayittund",
-        "english": "The other day my son asked me to help him with his business. I have been assigned to look at the revenue and expenditure figures of the business. So I want to learn how to use a spreadsheet"
+        "english": "The other day my son asked me to help him with his business. I have been assigned to look at the revenue and expenditure figures of the business. So I want to learn how to use a spreadsheet",
+        "hindi": "दूसरे दिन मेरे बेटे ने मुझसे उसके व्यवसाय में मदद करने के लिए कहा। मुझे व्यवसाय के राजस्व और व्यय के आंकड़ों को देखने का काम सौंपा गया है। इसलिए मैं सीखना चाहता हूं कि स्प्रेडशीट का उपयोग कैसे करें"
       },
       {
         "manglish": "Angane yaanenkil  njangalude  adisthaana course aayirikkum  thaankalkk  ettavum anuyojyam  aayittullath.  Oru coursil thanne thaankalkk  avasyamaaya  elllatharam kazhivukalum padikkan  saadikkunnathaan",
-        "english": "Awesome. I need a class suitable for beginners. I've used computers only to send emails to my grand children"
+        "english": "Awesome. I need a class suitable for beginners. I've used computers only to send emails to my grand children",
+        "hindi": "बहुत बढ़िया। मुझे शुरुआती लोगों के लिए उपयुक्त कक्षा की आवश्यकता है। मैंने कंप्यूटर का उपयोग केवल अपने पोते-पोतियों को ईमेल भेजने के लिए किया है"
       },
       {
         "manglish": "Ath  prashnamalla  njangalude ella coursukal yaathoru mun parichayavum illatha ethorolalkkum anuyojyamaayava thanneyaan. Thaankal orikkalum mattullavarude  pirakil  aavilla enn njan urapp tharunnu",
-        "english": "I feel relieved now. Last time I had joined a computer course. Not only was it very expensive but the teacher was very impatient. If we had known everything in the first place we would not have gone to study there, right?"
+        "english": "I feel relieved now. Last time I had joined a computer course. Not only was it very expensive but the teacher was very impatient. If we had known everything in the first place we would not have gone to study there, right?",
+        "hindi": "अब मुझे राहत महसूस हो रही है. पिछली बार मैंने एक कंप्यूटर कोर्स ज्वाइन किया था. न केवल यह बहुत महंगा था बल्कि शिक्षक बहुत अधीर थे। अगर हमें पहले से सब कुछ पता होता तो हम वहां पढ़ने नहीं जाते, है ना?"
       },
       {
         "manglish": "Ath kettathil njan  khedikkunnu. Ivide njangalude adyaapakar valare kshamayullavaraan, thaankalk thaankalude swantham vegathayil  padikkam Glad to hear that. Can I join the next available slot? Because I want to start classes as soon as possible Theerchayaayun  Dhaaralam slotukal labyamaayittund . thaankal  krithya samayathaan vannirikkunnath . njangal praveshana nadapadikal aarambichatheyulloo . puthiya adyayanam  3 aazhchakullil thudangum.  Aazhchayil randu classukal aan njangal nadathunnath . onn budhanaazhchayum , mattonn sheniyaazhchayum",
-        "english": "I want to join Saturday classes. Because my son and daughter - in - law go to work on Wednesdays, So I need to be home to look after my grandchildren"
+        "english": "I want to join Saturday classes. Because my son and daughter - in - law go to work on Wednesdays, So I need to be home to look after my grandchildren",
+        "hindi": "मैं शनिवार की कक्षाओं में शामिल होना चाहता हूं. क्योंकि मेरा बेटा और बहू बुधवार को काम पर जाते हैं, इसलिए मुझे अपने पोते-पोतियों की देखभाल के लिए घर पर रहना पड़ता है"
       },
       {
         "manglish": "Angane aanenkil  njan  thaankale sheniyaazhcha  ravile 10 maniyude classil cherkkam  . thaankal varumbol oru penayum kurachu  kadalaasukalum kondu varunnuvenn  urappu varuthuka. classile notukal  kurichedukkan aavasyam varum",
-        "english": "Of course I will bring them . Or I may forget what the teacher is teaching me when I get home. Thanks a lot .I'm looking forward to starting classes"
+        "english": "Of course I will bring them . Or I may forget what the teacher is teaching me when I get home. Thanks a lot .I'm looking forward to starting classes",
+        "hindi": "अवश्य मैं उन्हें लाऊंगा। या जब मैं घर पहुँचूँगा तो मैं भूल जाऊँगा कि शिक्षक मुझे क्या पढ़ा रहे हैं। बहुत बहुत धन्यवाद। मैं कक्षाएं शुरू करने का इंतजार कर रहा हूं"
       }
     ]
   },
@@ -223,27 +265,33 @@
     "exchanges": [
       {
         "manglish": "theerchayayum sahaayikkan enik santhoshameyulloo njan thankale enganeyaan sahaayikkendath ? I have been looking for an encyclopaedia on world history for a while now. But I am not getting a good one.",
-        "english": "Good morning! I'm looking for assistance at the library."
+        "english": "Good morning! I'm looking for assistance at the library.",
+        "hindi": "शुभ प्रभात! मैं पुस्तकालय में सहायता की तलाश में हूं।"
       },
       {
         "manglish": "athoru prashnameyalla. ningalk anuyojyamaayath njangal naamaavali parishodikkatte. \"insights in to world history\" enna vikjaana kosham ithaa. ningal anweshikkunna vivarangal ithil undaayirikkanam. Thank you. While I'm here, could you tell me how books are arranged on the shelves? theerchayaayum. njangalude pusthakangal avayude thalakkettukale adisthaanamakki aksharamaala kramathil krameekarichirikkunnu.",
-        "english": "I see. Can you show me where I can find a language dictionary?"
+        "english": "I see. Can you show me where I can find a language dictionary?",
+        "hindi": "अच्छा ऐसा है। क्या आप मुझे दिखा सकते हैं कि मुझे भाषा शब्दकोश कहां मिल सकता है?"
       },
       {
         "manglish": "theerchayayum. ente koode varoo , baashaa nigandukalulla  vibaagathilekk njan ningale kond pokum . ithoru prashastha prasaadhakante english-malayalam  baashaa nigandu aan, ithonnu nokku",
-        "english": "I'm planning to go to my home country next month. Incase if I fail to return book on time, what would happen?"
+        "english": "I'm planning to go to my home country next month. Incase if I fail to return book on time, what would happen?",
+        "hindi": "मैं अगले महीने अपने गृह देश जाने की योजना बना रहा हूं। यदि मैं समय पर पुस्तक वापस करने में असफल हो जाऊं तो क्या होगा?"
       },
       {
         "manglish": "nischitha theeyathikk  munp thane pusthakam thirichelpikkunnathaan uchitham. vaikiyaal pizhayundakum , maathramalla  rand maasam kazhinjittum krithyamaaya ariyipponnum labichillenkil amgathwam vare radhaakapettekkam",
-        "english": "I will definitely keep that in mind. I saw a workshop pamphlet with everyone here. Where can I get it from?"
+        "english": "I will definitely keep that in mind. I saw a workshop pamphlet with everyone here. Where can I get it from?",
+        "hindi": "मैं निश्चित रूप से इसे ध्यान में रखूंगा। मैंने यहां सभी के साथ एक कार्यशाला पुस्तिका देखी। मैं इसे कहां से प्राप्त कर सकता हूं?"
       },
       {
         "manglish": "lakhu lekhakalum  ariyippukalum  saadaranayaayi  praveshana kavaadathinaduthaar  undaavaar . ath njan ningalk kaanichu tharaam",
-        "english": "Thank you. Lastly, can you tell me about a nearby book stall where I can buy a novel?"
+        "english": "Thank you. Lastly, can you tell me about a nearby book stall where I can buy a novel?",
+        "hindi": "धन्यवाद। अंत में, क्या आप मुझे नजदीकी बुक स्टॉल के बारे में बता सकते हैं जहाँ मैं एक उपन्यास खरीद सकता हूँ?"
       },
       {
         "manglish": "theerchayum . ivied ninn  oru  block akale , 123 main streetil   \"readers heaven\" enna  peril oru book stall und .avide  ella pusthakangalum vilakkizhivil labikkum",
-        "english": "I really do appreciate your assistance.See you again"
+        "english": "I really do appreciate your assistance.See you again",
+        "hindi": "मैं वास्तव में आपकी सहायता की सराहना करता हूँ। फिर मिलेंगे"
       }
     ]
   }

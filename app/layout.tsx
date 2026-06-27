@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NAATI CCLMalayalam",
-  description: "NAATI CCL Malayalam ",
+  title: "NAATI CCL Hindi",
+  description: "NAATI CCL Hindi Practice",
 };
 
 export default function RootLayout({

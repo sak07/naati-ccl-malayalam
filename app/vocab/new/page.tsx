@@ -6,7 +6,7 @@ import { useCustomVocab } from '@/lib/useCustomVocab';
 import type { VocabTerm } from '@/lib/vocab-data';
 
 function blankTerm(): VocabTerm & { key: number } {
-  return { key: Date.now() + Math.random(), english: '', manglish: '' };
+  return { key: Date.now() + Math.random(), english: '', hindi: '' };
 }
 
 export default function NewVocabPage() {
@@ -17,7 +17,7 @@ export default function NewVocabPage() {
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
 
-  const updateTerm = useCallback((index: number, field: 'english' | 'manglish', value: string) => {
+  const updateTerm = useCallback((index: number, field: 'english' | 'hindi', value: string) => {
     setTerms(prev => prev.map((t, i) => i === index ? { ...t, [field]: value } : t));
   }, []);
 
@@ -31,11 +31,11 @@ export default function NewVocabPage() {
 
   const handleSubmit = useCallback(async () => {
     if (!domain.trim()) { setError('Please enter a list name.'); return; }
-    const valid = terms.filter(t => t.english.trim() && t.manglish.trim());
+    const valid = terms.filter(t => t.english.trim() && t.hindi.trim());
     if (valid.length === 0) { setError('Add at least one word pair.'); return; }
     setSaving(true);
     try {
-      const id = await addVocab(domain.trim(), valid.map(({ english, manglish }) => ({ english, manglish })));
+      const id = await addVocab(domain.trim(), valid.map(({ english, hindi }) => ({ english, hindi })));
       router.push(`/vocab/custom/${encodeURIComponent(id)}`);
     } catch {
       setError('Failed to save. Please try again.');
@@ -79,7 +79,7 @@ export default function NewVocabPage() {
         <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
           <div className="grid grid-cols-2 gap-px bg-slate-100 px-4 py-2.5">
             <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">English</span>
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Manglish</span>
+            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Hindi</span>
           </div>
           <div className="divide-y divide-slate-50">
             {terms.map((t, i) => (
@@ -91,9 +91,9 @@ export default function NewVocabPage() {
                   className="flex-1 px-2.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                 />
                 <input
-                  value={t.manglish}
-                  onChange={e => updateTerm(i, 'manglish', e.target.value)}
-                  placeholder="Manglish"
+                  value={t.hindi}
+                  onChange={e => updateTerm(i, 'hindi', e.target.value)}
+                  placeholder="Hindi"
                   className="flex-1 px-2.5 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                 />
                 {terms.length > 1 && (
