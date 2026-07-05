@@ -155,22 +155,23 @@ export default function VocabClient({ vocab }: Props) {
             : 'Keep practising — you\'ll get them all!'}
         </p>
 
-        {known.size < ordered.length && (
-          <button
-            onClick={startIncorrectOnlyFlashcards}
-            className="px-5 py-3 rounded-xl bg-red-600 text-white font-bold text-sm hover:bg-red-700 transition-all shadow-sm"
-          >
-            🔄 Practise the {ordered.length - known.size} Incorrect Words Now
-          </button>
-        )}
-
-        <div className="flex gap-3">
-          <button onClick={restart} className="px-5 py-2.5 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
-            Go again
-          </button>
-          <a href="/" className="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-all">
-            Back to home
-          </a>
+        <div className="flex flex-col gap-2 w-full">
+          <div className="flex gap-3">
+            <button onClick={restart} className="flex-1 px-4 py-2.5 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
+              Go again
+            </button>
+            <a href="/" className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 transition-all text-center">
+              Back to home
+            </a>
+          </div>
+          {known.size < ordered.length && (
+            <button
+              onClick={startIncorrectOnlyFlashcards}
+              className="w-full py-2.5 rounded-xl border-2 border-red-200 text-red-600 font-semibold text-sm hover:bg-red-50 transition-all"
+            >
+              🔄 Review the {ordered.length - known.size} words I got wrong
+            </button>
+          )}
         </div>
       </div>
     );
@@ -192,12 +193,26 @@ export default function VocabClient({ vocab }: Props) {
         </div>
 
         {mode === 'flashcard' && !isPractisingIncorrect && sheetIncorrectsCount > 0 && (
-          <button
-            onClick={startIncorrectOnlyFlashcards}
-            className="px-3.5 py-2 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-bold transition-all"
-          >
-            ⚠️ Review Wrong Words ({sheetIncorrectsCount})
-          </button>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={startIncorrectOnlyFlashcards}
+              className="px-3.5 py-2 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-bold transition-all"
+            >
+              ⚠️ Review Wrong ({sheetIncorrectsCount})
+            </button>
+            <button
+              onClick={() => {
+                // Clear only the incorrect words from this sheet
+                incorrectList
+                  .filter(t => listWordsMap.has(t.english.toLowerCase()))
+                  .forEach(t => removeIncorrect(t.english));
+              }}
+              title="Reset wrong word list"
+              className="px-2.5 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 text-xs font-bold transition-all"
+            >
+              ✕ Reset
+            </button>
+          </div>
         )}
 
         <div className="flex bg-white border border-slate-200 rounded-xl p-1 gap-1 ml-auto">
