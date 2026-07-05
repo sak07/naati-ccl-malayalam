@@ -2,41 +2,53 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import type { VocabTerm } from './vocab-data';
-import { supabase } from './supabase';
 
 interface Addition extends VocabTerm {
   id: string;
+}
+
+function storageKey(vocabId: string) {
+  return `naati_vocab_additions_${vocabId}`;
+}
+
+function loadAdditions(vocabId: string): Addition[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(storageKey(vocabId));
+    return raw ? (JSON.parse(raw) as Addition[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveAdditions(vocabId: string, additions: Addition[]) {
+  localStorage.setItem(storageKey(vocabId), JSON.stringify(additions));
 }
 
 export function useVocabAdditions(vocabId: string) {
   const [additions, setAdditions] = useState<Addition[]>([]);
 
   useEffect(() => {
-    supabase
-      .from('vocab_additions')
-      .select('*')
-      .eq('vocab_id', vocabId)
-      .order('created_at', { ascending: true })
-      .then(({ data }) => { if (data) setAdditions(data as Addition[]); });
+    setAdditions(loadAdditions(vocabId));
   }, [vocabId]);
 
   const addTerm = useCallback(async (english: string, hindi: string) => {
     const id = `add-${Date.now()}`;
-    const { error } = await supabase
-      .from('vocab_additions')
-      .insert({ id, vocab_id: vocabId, english, hindi });
-    if (error) throw error;
-    setAdditions(prev => [...prev, { id, english, hindi }]);
+    const newTerm: Addition = { id, english, hindi };
+    setAdditions(prev => {
+      const updated = [...prev, newTerm];
+      saveAdditions(vocabId, updated);
+      return updated;
+    });
   }, [vocabId]);
 
   const deleteTerm = useCallback(async (id: string) => {
-    const { error } = await supabase
-      .from('vocab_additions')
-      .delete()
-      .eq('id', id);
-    if (error) throw error;
-    setAdditions(prev => prev.filter(a => a.id !== id));
-  }, []);
+    setAdditions(prev => {
+      const updated = prev.filter(a => a.id !== id);
+      saveAdditions(vocabId, updated);
+      return updated;
+    });
+  }, [vocabId]);
 
   return { additions, addTerm, deleteTerm };
 }

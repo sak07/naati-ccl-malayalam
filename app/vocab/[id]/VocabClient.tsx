@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import type { VocabList, VocabTerm } from '@/lib/vocab-data';
 import { useProgress } from '@/lib/useProgress';
 import { useVocabAdditions } from '@/lib/useVocabAdditions';
+import { useIncorrectVocab } from '@/lib/useIncorrectVocab';
 
 interface Props { vocab: VocabList; }
 
@@ -39,11 +40,16 @@ export default function VocabClient({ vocab }: Props) {
 
   const { recordVocabKnown } = useProgress();
   const { additions, addTerm, deleteTerm } = useVocabAdditions(vocab.id);
+  const { addIncorrect, removeIncorrect, incorrectList } = useIncorrectVocab();
 
   const allTerms: VocabTerm[] = [...vocab.terms, ...additions];
+  const [ordered, setOrdered] = useState<VocabTerm[]>([]);
+  const [isPractisingIncorrect, setIsPractisingIncorrect] = useState(false);
 
-  const [ordered, setOrdered] = useState<VocabTerm[]>(vocab.terms);
-  useEffect(() => { setOrdered(shuffle(allTerms)); }, [vocab.terms, additions]);
+  useEffect(() => { 
+    setOrdered(shuffle(allTerms)); 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [vocab.terms, additions]);
 
   const term = ordered[current];
   const front = direction === 'en-to-hi' ? term?.english : term?.hindi;
@@ -55,6 +61,15 @@ export default function VocabClient({ vocab }: Props) {
     if (didKnow) {
       setKnown(prev => new Set([...prev, current]));
       recordVocabKnown(1);
+      // Remove from incorrect list if marked as known
+      if (term) {
+        removeIncorrect(term.english);
+      }
+    } else {
+      // Add to incorrect list if marked as "still learning"
+      if (term) {
+        addIncorrect(term);
+      }
     }
     if (current < ordered.length - 1) {
       setCurrent(c => c + 1);
@@ -62,14 +77,31 @@ export default function VocabClient({ vocab }: Props) {
     } else {
       setDone(true);
     }
-  }, [current, ordered.length, recordVocabKnown]);
+  }, [current, ordered, recordVocabKnown, addIncorrect, removeIncorrect, term]);
 
   const restart = useCallback(() => {
     setCurrent(0);
     setRevealed(false);
     setKnown(new Set());
     setDone(false);
-  }, []);
+    setIsPractisingIncorrect(false);
+    setOrdered(shuffle(allTerms));
+  }, [allTerms]);
+
+  const startIncorrectOnlyFlashcards = useCallback(() => {
+    // Filter global incorrect list for items belonging to this vocabulary sheet
+    const listWordsMap = new Set(allTerms.map(t => t.english.toLowerCase()));
+    const sheetIncorrects = incorrectList.filter(t => listWordsMap.has(t.english.toLowerCase()));
+
+    if (sheetIncorrects.length > 0) {
+      setOrdered(shuffle(sheetIncorrects));
+      setCurrent(0);
+      setRevealed(false);
+      setKnown(new Set());
+      setDone(false);
+      setIsPractisingIncorrect(true);
+    }
+  }, [allTerms, incorrectList]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -103,7 +135,11 @@ export default function VocabClient({ vocab }: Props) {
     } finally {
       setSaving(false);
     }
-  }, [newEnglish, newHindi, addTerm]);
+  }, [newEnglish, newHindi, addTerm, allTerms]);
+
+  // Find sheet specific incorrects for current state checks
+  const listWordsMap = new Set(allTerms.map(t => t.english.toLowerCase()));
+  const sheetIncorrectsCount = incorrectList.filter(t => listWordsMap.has(t.english.toLowerCase())).length;
 
   // ── Completion ────────────────────────────────────────────────
   if (done && mode === 'flashcard') {
@@ -118,6 +154,16 @@ export default function VocabClient({ vocab }: Props) {
             ? 'You know every word in this list!'
             : 'Keep practising — you\'ll get them all!'}
         </p>
+
+        {known.size < ordered.length && (
+          <button
+            onClick={startIncorrectOnlyFlashcards}
+            className="px-5 py-3 rounded-xl bg-red-600 text-white font-bold text-sm hover:bg-red-700 transition-all shadow-sm"
+          >
+            🔄 Practise the {ordered.length - known.size} Incorrect Words Now
+          </button>
+        )}
+
         <div className="flex gap-3">
           <button onClick={restart} className="px-5 py-2.5 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
             Go again
@@ -145,6 +191,15 @@ export default function VocabClient({ vocab }: Props) {
           >Word list</button>
         </div>
 
+        {mode === 'flashcard' && !isPractisingIncorrect && sheetIncorrectsCount > 0 && (
+          <button
+            onClick={startIncorrectOnlyFlashcards}
+            className="px-3.5 py-2 rounded-xl bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-bold transition-all"
+          >
+            ⚠️ Review Wrong Words ({sheetIncorrectsCount})
+          </button>
+        )}
+
         <div className="flex bg-white border border-slate-200 rounded-xl p-1 gap-1 ml-auto">
           <button onClick={() => setDirection('en-to-hi')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${direction === 'en-to-hi' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-800'}`}>EN → HI</button>
           <button onClick={() => setDirection('hi-to-en')} className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${direction === 'hi-to-en' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-800'}`}>HI → EN</button>
@@ -165,6 +220,11 @@ export default function VocabClient({ vocab }: Props) {
               />
             </div>
             <span className="text-xs text-emerald-600 font-medium">{known.size} known</span>
+            {isPractisingIncorrect && (
+              <span className="text-xs text-red-600 bg-red-50 border border-red-100 font-bold px-2 py-0.5 rounded-full">
+                Review Mode
+              </span>
+            )}
           </div>
 
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center animate-popIn min-h-[160px] flex flex-col items-center justify-center">

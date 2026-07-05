@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import type { VocabTerm } from '@/lib/vocab-data';
 import { useProgress } from '@/lib/useProgress';
+import { useIncorrectVocab } from '@/lib/useIncorrectVocab';
 
 interface TermWithDomain extends VocabTerm { domain: string; }
 interface Props { allTerms: TermWithDomain[]; }
@@ -30,20 +31,31 @@ const BATCH = 15;
 
 export default function VocabQuizClient({ allTerms }: Props) {
   const [restartKey, setRestartKey] = useState(0);
-  const [queue]    = useState<TermWithDomain[]>(() => shuffle(allTerms).slice(0, BATCH));
+  const [quizTerms, setQuizTerms] = useState<TermWithDomain[]>([]);
   const [index, setIndex]         = useState(0);
   const [selected, setSelected]   = useState<string | null>(null);
   const [score, setScore]         = useState(0);
   const [done, setDone]           = useState(false);
   const [options, setOptions]     = useState<TermWithDomain[]>([]);
+  
+  // Track incorrect ones specifically in this run
+  const [wrongInCurrentRun, setWrongInCurrentRun] = useState<TermWithDomain[]>([]);
+
+  // Persistent tracker for wrong terms across all lists
+  const { addIncorrect, removeIncorrect } = useIncorrectVocab();
   const { recordVocabKnown } = useProgress();
 
-  const term = queue[index];
+  // Initialize terms
+  useEffect(() => {
+    setQuizTerms(shuffle(allTerms).slice(0, BATCH));
+  }, [allTerms]);
+
+  const term = quizTerms[index];
 
   useEffect(() => {
     if (term) setOptions(getOptions(term, allTerms));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+  }, [index, term]);
 
   const pick = useCallback((opt: TermWithDomain) => {
     if (selected !== null) return;
@@ -51,44 +63,83 @@ export default function VocabQuizClient({ allTerms }: Props) {
     if (opt.hindi === term.hindi) {
       setScore(s => s + 1);
       recordVocabKnown(1);
+      // If we got it right, remove it from the general wrong lists if it was there
+      removeIncorrect(term.english);
+    } else {
+      // Add to current run's incorrect collection
+      setWrongInCurrentRun(prev => [...prev, term]);
+      // Persist to incorrect storage
+      addIncorrect(term);
     }
     setTimeout(() => {
-      if (index < queue.length - 1) {
+      if (index < quizTerms.length - 1) {
         setIndex(i => i + 1);
         setSelected(null);
       } else {
         setDone(true);
       }
     }, 1400);
-  }, [selected, term, index, queue.length, recordVocabKnown]);
+  }, [selected, term, index, quizTerms.length, recordVocabKnown, addIncorrect, removeIncorrect]);
 
   const restart = useCallback(() => {
-    setRestartKey(k => k + 1);
-  }, []);
+    setQuizTerms(shuffle(allTerms).slice(0, BATCH));
+    setIndex(0);
+    setSelected(null);
+    setScore(0);
+    setDone(false);
+    setWrongInCurrentRun([]);
+  }, [allTerms]);
 
-  if (restartKey > 0) {
-    return <VocabQuizClient allTerms={allTerms} />;
-  }
+  const startIncorrectOnlyQuiz = useCallback(() => {
+    if (wrongInCurrentRun.length > 0) {
+      setQuizTerms(shuffle(wrongInCurrentRun));
+      setIndex(0);
+      setSelected(null);
+      setScore(0);
+      setDone(false);
+      setWrongInCurrentRun([]);
+    }
+  }, [wrongInCurrentRun]);
 
   if (done) {
-    const pct = Math.round((score / queue.length) * 100);
+    const pct = Math.round((score / quizTerms.length) * 100);
     return (
       <div className="flex flex-col items-center py-12 gap-5 text-center animate-popIn">
-        <div className="text-7xl">{score === queue.length ? '🌟' : score >= queue.length * 0.7 ? '💪' : '📚'}</div>
+        <div className="text-7xl">{score === quizTerms.length ? '🌟' : score >= quizTerms.length * 0.7 ? '💪' : '📚'}</div>
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">{score} / {queue.length}</h2>
+          <h2 className="text-2xl font-bold text-slate-900">{score} / {quizTerms.length}</h2>
           <p className="text-slate-500 text-sm mt-1">{pct}% correct</p>
         </div>
         <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
           <div
-            className={`h-full rounded-full transition-all duration-700 ${score === queue.length ? 'bg-emerald-500' : 'bg-indigo-500'}`}
+            className={`h-full rounded-full transition-all duration-700 ${score === quizTerms.length ? 'bg-emerald-500' : 'bg-indigo-500'}`}
             style={{ width: `${pct}%` }}
           />
         </div>
         <p className="text-slate-500 text-sm max-w-xs">
-          {score === queue.length ? 'Perfect! Every word correct.' : score >= queue.length * 0.7 ? 'Great work — keep practising!' : 'Keep going, you\'ll get there!'}
+          {score === quizTerms.length ? 'Perfect! Every word correct.' : score >= quizTerms.length * 0.7 ? 'Great work — keep practising!' : 'Keep going, you\'ll get there!'}
         </p>
-        <div className="flex gap-3 w-full">
+
+        {wrongInCurrentRun.length > 0 && (
+          <div className="bg-red-50 border border-red-100 rounded-2xl p-4 w-full text-left space-y-2 max-w-sm mx-auto">
+            <span className="text-xs font-bold text-red-700 block">Words to review:</span>
+            <div className="flex flex-wrap gap-1.5">
+              {wrongInCurrentRun.map((w, idx) => (
+                <span key={idx} className="text-xs bg-white border border-red-200 text-red-700 font-semibold px-2 py-0.5 rounded-lg">
+                  {w.english}
+                </span>
+              ))}
+            </div>
+            <button
+              onClick={startIncorrectOnlyQuiz}
+              className="w-full mt-2 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs transition-colors shadow-sm"
+            >
+              🔄 Practise Just These {wrongInCurrentRun.length} Incorrect Words
+            </button>
+          </div>
+        )}
+
+        <div className="flex gap-3 w-full max-w-sm mt-2">
           <button onClick={restart} className="flex-1 py-3 rounded-xl border-2 border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
             Try again
           </button>
@@ -102,14 +153,14 @@ export default function VocabQuizClient({ allTerms }: Props) {
 
   if (!term || options.length < 2) return null;
 
-  const pct = Math.round((index / queue.length) * 100);
+  const pct = Math.round((index / quizTerms.length) * 100);
 
   return (
     <div className="space-y-5">
       {/* Progress */}
       <div className="space-y-1.5">
         <div className="flex justify-between text-xs text-slate-400">
-          <span><span className="font-semibold text-slate-700">{index + 1}</span> of {queue.length}</span>
+          <span><span className="font-semibold text-slate-700">{index + 1}</span> of {quizTerms.length}</span>
           <span className="text-emerald-600 font-semibold">{score} correct</span>
         </div>
         <div className="h-2 bg-slate-100 rounded-full overflow-hidden">

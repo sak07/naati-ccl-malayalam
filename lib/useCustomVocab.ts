@@ -2,40 +2,49 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import type { VocabList, VocabTerm } from './vocab-data';
-import { supabase } from './supabase';
+
+const STORAGE_KEY = 'naati_custom_vocabs';
+
+function loadFromStorage(): VocabList[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? (JSON.parse(raw) as VocabList[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveToStorage(vocabs: VocabList[]) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(vocabs));
+}
 
 export function useCustomVocab() {
   const [customVocabs, setCustomVocabs] = useState<VocabList[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase
-      .from('custom_vocabularies')
-      .select('*')
-      .order('created_at', { ascending: true })
-      .then(({ data }) => {
-        if (data) setCustomVocabs(data as VocabList[]);
-        setLoading(false);
-      });
+    setCustomVocabs(loadFromStorage());
+    setLoading(false);
   }, []);
 
   const addVocab = useCallback(async (domain: string, terms: VocabTerm[]): Promise<string> => {
     const id = `custom-${Date.now()}`;
-    const { error } = await supabase
-      .from('custom_vocabularies')
-      .insert({ id, domain, terms });
-    if (error) throw error;
-    setCustomVocabs(prev => [...prev, { id, domain, terms }]);
+    const newVocab: VocabList = { id, domain, terms };
+    setCustomVocabs(prev => {
+      const updated = [...prev, newVocab];
+      saveToStorage(updated);
+      return updated;
+    });
     return id;
   }, []);
 
   const deleteVocab = useCallback(async (id: string) => {
-    const { error } = await supabase
-      .from('custom_vocabularies')
-      .delete()
-      .eq('id', id);
-    if (error) throw error;
-    setCustomVocabs(prev => prev.filter(v => v.id !== id));
+    setCustomVocabs(prev => {
+      const updated = prev.filter(v => v.id !== id);
+      saveToStorage(updated);
+      return updated;
+    });
   }, []);
 
   const getById = useCallback((id: string): VocabList | undefined => {
