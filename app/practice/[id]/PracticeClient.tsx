@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Exchange } from '@/lib/types';
 import { useProgress } from '@/lib/useProgress';
-import { useTTS, useAudioRecorder, playExamChime } from '@/lib/useExamAudio';
+import { useTTS, useAudioRecorder, playExamChime, playReadyChime } from '@/lib/useExamAudio';
 
 interface Props {
   exchanges: Exchange[];
@@ -56,18 +56,18 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
   // Determine language of current prompt (for TTS)
   const isPromptHindi = !isEnglish(showFirst);
 
-  const startExamSegment = useCallback(() => {
+  const startExamSegment = useCallback(async () => {
     setIsPlayingPrompt(true);
     setRevealed(false);
     clearRecording();
-    speak(showFirst, isPromptHindi, () => {
+    // "Listen now" cue — mirrors the real NAATI exam
+    await playReadyChime();
+    speak(showFirst, isPromptHindi, async () => {
+      // Double-beep "start speaking" cue after dialogue finishes
+      await playExamChime();
       setIsPlayingPrompt(false);
-      playExamChime();
-      // Auto-start recording after beep
-      setTimeout(() => {
-        startRecording();
-        setIsRecordingAnswer(true);
-      }, 600);
+      startRecording();
+      setIsRecordingAnswer(true);
     });
   }, [showFirst, isPromptHindi, speak, startRecording, clearRecording]);
 
@@ -125,13 +125,15 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
             : (nextPromptIsEnglish ? nextExchange.answer : nextExchange.prompt);
           const nextIsPromptHindi = !isEnglish(nextShowFirst);
 
-          speak(nextShowFirst, nextIsPromptHindi, () => {
-            setIsPlayingPrompt(false);
-            playExamChime();
-            setTimeout(() => {
+          // "Listen now" cue before next dialogue
+          playReadyChime().then(() => {
+            speak(nextShowFirst, nextIsPromptHindi, async () => {
+              // Double-beep "start speaking" cue
+              await playExamChime();
+              setIsPlayingPrompt(false);
               startRecording();
               setIsRecordingAnswer(true);
-            }, 600);
+            });
           });
         }, 100);
       }
@@ -174,13 +176,14 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
     stopRecording();
     setIsRecordingAnswer(false);
     setIsPlayingPrompt(true);
-    speak(showFirst, isPromptHindi, () => {
-      setIsPlayingPrompt(false);
-      playExamChime();
-      setTimeout(() => {
+    // "Listen now" cue before replaying
+    playReadyChime().then(() => {
+      speak(showFirst, isPromptHindi, async () => {
+        await playExamChime();
+        setIsPlayingPrompt(false);
         startRecording();
         setIsRecordingAnswer(true);
-      }, 600);
+      });
     });
   }, [current, showFirst, isPromptHindi, speak, startRecording, stopRecording]);
 

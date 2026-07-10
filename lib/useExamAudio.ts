@@ -1,30 +1,64 @@
 import { useCallback, useRef, useState, useEffect } from 'react';
 
-// Play a NAATI-like chime using browser Web Audio API
-export function playExamChime() {
-  try {
-    const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-    
-    // NAATI exam chime is usually a double beep or a high frequency tone
-    const osc = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-    
-    osc.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(880, audioCtx.currentTime); // A5 note
-    
-    // Fade-in / Fade-out to make it sound pleasant
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-    gainNode.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.05);
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
-    
-    osc.start(audioCtx.currentTime);
-    osc.stop(audioCtx.currentTime + 0.5);
-  } catch (err) {
-    console.error('Failed to play exam chime:', err);
-  }
+// Helper: play a single tone via Web Audio API
+function playTone(
+  audioCtx: AudioContext,
+  frequency: number,
+  startTime: number,
+  duration: number,
+  peakGain = 0.35
+) {
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(frequency, startTime);
+  gain.gain.setValueAtTime(0, startTime);
+  gain.gain.linearRampToValueAtTime(peakGain, startTime + 0.04);
+  gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+  osc.start(startTime);
+  osc.stop(startTime + duration);
+}
+
+/**
+ * "Listen now" chime — a single soft downward tone played BEFORE
+ * the dialogue audio starts, to cue the candidate to pay attention.
+ * Mirrors the real NAATI exam behaviour.
+ */
+export function playReadyChime(): Promise<void> {
+  return new Promise((resolve) => {
+    try {
+      const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      // A soft mid-tone: 660 Hz (E5), 0.6 s
+      playTone(audioCtx, 660, audioCtx.currentTime, 0.55, 0.28);
+      setTimeout(resolve, 700); // wait for tone + small gap before dialogue
+    } catch {
+      resolve();
+    }
+  });
+}
+
+/**
+ * "Start speaking" chime — a NAATI-style ascending double-beep
+ * played AFTER the dialogue and BEFORE the recording window opens.
+ * The two-beep pattern is instantly recognisable from the real exam.
+ */
+export function playExamChime(): Promise<void> {
+  return new Promise((resolve) => {
+    try {
+      const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const t = audioCtx.currentTime;
+      // First beep: 880 Hz (A5), 0.3 s
+      playTone(audioCtx, 880, t, 0.30, 0.38);
+      // Second beep: 1046 Hz (C6), 0.3 s — slightly higher, starts 0.38 s later
+      playTone(audioCtx, 1046, t + 0.38, 0.30, 0.38);
+      // Resolve after both beeps finish + a brief settle gap
+      setTimeout(resolve, 900);
+    } catch {
+      resolve();
+    }
+  });
 }
 
 // Hook to speak text using correct voice/language
@@ -59,13 +93,15 @@ export function useTTS() {
       const hindiVoice = voices.find(v => v.lang.startsWith('hi') || v.lang.includes('Hindi'));
       if (hindiVoice) utterance.voice = hindiVoice;
       utterance.lang = 'hi-IN';
-      utterance.rate = 0.9; // Hindi is spoken slightly slower for clear comprehension
+      // Real NAATI exam pace — deliberate and clear, not rushed
+      utterance.rate = 0.72;
     } else {
       // Find English voice (prefer AU or standard EN)
       const englishVoice = voices.find(v => v.lang.startsWith('en-AU') || v.lang.startsWith('en-GB') || v.lang.startsWith('en'));
       if (englishVoice) utterance.voice = englishVoice;
       utterance.lang = 'en-AU';
-      utterance.rate = 0.95;
+      // Real NAATI exam pace — measured Australian English delivery
+      utterance.rate = 0.78;
     }
 
     utterance.onstart = () => setSpeaking(true);
