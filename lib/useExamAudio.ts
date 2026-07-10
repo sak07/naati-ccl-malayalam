@@ -61,6 +61,55 @@ export function playExamChime(): Promise<void> {
   });
 }
 
+// Singleton audio element so only one file plays at a time
+let _currentAudio: HTMLAudioElement | null = null;
+
+/** Stop any in-progress pre-generated audio playback. */
+export function stopAudioPlayback() {
+  if (_currentAudio) {
+    _currentAudio.pause();
+    _currentAudio.src = '';
+    _currentAudio = null;
+  }
+}
+
+/**
+ * Play a pre-generated audio file (e.g. /audio/Education-1/0-en.m4a).
+ * Resolves when playback ends; rejects if the file can't be loaded
+ * so the caller can fall back to TTS.
+ */
+export function playAudioFile(url: string, onEnd?: () => void): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // Stop any currently playing audio
+    if (_currentAudio) {
+      _currentAudio.pause();
+      _currentAudio.src = '';
+      _currentAudio = null;
+    }
+
+    const audio = new Audio(url);
+    _currentAudio = audio;
+
+    audio.onended = () => {
+      _currentAudio = null;
+      if (onEnd) onEnd();
+      resolve();
+    };
+
+    audio.onerror = () => {
+      _currentAudio = null;
+      reject(new Error(`Audio file not found: ${url}`));
+    };
+
+    // canplaythrough fires once enough is buffered
+    audio.oncanplaythrough = () => {
+      audio.play().catch(reject);
+    };
+
+    audio.load();
+  });
+}
+
 // Hook to speak text using correct voice/language
 export function useTTS() {
   const [speaking, setSpeaking] = useState(false);

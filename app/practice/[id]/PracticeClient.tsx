@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import type { Exchange } from '@/lib/types';
 import { useProgress } from '@/lib/useProgress';
-import { useTTS, useAudioRecorder, playExamChime, playReadyChime } from '@/lib/useExamAudio';
+import { useTTS, useAudioRecorder, playExamChime, playReadyChime, playAudioFile, stopAudioPlayback } from '@/lib/useExamAudio';
 
 interface Props {
   exchanges: Exchange[];
@@ -52,9 +52,28 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
   const showSecond = direction === 'en-first' ? translationText : englishText;
   const firstLabel  = direction === 'en-first' ? 'English' : 'Translation';
   const secondLabel = direction === 'en-first' ? 'Translation' : 'English';
-
-  // Determine language of current prompt (for TTS)
   const isPromptHindi = !isEnglish(showFirst);
+
+  // Determine which pre-generated audio file to play for the current exchange
+  // Files are at /audio/{dialogueId}/{exchangeIndex}-en.m4a and -hi.m4a
+  const getAudioUrl = useCallback((exchangeIndex: number, isHindi: boolean) => {
+    const lang = isHindi ? 'hi' : 'en';
+    return `/audio/${dialogueId}/${exchangeIndex}-${lang}.m4a`;
+  }, [dialogueId]);
+
+  // Play audio: tries the pre-generated file first, falls back to TTS
+  const playSegment = useCallback(
+    async (text: string, isHindi: boolean, exchangeIndex: number, onEnd: () => void) => {
+      const url = getAudioUrl(exchangeIndex, isHindi);
+      try {
+        await playAudioFile(url, onEnd);
+      } catch {
+        // File not yet generated — fall back to TTS
+        speak(text, isHindi, onEnd);
+      }
+    },
+    [getAudioUrl, speak]
+  );
 
   const startExamSegment = useCallback(async () => {
     setIsPlayingPrompt(true);
@@ -62,19 +81,20 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
     clearRecording();
     // "Listen now" cue — mirrors the real NAATI exam
     await playReadyChime();
-    speak(showFirst, isPromptHindi, async () => {
+    playSegment(showFirst, isPromptHindi, current, async () => {
       // Double-beep "start speaking" cue after dialogue finishes
       await playExamChime();
       setIsPlayingPrompt(false);
       startRecording();
       setIsRecordingAnswer(true);
     });
-  }, [showFirst, isPromptHindi, speak, startRecording, clearRecording]);
+  }, [showFirst, isPromptHindi, current, playSegment, startRecording, clearRecording]);
 
   // Handle toggling exam mode
   const handleToggleExamMode = useCallback((enabled: boolean) => {
     setExamMode(enabled);
     stopTTS();
+    stopAudioPlayback();
     stopRecording();
     clearRecording();
     setIsPlayingPrompt(false);
@@ -106,6 +126,7 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
   const next = useCallback(() => {
     recordExchanges(dialogueId, 1);
     stopTTS();
+    stopAudioPlayback();
     stopRecording();
     setIsRecordingAnswer(false);
 
@@ -118,7 +139,8 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
         setTimeout(() => {
           setIsPlayingPrompt(true);
           clearRecording();
-          const nextExchange = exchanges[current + 1];
+          const nextIdx = current + 1;
+          const nextExchange = exchanges[nextIdx];
           const nextPromptIsEnglish = isEnglish(nextExchange.prompt);
           const nextShowFirst = direction === 'en-first' 
             ? (nextPromptIsEnglish ? nextExchange.prompt : nextExchange.answer)
@@ -127,7 +149,7 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
 
           // "Listen now" cue before next dialogue
           playReadyChime().then(() => {
-            speak(nextShowFirst, nextIsPromptHindi, async () => {
+            playSegment(nextShowFirst, nextIsPromptHindi, nextIdx, async () => {
               // Double-beep "start speaking" cue
               await playExamChime();
               setIsPlayingPrompt(false);
@@ -140,13 +162,14 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
     } else {
       setDone(true);
     }
-  }, [current, exchanges, dialogueId, recordExchanges, examMode, speak, startRecording, clearRecording, direction, stopTTS, stopRecording]);
+  }, [current, exchanges, dialogueId, recordExchanges, examMode, playSegment, startRecording, clearRecording, direction, stopTTS, stopRecording]);
 
   const prev = useCallback(() => {
     if (current > 0) {
       setCurrent(c => c - 1);
       setRevealed(false);
       stopTTS();
+      stopAudioPlayback();
       stopRecording();
       setIsRecordingAnswer(false);
       clearRecording();
@@ -165,6 +188,7 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
     setIsRecordingAnswer(false);
     setIsPlayingPrompt(false);
     stopTTS();
+    stopAudioPlayback();
     stopRecording();
   }, [clearRecording, stopTTS, stopRecording]);
 
@@ -178,14 +202,14 @@ export default function PracticeClient({ exchanges, dialogueId }: Props) {
     setIsPlayingPrompt(true);
     // "Listen now" cue before replaying
     playReadyChime().then(() => {
-      speak(showFirst, isPromptHindi, async () => {
+      playSegment(showFirst, isPromptHindi, current, async () => {
         await playExamChime();
         setIsPlayingPrompt(false);
         startRecording();
         setIsRecordingAnswer(true);
       });
     });
-  }, [current, showFirst, isPromptHindi, speak, startRecording, stopRecording]);
+  }, [current, showFirst, isPromptHindi, playSegment, startRecording, stopRecording]);
 
   const handleTakeCorrection = useCallback(() => {
     setCorrectionsUsed(prev => ({
