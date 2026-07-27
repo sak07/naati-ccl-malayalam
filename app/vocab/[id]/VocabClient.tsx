@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import type { VocabList, VocabTerm } from '@/lib/vocab-data';
+import { getExtractedVocabByDomain } from '@/lib/vocab-data';
 import { useProgress } from '@/lib/useProgress';
 import { useVocabAdditions } from '@/lib/useVocabAdditions';
 import { useIncorrectVocab } from '@/lib/useIncorrectVocab';
@@ -115,6 +116,12 @@ export default function VocabClient({ vocab }: Props) {
   }, [mode, revealed, done, reveal, handleKnow]);
 
   const filteredList = allTerms.filter(t =>
+    t.english.toLowerCase().includes(search.toLowerCase()) ||
+    t.hindi.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const extractedTerms = getExtractedVocabByDomain(vocab.domain);
+  const filteredExtractedList = extractedTerms.filter(t =>
     t.english.toLowerCase().includes(search.toLowerCase()) ||
     t.hindi.toLowerCase().includes(search.toLowerCase())
   );
@@ -348,6 +355,29 @@ export default function VocabClient({ vocab }: Props) {
             })}
           </div>
 
+          {/* Extracted words section */}
+          {filteredExtractedList.length > 0 && (
+            <div className="mt-8 space-y-3">
+              <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider pl-1 flex items-center gap-2">
+                <span>✨</span> Extracted words from scripts
+              </h3>
+              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden divide-y divide-slate-50">
+                {filteredExtractedList.map((t, i) => {
+                  const { script, roman } = parseHindi(t.hindi);
+                  return (
+                    <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group">
+                      <span className="text-sm font-medium text-slate-800 flex-1">{t.english}</span>
+                      <div className="text-right shrink-0">
+                        <p className="text-base font-bold text-indigo-700 leading-tight">{script}</p>
+                        {roman && <p className="text-xs text-slate-400 mt-0.5">{roman}</p>}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Add term form */}
           {showAddForm ? (
             <div className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3">
@@ -396,7 +426,11 @@ export default function VocabClient({ vocab }: Props) {
             </button>
           )}
 
-          <p className="text-xs text-slate-400 text-right">{filteredList.length} words</p>
+          <p className="text-xs text-slate-400 text-right">
+            {filteredList.length} words
+            {extractedTerms.length > 0 && ` (+ ${filteredExtractedList.length} extracted)`}
+          </p>
+
         </div>
       )}
     </div>
